@@ -9,7 +9,7 @@ function Home() {
       <div className="headerContainer">
         <h1> Skyruk Creative Studios </h1>
         <p> PROJECTS MADE FOR FUN!! </p>
-        <Link to="/hall">
+        <Link to="/Lobby">
           <button> Explore Now </button>
         </Link>
       </div>
