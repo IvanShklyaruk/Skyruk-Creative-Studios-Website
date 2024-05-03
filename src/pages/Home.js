@@ -1,25 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import HomePageBackground from "../assets/HomePageBackgroundVideo.mp4";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import HomePageBackground1 from "../assets/HomePageBackgroundVideo1.mp4";
+import HomePageBackground2 from "../assets/HomePageBackgroundVideo2.mp4";
 import "../styles/Home.css";
 
 function Home() {
-  return (
-    <div className="home">
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src={HomePageBackground} type="video/mp4"></source>
-      </video>
-      <div className="headerContainer">
-        <div className="centeredContent">
-          <h1>Skyruk Creative Studios</h1>
-          <p>PROJECTS MADE FOR FUN!</p>
-          <Link to="/Hall">
-            <button>Explore Now</button>
-          </Link>
+    const navigate = useNavigate();
+    const [backgroundVideo, setBackgroundVideo] = useState(HomePageBackground1);
+
+    // Function to change the background video and navigate
+    function handleExplore() {
+        // Update the background video and navigate after a delay
+        const nextVideo = backgroundVideo === HomePageBackground1 ? HomePageBackground2 : HomePageBackground1;
+        setBackgroundVideo(nextVideo);
+
+        setTimeout(() => {
+            navigate('/home'); // Adjust this as necessary for the correct route
+        }, 1000); // Delay of 2 seconds to observe the video change
+    }
+
+    return (
+        <div className="home">
+            <video autoPlay loop muted playsInline className="background-video" key={backgroundVideo}>
+                <source src={backgroundVideo} type="video/mp4" />
+            </video>
+            <div className="headerContainer">
+                <div className="centeredContent">
+                    <h1>Skyruk Creative Studios</h1>
+                    <p>PROJECTS MADE FOR FUN!</p>
+                    <button onClick={handleExplore}>Explore Now</button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default Home;
