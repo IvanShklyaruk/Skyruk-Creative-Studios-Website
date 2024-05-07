@@ -34,7 +34,7 @@
     border: none; /* No border */
     color: #b8e2f5; /* Set text color, change if needed */
     font-family: 'Tangerine', cursive;
-    font-size: 23px; /* Adjust based on your design */
+    font-size: 23px; 
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease; /* Transition for text color */
