@@ -7,7 +7,7 @@ function Games() {
     const navigate = useNavigate();
 
     function handleLibraryClick() {
-        navigate('/library/games');
+        navigate('/library/games/riddler');
     }
 
     return (
