@@ -24,6 +24,21 @@ const useRiddler = (solution) => {
     // handle keyup event & track current guess
     // if user presses enter, add the new guess
     const handleKeyup = ({ key }) => {
+        if (key === 'Enter') {
+            if (turn > 5) {
+                console.log('you used all your guesses')
+                return
+            }
+            if (history.icludes(currentGuess)) {
+                console.log('you already tried that word')
+                return
+            }
+            if (currentGuess.length !== 5) {
+                console.log('word must be 5 chars long')
+                return
+            }
+            formatGuess()
+        }
         if (key === 'Backspace') {
             setCurrentGuess((prev) => {
                 return prev.slice(0, -1)
