@@ -36,7 +36,7 @@ const useRiddler = (solution) => {
     // add a new guess to the guesses state
     // update the isCorrect state if the guess is correct
     // add one to the turn state
-    const addNewGuess = () => {
+    const addNewGuess = (formattedGuess) => {
 
     }
 
@@ -45,19 +45,19 @@ const useRiddler = (solution) => {
     const handleKeyup = ({ key }) => {
         if (key === 'Enter') {
             if (turn > 5) {
-                console.log('you used all your guesses')
+                console.log('you used all your guesses!')
                 return
             }
             if (history.includes(currentGuess)) {
-                console.log('you already tried that word')
+                console.log('you already tried that word!')
                 return
             }
             if (currentGuess.length !== 5) {
-                console.log('word must be 5 chars long')
+                console.log('word must be 5 chars long!')
                 return
             }
             const formatted = formatGuess()
-            console.log(formatted)
+            addNewGuess(formatted)
         }
         if (key === 'Backspace') {
             setCurrentGuess((prev) => {
