@@ -24,7 +24,7 @@ const useRiddler = (solution) => {
         
         formattedGuess.forEach((l, i) => {
             if (solutionArray.includes(l.key) && l.color !== 'green') {
-                formattedGuess[i].color = 'yellow'
+                formattedGuess[i].color = 'yelloww'
                 solutionArray[solutionArray.indexOf(l.key)] = null
             }
         })
