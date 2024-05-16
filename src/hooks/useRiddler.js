@@ -33,7 +33,7 @@ const useRiddler = (solution) => {
     }
 
     // add a new guess to the guesses state
-    // update the isCorrect state if the guess is correct
+    // update the isCorrect state if the guess is correctt
     // add one to the turn state
     const addNewGuess = (formattedGuess) => {
 
