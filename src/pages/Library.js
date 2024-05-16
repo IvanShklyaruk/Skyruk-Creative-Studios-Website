@@ -10,13 +10,17 @@ function Library() {
         navigate('/library/games');
     }
 
+    function handleLibraryClick2() {
+        navigate('/library/test');
+    }
+
     return (
         <div className="library">
             <video autoPlay loop muted playsInline className="background-video" key={LibraryPageBackground}>
                 <source src={LibraryPageBackground} type="video/mp4" />
             </video>
             <button onClick={handleLibraryClick} className="interactive-area" style={{ top: '18%', left: '4%', width: '10%', height: '29%' }}>Games</button>
-            <button className="interactive-area" style={{ top: '27%', left: '15%', width: '7%', height: '24%' }}>Coming Soon...</button>
+            <button onClick={handleLibraryClick2} className="interactive-area" style={{ top: '27%', left: '15%', width: '7%', height: '24%' }}>Test</button>
             <button className="interactive-area" style={{ top: '27%', left: '77%', width: '7%', height: '24%' }}>Coming Soon...</button>
             <button className="interactive-area" style={{ top: '18%', left: '85%', width: '11%', height: '29%' }}>Coming Soon...</button>
         </div>
