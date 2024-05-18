@@ -11,7 +11,7 @@ function Library() {
     }
 
     function handleLibraryClick2() {
-        navigate('/library/test');
+        navigate('/library/games/test');
     }
 
     return (
