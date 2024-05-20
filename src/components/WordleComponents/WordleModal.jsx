@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/WordleModal.css';
+import '../../styles/WordleStyles/WordleModal.css';
 
 export default function WordleModal({ isCorrect, turn, solution }) {
   return (

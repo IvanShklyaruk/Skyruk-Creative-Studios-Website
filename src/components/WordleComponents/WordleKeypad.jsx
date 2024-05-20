@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/WordleKeypad.css';
+import '../../styles/WordleStyles/WordleKeypad.css';
 
 export default function WordleKeypad({ usedKeys }) {
   const [letters, setLetters] = useState(null)

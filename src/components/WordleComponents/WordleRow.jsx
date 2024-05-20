@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/WordleRow.css';
+import '../../styles/WordleStyles/WordleRow.css';
 
 export default function WordleRow({ guess, currentGuess }) {
     if (guess) {

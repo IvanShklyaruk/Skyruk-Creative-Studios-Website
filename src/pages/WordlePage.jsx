@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import WordleInterface from '../components/WordleInterface'
-import "../styles/WordlePage.css";
+import WordleInterface from '../components/WordleComponents/WordleInterface'
+import "../styles/WordleStyles/WordlePage.css";
 
 const WordlePage = () => {
     const [solution, setSolution] = useState(null)
