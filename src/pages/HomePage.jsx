@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import HomePageBackground1 from "../assets/HomePageBackgroundVideo1.mp4";
 import HomePageBackground2 from "../assets/HomePageBackgroundVideo2.mp4";
-import "../styles/Home.css";
+import "../styles/HomePage.css";
 
-function Home() {
+const HomePage = () => {
     const navigate = useNavigate();
     const [backgroundVideo, setBackgroundVideo] = useState(HomePageBackground1);
     const nextVideoRef = useRef(null);
@@ -23,7 +23,7 @@ function Home() {
     }
 
     return (
-        <div className="home">
+        <div className="home-page">
             <video autoPlay loop muted playsInline className="background-video" key={backgroundVideo}>
                 <source src={backgroundVideo} type="video/mp4" />
             </video>
@@ -42,4 +42,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default HomePage

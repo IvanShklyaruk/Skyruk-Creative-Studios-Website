@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useRiddler = (solution) => {
+const useWordle = (solution) => {
   const [turn, setTurn] = useState(0) 
   const [currentGuess, setCurrentGuess] = useState('')
   const [guesses, setGuesses] = useState([...Array(6)]) // each guess is an array
@@ -77,4 +77,4 @@ const useRiddler = (solution) => {
 
 }
 
-export default useRiddler
+export default useWordle
