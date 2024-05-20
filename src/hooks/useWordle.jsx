@@ -36,7 +36,25 @@ const useWordle = (solution) => {
     // update the isCorrect state if the guess is correctt
     // add one to the turn state
     const addNewGuess = (formattedGuess) => {
+        if (currentGuess === solution) {
+            setIsCorrect(true)
+        }
 
+        setGuesses((prevGuesses) => {
+            let newGuesses = [...prevGuesses]
+            newGuesses[turn] = formattedGuess
+            return newGuesses
+        })
+
+        setHistory((prevHistory) => {
+            return [...prevHistory, currentGuess]
+        })
+
+        setTurn((prevTurn) => {
+            return prevTurn + 1
+        })
+        
+        setCurrentGuess('')
     }
 
     // handle keyup event & track current guess
@@ -58,12 +76,14 @@ const useWordle = (solution) => {
             const formatted = formatGuess()
             addNewGuess(formatted)
         }
+
         if (key === 'Backspace') {
             setCurrentGuess((prev) => {
                 return prev.slice(0, -1)
             })
             return
         }
+
         if (/^[A-Za-z]$/.test(key)) {
             if (currentGuess.length < 5) {
                 setCurrentGuess((prev) => {
