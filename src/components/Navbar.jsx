@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ReorderIcon from '@mui/icons-material/Reorder';
 import '../styles/Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
   const [openLinks, setOpenLinks] = useState(false);
 
   const toggleNavbar = () => {
@@ -33,4 +33,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar

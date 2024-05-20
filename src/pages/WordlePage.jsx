@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import RiddlerInterface from '../components/RiddlerInterface'
-import "../styles/Riddler.css";
+import WordleInterface from '../components/WordleInterface'
+import "../styles/WordlePage.css";
 
-function Riddler() {
+const WordlePage = () => {
     const [solution, setSolution] = useState(null)
 
     useEffect(() => {
@@ -15,11 +15,11 @@ function Riddler() {
     }, [setSolution])
 
     return (
-        <div className="Riddler">
-            <h1>Riddler</h1>
-            {solution && <RiddlerInterface solution={solution}/>}
+        <div className="wordle-page">
+            <h1>Wordle</h1>
+            {solution && <WordleInterface solution={solution}/>}
         </div>
     );
 }
 
-export default Riddler;
+export default WordlePage

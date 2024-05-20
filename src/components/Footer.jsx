@@ -4,9 +4,7 @@ import TikTokIcon from '@mui/icons-material/LibraryMusic';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import "../styles/Footer.css";
 
-// Test
-
-function Footer() {
+const Footer = () => {
   return (
     <div className="footer">
       <div className="socialMedia">
@@ -17,4 +15,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer

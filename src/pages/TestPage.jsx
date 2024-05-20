@@ -1,11 +1,11 @@
 import { Canvas } from '@react-three/fiber'
 import { Experience } from '../components/Experience';
-import "../styles/Test.css";
+import "../styles/TestPage.css";
 
 
-function Test() {
+const TestPage = () => {
     return (
-    <div className="test">
+    <div className="test-page">
         <Canvas>
             <Experience />
         </Canvas>
@@ -13,4 +13,4 @@ function Test() {
     );
 }
 
-export default Test;
+export default TestPage

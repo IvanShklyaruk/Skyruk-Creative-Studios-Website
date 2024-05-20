@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import useRiddler from '../hooks/useRiddler';
+import useWordle from '../hooks/useWordle';
 
-export default function RiddlerInterface({ solution }) {
-  const { currentGuess, handleKeyup } = useRiddler(solution)
+export default function WordleInterface({ solution }) {
+  const { currentGuess, handleKeyup } = useWordle(solution)
   
   useEffect(() => {
     window.addEventListener('keyup', handleKeyup)

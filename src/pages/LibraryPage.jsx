@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import LibraryPageBackground from "../assets/LibraryPageBackgroundVideo.mp4";
-import "../styles/Library.css";
+import "../styles/LibraryPage.css";
 
-function Library() {
+const LibraryPage = () => {
     const navigate = useNavigate();
 
     function handleLibraryClick() {
@@ -15,7 +15,7 @@ function Library() {
     }
 
     return (
-        <div className="library">
+        <div className="library-page">
             <video autoPlay loop muted playsInline className="background-video" key={LibraryPageBackground}>
                 <source src={LibraryPageBackground} type="video/mp4" />
             </video>
@@ -27,4 +27,4 @@ function Library() {
     );
 }
 
-export default Library;
+export default LibraryPage
