@@ -4,7 +4,7 @@
   background-color: #121619;
   display: flex;
   flex-direction: row;
-  font-family: 'Tangerine', cursive; /* Example of a font that might look medieval */
+  font-family: 'Tangerine', cursive;
 }
 
 .navbar .leftSide {
