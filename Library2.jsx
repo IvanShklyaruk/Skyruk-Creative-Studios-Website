@@ -6,8 +6,8 @@ Command: npx gltfjsx@6.2.16 public/models/library2.glb
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function LibraryModel(props) {
-  const { nodes, materials } = useGLTF('./models/library2.glb')
+export function Model(props) {
+  const { nodes, materials } = useGLTF('/library2.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube015.geometry} material={materials['Wood Pillars']} position={[-7.838, 5.823, -0.004]} rotation={[-Math.PI, 0, 0]} scale={[-0.616, -0.045, -2.743]} />
@@ -37,4 +37,4 @@ export function LibraryModel(props) {
   )
 }
 
-useGLTF.preload('./models/library2.glb')
+useGLTF.preload('/library2.glb')

@@ -3,9 +3,8 @@ import { LibraryModel } from "./LibraryModel"
 
 export const Experience = () => {
     return (
-        <>
-            <ambientLight intensity={1} />
-            <OrbitControls />
+        <>       
+            <pointLight position={[-5, 3, 0]} intensity={100}/>
             <LibraryModel />
         </>
     )
