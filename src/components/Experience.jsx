@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { button, useControls } from "leva";
 import { LibraryModel } from "./LibraryModel";
 import CameraPositionLogger from "../helpers/CameraPositionLogger";
+import "../styles/Experience.css";
 
 const cameraPositions = {
   noShelf: [
