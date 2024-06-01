@@ -12,8 +12,7 @@ import "../styles/Experience.css";
 
 const cameraPositions = {
   noShelf: [
-    10.690409819478292, 5.85690639323601, -0.9805512698771267,
-    -0.7385785612766133, 3.832745517933255, -0.378328702161851,
+    1.0169448845584173, 5.0952365118624545, 15.586448616475266, 0.5450852772641668, 4.839987403130891, -0.26460287443670377,
   ],
   shelf1: [
     1.8458778215829745, 6.677529555501346, 5.484598656207786,
@@ -73,7 +72,7 @@ export const Experience = () => {
     <>
       <CameraControls
         ref={controls}
-        // disable all mouse buttons
+      /*  // disable all mouse buttons
         mouseButtons={{
           left: 0,
           middle: 0,
@@ -85,10 +84,10 @@ export const Experience = () => {
           one: 0,
           two: 0,
           three: 0,
-        }}
+        }}*/
       />
       <ambientLight intensity={1} />
-      <pointLight position={[-5, 3, 0]} intensity={100} />
+      <pointLight position={[-5, 3, 0]} intensity={10} />
       <LibraryModel shelf={shelf} setShelf={setShelf} />
     </>
   );
