@@ -73,7 +73,7 @@ export const Experience = () => {
     <>
       <CameraControls
         ref={controls}
-        // disable all mouse buttons
+        /* // disable all mouse buttons
         mouseButtons={{
           left: 0,
           middle: 0,
@@ -85,7 +85,7 @@ export const Experience = () => {
           one: 0,
           two: 0,
           three: 0,
-        }}
+        }}*/
       />
       <ambientLight intensity={1} />
       <pointLight position={[-5, 3, 0]} intensity={10} />
