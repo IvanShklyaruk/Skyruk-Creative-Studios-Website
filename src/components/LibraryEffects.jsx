@@ -26,8 +26,8 @@ export const LibraryEffects = () => {
 
   const brightnessContrastConfig = useControls("brightnessContrast", {
     enabled: true,
-    brightness: { value: -0.065, min: -1, max: 1 },
-    contrast: { value: -0.029, min: -1, max: 1 },
+    brightness: { value: 0.02, min: -1, max: 1 },
+    contrast: { value: 0.19, min: -1, max: 1 },
   });
 
   const sepiaConfig = useControls("sepia", {
@@ -53,6 +53,13 @@ export const LibraryEffects = () => {
   });
 
   /* {autofocusConfig.enabled && <Autofocus {...autofocusConfig} />} */
+  /* {sepiaConfig.enabled && (
+        <Sepia
+          {...sepiaConfig}
+          blendFunction={BlendFunction[sepiaConfig.blendFunction]}
+        />
+      )} 
+  */
 
   return (
     <EffectComposer disableNormalPass>
@@ -61,12 +68,7 @@ export const LibraryEffects = () => {
       {brightnessContrastConfig.enabled && (
         <BrightnessContrast {...brightnessContrastConfig} />
       )}
-      {sepiaConfig.enabled && (
-        <Sepia
-          {...sepiaConfig}
-          blendFunction={BlendFunction[sepiaConfig.blendFunction]}
-        />
-      )}
+
       {noiseConfig.enabled && <Noise {...noiseConfig} />}
     </EffectComposer>
   );

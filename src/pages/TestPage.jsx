@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "../components/Experience";
 import { LibraryEffects } from "../components/LibraryEffects";
+import { Leva } from "leva";
 import "../styles/TestPage.css";
 
 const TestPage = () => {

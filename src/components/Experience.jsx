@@ -83,17 +83,17 @@ export const Experience = () => {
 
       <pointLight
         position={[0.486, 2.2, -6.5]}
-        intensity={17}
+        intensity={11}
         color={"#ffce00"}
       />
       <ambientLight
         position={[-0.034, 0.008, 6.348]}
-        intensity={0.7}
+        intensity={0.65}
         /* color={"#ffce00"} */
       />
       <ambientLight
         position={[-6.695, 1.534, 0.011]}
-        intensity={0.15}
+        intensity={0.19}
         color={"#43edf5"}
       />
       <LibraryModel shelf={shelf} setShelf={setShelf} />

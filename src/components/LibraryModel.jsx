@@ -5,10 +5,11 @@ Command: npx gltfjsx@6.2.17 public/models/library.glb
 
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useGLTF, useAnimations, Html } from "@react-three/drei";
+import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import "../styles/LibraryModel.css";
+import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import WordlePNG from "../assets/Wordle.png";
 import ComingSoonPNG from "../assets/ComingSoon.png";
 import "../styles/LibraryPage.css";
@@ -20,6 +21,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const { actions } = useAnimations(animations, group);
   const [hoveredObject, setHoveredObject] = useState(null);
   const [hoveredPosition, setHoveredPosition] = useState(null);
+  const [showBackLabel, setShowBackLabel] = useState(false);
 
   useEffect(() => {
     // Perform any actions based on the shelf change
@@ -53,7 +55,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     setHoveredObject(bookName);
     setHoveredPosition(e.intersections[0].point);
 
-    // Highlight all parts of the book
+    document.body.style.cursor = "pointer";
+
+    // Highlight all parts of the book except the text component
     e.object.parent.traverse((child) => {
       if (child.isMesh) {
         child.material = child.material.clone();
@@ -61,15 +65,13 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
         child.material.emissiveIntensity = 2;
       }
     });
-
-    document.body.style.cursor = "pointer";
   };
 
   const handleMouseLeave = (e) => {
     setHoveredObject(null);
     setHoveredPosition(null);
 
-    // Reset highlight for all parts of the book
+    // Reset highlight for all parts of the book except the text component
     e.object.parent.traverse((child) => {
       if (child.isMesh) {
         child.material.emissive.set(0x000000);
@@ -89,9 +91,21 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
       // Set a timeout to navigate to the target path after 1 second
       setTimeout(() => {
         navigate(targetPath);
-      }, 1250); // 1000 milliseconds = 1 second
+      }, 1000); // 1000 milliseconds = 1 second
     }
   };
+
+  useEffect(() => {
+    if (shelf !== "noShelf") {
+      const timer = setTimeout(() => {
+        setShowBackLabel(true);
+      }, 100);
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowBackLabel(false);
+    }
+  }, [shelf]);
 
   useEffect(() => {
     // Store original colors
@@ -108,7 +122,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     materials["mat12.002"].color.multiplyScalar(12);
     materials.Light.color.multiplyScalar(12);
     materials.mat12.color.multiplyScalar(2.2);
-    materials.Sky.color.multiplyScalar(1.5);
+    materials.Sky.color.multiplyScalar(1.75);
 
     materials["mat12.001"].toneMapped = false;
     materials["mat12.002"].toneMapped = false;
@@ -4552,35 +4566,50 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           position={[-6.869, 7.235, 4.279]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
-          onPointerOver={(e) => {
-            e.stopPropagation();
-            handleMouseEnter(e, "shelf1_book1"); // Pass the book name
-          }}
-          onPointerOut={(e) => {
-            e.stopPropagation();
-            handleMouseLeave(e);
-          }}
-          onClick={(e) => {
-            e.stopPropagation();
-            handleClick("shelf1_book1_animation", "/library/games");
-          }}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf1_book1");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf1_book1_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book2_Cube024_1047"
             geometry={nodes.book2_Cube024_1047.geometry}
             material={materials.White}
           />
+
           <mesh
             name="book2_Cube024_1047_1"
             geometry={nodes.book2_Cube024_1047_1.geometry}
             material={materials["Yellow Book"]}
           />
+
           <mesh
             name="book2_Cube024_1047_2"
             geometry={nodes.book2_Cube024_1047_2.geometry}
             material={materials["Blue Book"]}
           />
-          {hoveredObject === "shelf1_book1" && (
+
+          {hoveredObject === "shelf1_book1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4593,25 +4622,48 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 <img src={WordlePNG} alt="Wordle" />
               </div>
             </Html>
+          ) : (
+            <Text
+              position={[4.675, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              Wordle
+            </Text>
           )}
         </group>
+
         <group
           name="shelf1_book2"
           position={[-6.864, 7.248, 4.034]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
-          onPointerOver={(e) => {
-            e.stopPropagation(); // Stop the event from propagating to other objects
-            handleMouseEnter(e, "shelf1_book2"); // Pass the book name
-          }}
-          onPointerOut={(e) => {
-            e.stopPropagation(); // Stop the event from propagating to other objects
-            handleMouseLeave(e);
-          }}
-          onClick={(e) => {
-            e.stopPropagation(); // Stop the event from propagating to other objects
-            handleClick("shelf1_book2_animation", "/library/games");
-          }}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf1_book2");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf1_book2_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1086"
@@ -4623,7 +4675,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1086_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf1_book2" && (
+          {hoveredObject === "shelf1_book2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4636,6 +4688,16 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 <img src={ComingSoonPNG} alt="???" />
               </div>
             </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
           )}
         </group>
         <group
@@ -5027,11 +5089,14 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               </div>
             </Html>
           ) : (
-            <Html className="html-style" position={[22, 0.5, 65]}>
-              <div onClick={() => setShelf("noShelf")} className="back-label">
-                Go Back
-              </div>
-            </Html>
+            shelf === "shelf1" &&
+            showBackLabel && (
+              <Html className="html-style" position={[22, 0.5, 65]}>
+                <div onClick={() => setShelf("noShelf")} className="back-label">
+                  Go Back
+                </div>
+              </Html>
+            )
           )}
         </group>
         <group
@@ -5104,11 +5169,14 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               </div>
             </Html>
           ) : (
-            <Html className="html-style" position={[25.7, -61, 73.5]}>
-              <div onClick={() => setShelf("noShelf")} className="back-label">
-                Go Back
-              </div>
-            </Html>
+            shelf === "shelf4" &&
+            showBackLabel && (
+              <Html className="html-style" position={[25.7, -61, 73.5]}>
+                <div onClick={() => setShelf("noShelf")} className="back-label">
+                  Go Back
+                </div>
+              </Html>
+            )
           )}
         </group>
         <group
@@ -5142,11 +5210,14 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               </div>
             </Html>
           ) : (
-            <Html className="html-style" position={[25.7, 93.5, 25]}>
-              <div onClick={() => setShelf("noShelf")} className="back-label">
-                Go Back
-              </div>
-            </Html>
+            shelf === "shelf3" &&
+            showBackLabel && (
+              <Html className="html-style" position={[25.7, 93.5, 25]}>
+                <div onClick={() => setShelf("noShelf")} className="back-label">
+                  Go Back
+                </div>
+              </Html>
+            )
           )}
         </group>
         <group
@@ -5219,11 +5290,14 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               </div>
             </Html>
           ) : (
-            <Html className="html-style" position={[22, 77, 2]}>
-              <div onClick={() => setShelf("noShelf")} className="back-label">
-                Go Back
-              </div>
-            </Html>
+            shelf === "shelf2" &&
+            showBackLabel && (
+              <Html className="html-style" position={[22, 77, 2]}>
+                <div onClick={() => setShelf("noShelf")} className="back-label">
+                  Go Back
+                </div>
+              </Html>
+            )
           )}
         </group>
       </group>
