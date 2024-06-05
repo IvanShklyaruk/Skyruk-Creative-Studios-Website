@@ -249,11 +249,6 @@ export function Model(props) {
           <mesh name="Book1_Cube025_1002_1" geometry={nodes.Book1_Cube025_1002_1.geometry} material={materials['Blue Book']} />
           <mesh name="Book1_Cube025_1002_2" geometry={nodes.Book1_Cube025_1002_2.geometry} material={materials['Yellow Book']} />
         </group>
-        <group name="Book1_Cube025" position={[-8.041, 2.364, 3.653]} rotation={[1.737, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="Book1_Cube025_1" geometry={nodes.Book1_Cube025_1.geometry} material={materials.White} />
-          <mesh name="Book1_Cube025_1_1" geometry={nodes.Book1_Cube025_1_1.geometry} material={materials['Purple Book']} />
-          <mesh name="Book1_Cube025_1_2" geometry={nodes.Book1_Cube025_1_2.geometry} material={materials['Cyan Book']} />
-        </group>
         <group name="book2_Cube001" position={[-8.087, 2.34, 2.97]} rotation={[1.737, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
           <mesh name="book2_Cube024_1001" geometry={nodes.book2_Cube024_1001.geometry} material={materials.White} />
           <mesh name="book2_Cube024_1001_1" geometry={nodes.book2_Cube024_1001_1.geometry} material={materials['Yellow Book']} />
@@ -263,11 +258,6 @@ export function Model(props) {
           <mesh name="book2_Cube024_1002" geometry={nodes.book2_Cube024_1002.geometry} material={materials.White} />
           <mesh name="book2_Cube024_1002_1" geometry={nodes.book2_Cube024_1002_1.geometry} material={materials['Orange Book']} />
           <mesh name="book2_Cube024_1002_2" geometry={nodes.book2_Cube024_1002_2.geometry} material={materials['Red Book']} />
-        </group>
-        <group name="book2_Cube024" position={[-8.05, 2.34, 4.041]} rotation={[1.737, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="book2_Cube024_1" geometry={nodes.book2_Cube024_1.geometry} material={materials.White} />
-          <mesh name="book2_Cube024_1_1" geometry={nodes.book2_Cube024_1_1.geometry} material={materials['Red Book']} />
-          <mesh name="book2_Cube024_1_2" geometry={nodes.book2_Cube024_1_2.geometry} material={materials.FF5722} />
         </group>
         <group name="book3_Cube" position={[-8.024, 2.3, 3.878]} rotation={[1.737, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
           <mesh name="book3_Cube_1" geometry={nodes.book3_Cube_1.geometry} material={materials['Green Book']} />
@@ -366,15 +356,6 @@ export function Model(props) {
           <mesh name="book3_Cube_1012" geometry={nodes.book3_Cube_1012.geometry} material={materials['Red Book']} />
           <mesh name="book3_Cube_1012_1" geometry={nodes.book3_Cube_1012_1.geometry} material={materials.White} />
         </group>
-        <group name="book3_Cube013" position={[-8.024, 2.09, -3.796]} rotation={[0.538, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="book3_Cube_1013" geometry={nodes.book3_Cube_1013.geometry} material={materials['Green Book']} />
-          <mesh name="book3_Cube_1013_1" geometry={nodes.book3_Cube_1013_1.geometry} material={materials.White} />
-        </group>
-        <group name="Book1_Cube008" position={[-8.032, 1.484, -2.908]} rotation={[0.272, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="Book1_Cube025_1010" geometry={nodes.Book1_Cube025_1010.geometry} material={materials.White} />
-          <mesh name="Book1_Cube025_1010_1" geometry={nodes.Book1_Cube025_1010_1.geometry} material={materials['Purple Book']} />
-          <mesh name="Book1_Cube025_1010_2" geometry={nodes.Book1_Cube025_1010_2.geometry} material={materials['Orange Book']} />
-        </group>
         <group name="Book1_Cube009" position={[-8.032, 2.167, 5.027]} rotation={[1.296, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
           <mesh name="Book1_Cube025_1011" geometry={nodes.Book1_Cube025_1011.geometry} material={materials.White} />
           <mesh name="Book1_Cube025_1011_1" geometry={nodes.Book1_Cube025_1011_1.geometry} material={materials['Orange Book2']} />
@@ -427,16 +408,6 @@ export function Model(props) {
         <group name="book3_Cube020" position={[-8.024, 5.388, 6.487]} rotation={[0.538, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
           <mesh name="book3_Cube_1020" geometry={nodes.book3_Cube_1020.geometry} material={materials['Blue Book']} />
           <mesh name="book3_Cube_1020_1" geometry={nodes.book3_Cube_1020_1.geometry} material={materials.White} />
-        </group>
-        <group name="Book1_Cube014" position={[8.949, 2.049, 4.54]} rotation={[2.053, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="Book1_Cube025_1016" geometry={nodes.Book1_Cube025_1016.geometry} material={materials.White} />
-          <mesh name="Book1_Cube025_1016_1" geometry={nodes.Book1_Cube025_1016_1.geometry} material={materials['Orange Book2']} />
-          <mesh name="Book1_Cube025_1016_2" geometry={nodes.Book1_Cube025_1016_2.geometry} material={materials['Purple Book']} />
-        </group>
-        <group name="book2_Cube010" position={[9.033, 2.161, 4.163]} rotation={[2.053, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="book2_Cube024_1010" geometry={nodes.book2_Cube024_1010.geometry} material={materials.White} />
-          <mesh name="book2_Cube024_1010_1" geometry={nodes.book2_Cube024_1010_1.geometry} material={materials['Yellow Book']} />
-          <mesh name="book2_Cube024_1010_2" geometry={nodes.book2_Cube024_1010_2.geometry} material={materials['Red Book']} />
         </group>
         <group name="book3_Cube021" position={[8.969, 2.053, 2.328]} rotation={[2.679, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
           <mesh name="book3_Cube_1021" geometry={nodes.book3_Cube_1021.geometry} material={materials['Cyan Book']} />
@@ -514,15 +485,6 @@ export function Model(props) {
           <mesh name="Book1_Cube025_1020" geometry={nodes.Book1_Cube025_1020.geometry} material={materials.White} />
           <mesh name="Book1_Cube025_1020_1" geometry={nodes.Book1_Cube025_1020_1.geometry} material={materials['Orange Book2']} />
           <mesh name="Book1_Cube025_1020_2" geometry={nodes.Book1_Cube025_1020_2.geometry} material={materials['Blue Book']} />
-        </group>
-        <group name="book2_Cube015" position={[9.015, 2.033, -4.066]} rotation={[0.001, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
-          <mesh name="book2_Cube024_1016" geometry={nodes.book2_Cube024_1016.geometry} material={materials.White} />
-          <mesh name="book2_Cube024_1016_1" geometry={nodes.book2_Cube024_1016_1.geometry} material={materials['Purple Book']} />
-          <mesh name="book2_Cube024_1016_2" geometry={nodes.book2_Cube024_1016_2.geometry} material={materials['Cyan Book']} />
-        </group>
-        <group name="book3_Cube029" position={[8.941, 1.974, -3.357]} rotation={[0.374, 0, 0]} scale={[-0.079, -0.058, -0.08]}>
-          <mesh name="book3_Cube_1031" geometry={nodes.book3_Cube_1031.geometry} material={materials['Green Book']} />
-          <mesh name="book3_Cube_1031_1" geometry={nodes.book3_Cube_1031_1.geometry} material={materials.White} />
         </group>
         <group name="Book1_Cube020" position={[8.98, 5.675, 5.829]} rotation={[1.372, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
           <mesh name="Book1_Cube025_1021" geometry={nodes.Book1_Cube025_1021.geometry} material={materials.White} />
@@ -1134,6 +1096,44 @@ export function Model(props) {
         <group name="shelf4_book1" position={[7.765, 7.237, -7.159]} rotation={[1.375, 0, 0]} scale={[-0.079, -0.058, -0.08]}>
           <mesh name="book3_Cube_1092" geometry={nodes.book3_Cube_1092.geometry} material={materials['Cyan Book']} />
           <mesh name="book3_Cube_1092_1" geometry={nodes.book3_Cube_1092_1.geometry} material={materials.White} />
+        </group>
+        <group name="shelf1_book_anchor1" position={[-8.05, 2.34, 4.041]} rotation={[1.737, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="book2_Cube024_1" geometry={nodes.book2_Cube024_1.geometry} material={materials.White} />
+          <mesh name="book2_Cube024_1_1" geometry={nodes.book2_Cube024_1_1.geometry} material={materials['Red Book']} />
+          <mesh name="book2_Cube024_1_2" geometry={nodes.book2_Cube024_1_2.geometry} material={materials.FF5722} />
+        </group>
+        <group name="shelf1_book_anchor2" position={[-8.041, 2.364, 3.653]} rotation={[1.737, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="Book1_Cube025_1" geometry={nodes.Book1_Cube025_1.geometry} material={materials.White} />
+          <mesh name="Book1_Cube025_1_1" geometry={nodes.Book1_Cube025_1_1.geometry} material={materials['Purple Book']} />
+          <mesh name="Book1_Cube025_1_2" geometry={nodes.Book1_Cube025_1_2.geometry} material={materials['Cyan Book']} />
+        </group>
+        <group name="shelf4_book_anchor2" position={[9.015, 2.033, -4.066]} rotation={[0.001, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="book2_Cube024_1016" geometry={nodes.book2_Cube024_1016.geometry} material={materials.White} />
+          <mesh name="book2_Cube024_1016_1" geometry={nodes.book2_Cube024_1016_1.geometry} material={materials['Purple Book']} />
+          <mesh name="book2_Cube024_1016_2" geometry={nodes.book2_Cube024_1016_2.geometry} material={materials['Cyan Book']} />
+        </group>
+        <group name="shelf4_book_anchor1" position={[8.941, 1.974, -3.357]} rotation={[0.374, 0, 0]} scale={[-0.079, -0.058, -0.08]}>
+          <mesh name="book3_Cube_1031" geometry={nodes.book3_Cube_1031.geometry} material={materials['Green Book']} />
+          <mesh name="book3_Cube_1031_1" geometry={nodes.book3_Cube_1031_1.geometry} material={materials.White} />
+        </group>
+        <group name="shelf3_book_anchor1" position={[8.949, 2.049, 4.54]} rotation={[2.053, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="Book1_Cube025_1016" geometry={nodes.Book1_Cube025_1016.geometry} material={materials.White} />
+          <mesh name="Book1_Cube025_1016_1" geometry={nodes.Book1_Cube025_1016_1.geometry} material={materials['Orange Book2']} />
+          <mesh name="Book1_Cube025_1016_2" geometry={nodes.Book1_Cube025_1016_2.geometry} material={materials['Purple Book']} />
+        </group>
+        <group name="shelf3_book_anchor2" position={[9.033, 2.161, 4.163]} rotation={[2.053, 0, 0]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="book2_Cube024_1010" geometry={nodes.book2_Cube024_1010.geometry} material={materials.White} />
+          <mesh name="book2_Cube024_1010_1" geometry={nodes.book2_Cube024_1010_1.geometry} material={materials['Yellow Book']} />
+          <mesh name="book2_Cube024_1010_2" geometry={nodes.book2_Cube024_1010_2.geometry} material={materials['Red Book']} />
+        </group>
+        <group name="shelf2_book_anchor2" position={[-8.024, 2.09, -3.796]} rotation={[0.538, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="book3_Cube_1013" geometry={nodes.book3_Cube_1013.geometry} material={materials['Green Book']} />
+          <mesh name="book3_Cube_1013_1" geometry={nodes.book3_Cube_1013_1.geometry} material={materials.White} />
+        </group>
+        <group name="shelf2_book_anchor1" position={[-8.032, 1.484, -2.908]} rotation={[0.272, 0, -Math.PI]} scale={[-0.079, -0.081, -0.081]}>
+          <mesh name="Book1_Cube025_1010" geometry={nodes.Book1_Cube025_1010.geometry} material={materials.White} />
+          <mesh name="Book1_Cube025_1010_1" geometry={nodes.Book1_Cube025_1010_1.geometry} material={materials['Purple Book']} />
+          <mesh name="Book1_Cube025_1010_2" geometry={nodes.Book1_Cube025_1010_2.geometry} material={materials['Orange Book']} />
         </group>
       </group>
     </group>

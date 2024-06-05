@@ -18,7 +18,6 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
   const { nodes, materials, animations } = useGLTF("./models/library222.glb");
   const { actions } = useAnimations(animations, group);
   const [hovered, setHovered] = useState(false);
-  const [originalMaterial, setOriginalMaterial] = useState(null);
 
   useEffect(() => {
     // Perform any actions based on the shelf change

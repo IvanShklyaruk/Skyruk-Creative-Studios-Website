@@ -1,12 +1,12 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "../components/Experience";
+import { LibraryEffects } from "../components/LibraryEffects";
 import "../styles/TestPage.css";
 
 const TestPage = () => {
   return (
     <div className="test-page">
       <Canvas
-        shadows
         camera={{
           position: [
             1.0422729349890474, 5.267620732424673, 11.78916240352308,
@@ -16,6 +16,7 @@ const TestPage = () => {
         }}
       >
         <Experience />
+        <LibraryEffects />
       </Canvas>
     </div>
   );

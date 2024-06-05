@@ -10,14 +10,16 @@ import { useControls } from "leva";
 import * as THREE from "three";
 import "../styles/LibraryModel.css";
 import WordlePNG from "../assets/Wordle.png";
+import ComingSoonPNG from "../assets/ComingSoon.png";
 import "../styles/LibraryPage.css";
 
-export function LibraryModel({ shelf, setShelf, ...props }) {
+export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const group = useRef();
   const navigate = useNavigate();
   const { nodes, materials, animations } = useGLTF("./models/library.glb");
   const { actions } = useAnimations(animations, group);
-  const [hovered, setHovered] = useState(false);
+  const [hoveredObject, setHoveredObject] = useState(null);
+  const [hoveredPosition, setHoveredPosition] = useState(null);
 
   useEffect(() => {
     // Perform any actions based on the shelf change
@@ -45,42 +47,84 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
         actions[animation].stop();
       }
     };
-  }, [animation]);
+  }, [animation, actions]);
 
-  const handleMouseEnter = (event) => {
-    /* const object = event.object;
-    if (!originalMaterial) {
-      setOriginalMaterial(object.material.clone());
-    }
-    object.material.emissive = new THREE.Color(0xffff00); // Highlight color
-    */
-    setHovered(true);
+  const handleMouseEnter = (e, bookName) => {
+    setHoveredObject(bookName);
+    setHoveredPosition(e.intersections[0].point);
+
+    // Highlight all parts of the book
+    e.object.parent.traverse((child) => {
+      if (child.isMesh) {
+        child.material = child.material.clone();
+        child.material.emissive.set(0x444444);
+        child.material.emissiveIntensity = 2;
+      }
+    });
+
     document.body.style.cursor = "pointer";
-    event.stopPropagation();
   };
 
-  const handleMouseLeave = (event) => {
-    /*
-    const object = event.object;
-    if (originalMaterial) {
-      object.material.emissive = originalMaterial.emissive.clone();
-    }
-    */
-    setHovered(false);
+  const handleMouseLeave = (e) => {
+    setHoveredObject(null);
+    setHoveredPosition(null);
+
+    // Reset highlight for all parts of the book
+    e.object.parent.traverse((child) => {
+      if (child.isMesh) {
+        child.material.emissive.set(0x000000);
+        child.material.emissiveIntensity = 0;
+      }
+    });
+
     document.body.style.cursor = "default";
-    event.stopPropagation();
+  };
+
+  const handleClick = (animationName, targetPath) => {
+    if (actions[animationName]) {
+      actions[animationName].reset().play();
+      actions[animationName].setLoop(THREE.LoopOnce, 1);
+      actions[animationName].clampWhenFinished = true;
+
+      // Set a timeout to navigate to the target path after 1 second
+      setTimeout(() => {
+        navigate(targetPath);
+      }, 1250); // 1000 milliseconds = 1 second
+    }
   };
 
   useEffect(() => {
-    const animationName = "Book2_ClosedAction.002";
-    if (hovered && actions[animationName]) {
-      actions[animationName].setLoop(THREE.LoopOnce, 1); // Play only once
-      actions[animationName].clampWhenFinished = true; // Stop at the last frame
-      actions[animationName].reset().play();
-    } else if (actions[animationName]) {
-      actions[animationName].stop();
-    }
-  }, [hovered]);
+    // Store original colors
+    const originalColors = {
+      "mat12.001": materials["mat12.001"].color.clone(),
+      "mat12.002": materials["mat12.002"].color.clone(),
+      Light: materials.Light.color.clone(),
+      mat12: materials.mat12.color.clone(),
+      Sky: materials.Sky.color.clone(),
+    };
+
+    // Modify colors
+    materials["mat12.001"].color.multiplyScalar(12);
+    materials["mat12.002"].color.multiplyScalar(12);
+    materials.Light.color.multiplyScalar(12);
+    materials.mat12.color.multiplyScalar(2.2);
+    materials.Sky.color.multiplyScalar(1.5);
+
+    materials["mat12.001"].toneMapped = false;
+    materials["mat12.002"].toneMapped = false;
+    materials.Light.toneMapped = false;
+    materials.mat12.toneMapped = false;
+    materials.Sky.toneMapped = false;
+
+    // Cleanup function to restore original colors
+    return () => {
+      materials["mat12.001"].color.copy(originalColors["mat12.001"]);
+      materials["mat12.002"].color.copy(originalColors["mat12.002"]);
+      materials.Light.color.copy(originalColors.Light);
+      materials.mat12.color.copy(originalColors.mat12);
+      materials.Sky.color.copy(originalColors.Sky);
+    };
+  }, []);
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -763,90 +807,21 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
               geometry={nodes.Candle_1.geometry}
               material={materials["mat21.002"]}
             />
-
-            <group>
-              <mesh
-                name="Candle_2"
-                geometry={nodes.Candle_2.geometry}
-                material={materials["mat17.001"]}
-              />
-              {shelf === "noShelf" ? (
-                <Html className="html-style" position={[1.54, -0.15, 3.01]}>
-                  <div
-                    onClick={() => setShelf("shelf2")}
-                    className="coming-soon-label"
-                  >
-                    Coming Soon...
-                  </div>
-                </Html>
-              ) : (
-                <Html className="html-style" position={[1.54, -0.15, 3.01]}>
-                  <div
-                    onClick={() => setShelf("noShelf")}
-                    className="back-label"
-                  >
-                    Go Back
-                  </div>
-                </Html>
-              )}
-            </group>
-            <group>
-              <mesh
-                name="Candle_3"
-                geometry={nodes.Candle_3.geometry}
-                material={materials.mat13}
-              />
-              {shelf === "noShelf" ? (
-                <Html className="html-style" position={[-2, 0, 5]}>
-                  <div
-                    onClick={() => setShelf("shelf4")}
-                    className="coming-soon-label"
-                  >
-                    Coming Soon...
-                  </div>
-                </Html>
-              ) : (
-                <Html className="html-style">
-                  <div
-                    onClick={() => setShelf("noShelf")}
-                    className="back-label"
-                  >
-                    Go Back
-                  </div>
-                </Html>
-              )}
-            </group>
-            <group>
-              <mesh
-                name="Candle_4"
-                geometry={nodes.Candle_4.geometry}
-                material={materials["mat12.001"]}
-              />
-              {shelf === "noShelf" ? (
-                <Html
-                  className="html-style"
-                  position={[
-                    1.0422729349890474, 5.267620732424673, 11.78916240352308,
-                  ]}
-                >
-                  <div
-                    onClick={() => setShelf("shelf3")}
-                    className="coming-soon-label"
-                  >
-                    Coming Soon...
-                  </div>
-                </Html>
-              ) : (
-                <Html className="html-style">
-                  <div
-                    onClick={() => setShelf("noShelf")}
-                    className="back-label"
-                  >
-                    Go Back
-                  </div>
-                </Html>
-              )}
-            </group>
+            <mesh
+              name="Candle_2"
+              geometry={nodes.Candle_2.geometry}
+              material={materials["mat17.001"]}
+            />
+            <mesh
+              name="Candle_3"
+              geometry={nodes.Candle_3.geometry}
+              material={materials.mat13}
+            />
+            <mesh
+              name="Candle_4"
+              geometry={nodes.Candle_4.geometry}
+              material={materials["mat12.001"]}
+            />
           </group>
           <group
             name="Candle001"
@@ -1292,28 +1267,6 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
           />
         </group>
         <group
-          name="Book1_Cube025"
-          position={[-8.041, 2.364, 3.653]}
-          rotation={[1.737, 0, -Math.PI]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="Book1_Cube025_1"
-            geometry={nodes.Book1_Cube025_1.geometry}
-            material={materials.White}
-          />
-          <mesh
-            name="Book1_Cube025_1_1"
-            geometry={nodes.Book1_Cube025_1_1.geometry}
-            material={materials["Purple Book"]}
-          />
-          <mesh
-            name="Book1_Cube025_1_2"
-            geometry={nodes.Book1_Cube025_1_2.geometry}
-            material={materials["Cyan Book"]}
-          />
-        </group>
-        <group
           name="book2_Cube001"
           position={[-8.087, 2.34, 2.97]}
           rotation={[1.737, 0, -Math.PI]}
@@ -1355,28 +1308,6 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
             name="book2_Cube024_1002_2"
             geometry={nodes.book2_Cube024_1002_2.geometry}
             material={materials["Red Book"]}
-          />
-        </group>
-        <group
-          name="book2_Cube024"
-          position={[-8.05, 2.34, 4.041]}
-          rotation={[1.737, 0, -Math.PI]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="book2_Cube024_1"
-            geometry={nodes.book2_Cube024_1.geometry}
-            material={materials.White}
-          />
-          <mesh
-            name="book2_Cube024_1_1"
-            geometry={nodes.book2_Cube024_1_1.geometry}
-            material={materials["Red Book"]}
-          />
-          <mesh
-            name="book2_Cube024_1_2"
-            geometry={nodes.book2_Cube024_1_2.geometry}
-            material={materials.FF5722}
           />
         </group>
         <group
@@ -1799,45 +1730,6 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
           />
         </group>
         <group
-          name="book3_Cube013"
-          position={[-8.024, 2.09, -3.796]}
-          rotation={[0.538, 0, -Math.PI]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="book3_Cube_1013"
-            geometry={nodes.book3_Cube_1013.geometry}
-            material={materials["Green Book"]}
-          />
-          <mesh
-            name="book3_Cube_1013_1"
-            geometry={nodes.book3_Cube_1013_1.geometry}
-            material={materials.White}
-          />
-        </group>
-        <group
-          name="Book1_Cube008"
-          position={[-8.032, 1.484, -2.908]}
-          rotation={[0.272, 0, -Math.PI]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="Book1_Cube025_1010"
-            geometry={nodes.Book1_Cube025_1010.geometry}
-            material={materials.White}
-          />
-          <mesh
-            name="Book1_Cube025_1010_1"
-            geometry={nodes.Book1_Cube025_1010_1.geometry}
-            material={materials["Purple Book"]}
-          />
-          <mesh
-            name="Book1_Cube025_1010_2"
-            geometry={nodes.Book1_Cube025_1010_2.geometry}
-            material={materials["Orange Book"]}
-          />
-        </group>
-        <group
           name="Book1_Cube009"
           position={[-8.032, 2.167, 5.027]}
           rotation={[1.296, 0, -Math.PI]}
@@ -2064,50 +1956,6 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
             name="book3_Cube_1020_1"
             geometry={nodes.book3_Cube_1020_1.geometry}
             material={materials.White}
-          />
-        </group>
-        <group
-          name="Book1_Cube014"
-          position={[8.949, 2.049, 4.54]}
-          rotation={[2.053, 0, 0]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="Book1_Cube025_1016"
-            geometry={nodes.Book1_Cube025_1016.geometry}
-            material={materials.White}
-          />
-          <mesh
-            name="Book1_Cube025_1016_1"
-            geometry={nodes.Book1_Cube025_1016_1.geometry}
-            material={materials["Orange Book2"]}
-          />
-          <mesh
-            name="Book1_Cube025_1016_2"
-            geometry={nodes.Book1_Cube025_1016_2.geometry}
-            material={materials["Purple Book"]}
-          />
-        </group>
-        <group
-          name="book2_Cube010"
-          position={[9.033, 2.161, 4.163]}
-          rotation={[2.053, 0, 0]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="book2_Cube024_1010"
-            geometry={nodes.book2_Cube024_1010.geometry}
-            material={materials.White}
-          />
-          <mesh
-            name="book2_Cube024_1010_1"
-            geometry={nodes.book2_Cube024_1010_1.geometry}
-            material={materials["Yellow Book"]}
-          />
-          <mesh
-            name="book2_Cube024_1010_2"
-            geometry={nodes.book2_Cube024_1010_2.geometry}
-            material={materials["Red Book"]}
           />
         </group>
         <group
@@ -2442,45 +2290,6 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
             name="Book1_Cube025_1020_2"
             geometry={nodes.Book1_Cube025_1020_2.geometry}
             material={materials["Blue Book"]}
-          />
-        </group>
-        <group
-          name="book2_Cube015"
-          position={[9.015, 2.033, -4.066]}
-          rotation={[0.001, 0, 0]}
-          scale={[-0.079, -0.081, -0.081]}
-        >
-          <mesh
-            name="book2_Cube024_1016"
-            geometry={nodes.book2_Cube024_1016.geometry}
-            material={materials.White}
-          />
-          <mesh
-            name="book2_Cube024_1016_1"
-            geometry={nodes.book2_Cube024_1016_1.geometry}
-            material={materials["Purple Book"]}
-          />
-          <mesh
-            name="book2_Cube024_1016_2"
-            geometry={nodes.book2_Cube024_1016_2.geometry}
-            material={materials["Cyan Book"]}
-          />
-        </group>
-        <group
-          name="book3_Cube029"
-          position={[8.941, 1.974, -3.357]}
-          rotation={[0.374, 0, 0]}
-          scale={[-0.079, -0.058, -0.08]}
-        >
-          <mesh
-            name="book3_Cube_1031"
-            geometry={nodes.book3_Cube_1031.geometry}
-            material={materials["Green Book"]}
-          />
-          <mesh
-            name="book3_Cube_1031_1"
-            geometry={nodes.book3_Cube_1031_1.geometry}
-            material={materials.White}
           />
         </group>
         <group
@@ -4744,12 +4553,17 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
           onPointerOver={(e) => {
-            handleMouseEnter(e);
+            e.stopPropagation();
+            handleMouseEnter(e, "shelf1_book1"); // Pass the book name
           }}
           onPointerOut={(e) => {
+            e.stopPropagation();
             handleMouseLeave(e);
           }}
-          onClick={() => navigate("/library/games")}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleClick("shelf1_book1_animation", "/library/games");
+          }}
         >
           <mesh
             name="book2_Cube024_1047"
@@ -4766,15 +4580,17 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1047_2.geometry}
             material={materials["Blue Book"]}
           />
-          {hovered && (
-            <Html position={[4.47, 0.5, 8.866]}>
-              <div
-                className="hover-info"
-                onMouseEnter={(e) => e.stopPropagation()}
-                onMouseLeave={(e) => e.stopPropagation()}
-              >
+          {hoveredObject === "shelf1_book1" && (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
                 <h3>Wordle</h3>
-                <img src={WordlePNG} />
+                <img src={WordlePNG} alt="Wordle" />
               </div>
             </Html>
           )}
@@ -4784,6 +4600,18 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
           position={[-6.864, 7.248, 4.034]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={(e) => {
+            e.stopPropagation(); // Stop the event from propagating to other objects
+            handleMouseEnter(e, "shelf1_book2"); // Pass the book name
+          }}
+          onPointerOut={(e) => {
+            e.stopPropagation(); // Stop the event from propagating to other objects
+            handleMouseLeave(e);
+          }}
+          onClick={(e) => {
+            e.stopPropagation(); // Stop the event from propagating to other objects
+            handleClick("shelf1_book2_animation", "/library/games");
+          }}
         >
           <mesh
             name="book3_Cube_1086"
@@ -4795,6 +4623,20 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1086_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf1_book2" && (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          )}
         </group>
         <group
           name="shelf1_book3"
@@ -5156,6 +4998,233 @@ export function LibraryModel({ shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1092_1.geometry}
             material={materials.White}
           />
+        </group>
+        <group
+          name="shelf1_book_anchor1"
+          position={[-8.05, 2.34, 4.041]}
+          rotation={[1.737, 0, -Math.PI]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="book2_Cube024_1"
+            geometry={nodes.book2_Cube024_1.geometry}
+            material={materials.White}
+          />
+          <mesh
+            name="book2_Cube024_1_1"
+            geometry={nodes.book2_Cube024_1_1.geometry}
+            material={materials["Red Book"]}
+          />
+          <mesh
+            name="book2_Cube024_1_2"
+            geometry={nodes.book2_Cube024_1_2.geometry}
+            material={materials.FF5722}
+          />
+          {shelf === "noShelf" ? (
+            <Html className="html-style" position={[22, -21, 40.5]}>
+              <div onClick={() => setShelf("shelf1")} className="games-label">
+                Games
+              </div>
+            </Html>
+          ) : (
+            <Html className="html-style" position={[22, 0.5, 65]}>
+              <div onClick={() => setShelf("noShelf")} className="back-label">
+                Go Back
+              </div>
+            </Html>
+          )}
+        </group>
+        <group
+          name="shelf1_book_anchor2"
+          position={[-8.041, 2.364, 3.653]}
+          rotation={[1.737, 0, -Math.PI]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="Book1_Cube025_1"
+            geometry={nodes.Book1_Cube025_1.geometry}
+            material={materials.White}
+          />
+          <mesh
+            name="Book1_Cube025_1_1"
+            geometry={nodes.Book1_Cube025_1_1.geometry}
+            material={materials["Purple Book"]}
+          />
+          <mesh
+            name="Book1_Cube025_1_2"
+            geometry={nodes.Book1_Cube025_1_2.geometry}
+            material={materials["Cyan Book"]}
+          />
+        </group>
+        <group
+          name="shelf4_book_anchor2"
+          position={[9.015, 2.033, -4.066]}
+          rotation={[0.001, 0, 0]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="book2_Cube024_1016"
+            geometry={nodes.book2_Cube024_1016.geometry}
+            material={materials.White}
+          />
+          <mesh
+            name="book2_Cube024_1016_1"
+            geometry={nodes.book2_Cube024_1016_1.geometry}
+            material={materials["Purple Book"]}
+          />
+          <mesh
+            name="book2_Cube024_1016_2"
+            geometry={nodes.book2_Cube024_1016_2.geometry}
+            material={materials["Cyan Book"]}
+          />
+        </group>
+        <group
+          name="shelf4_book_anchor1"
+          position={[8.941, 1.974, -3.357]}
+          rotation={[0.374, 0, 0]}
+          scale={[-0.079, -0.058, -0.08]}
+        >
+          <mesh
+            name="book3_Cube_1031"
+            geometry={nodes.book3_Cube_1031.geometry}
+            material={materials["Green Book"]}
+          />
+          <mesh
+            name="book3_Cube_1031_1"
+            geometry={nodes.book3_Cube_1031_1.geometry}
+            material={materials.White}
+          />
+          {shelf === "noShelf" ? (
+            <Html className="html-style" position={[25.7, -59.5, 39]}>
+              <div
+                onClick={() => setShelf("shelf4")}
+                className="coming-soon-label"
+              >
+                Coming Soon...
+              </div>
+            </Html>
+          ) : (
+            <Html className="html-style" position={[25.7, -61, 73.5]}>
+              <div onClick={() => setShelf("noShelf")} className="back-label">
+                Go Back
+              </div>
+            </Html>
+          )}
+        </group>
+        <group
+          name="shelf3_book_anchor1"
+          position={[8.949, 2.049, 4.54]}
+          rotation={[2.053, 0, 0]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="Book1_Cube025_1016"
+            geometry={nodes.Book1_Cube025_1016.geometry}
+            material={materials.White}
+          />
+          <mesh
+            name="Book1_Cube025_1016_1"
+            geometry={nodes.Book1_Cube025_1016_1.geometry}
+            material={materials["Orange Book2"]}
+          />
+          <mesh
+            name="Book1_Cube025_1016_2"
+            geometry={nodes.Book1_Cube025_1016_2.geometry}
+            material={materials["Purple Book"]}
+          />
+          {shelf === "noShelf" ? (
+            <Html className="html-style" position={[25.7, 48, 29.5]}>
+              <div
+                onClick={() => setShelf("shelf3")}
+                className="coming-soon-label"
+              >
+                Coming Soon...
+              </div>
+            </Html>
+          ) : (
+            <Html className="html-style" position={[25.7, 93.5, 25]}>
+              <div onClick={() => setShelf("noShelf")} className="back-label">
+                Go Back
+              </div>
+            </Html>
+          )}
+        </group>
+        <group
+          name="shelf3_book_anchor2"
+          position={[9.033, 2.161, 4.163]}
+          rotation={[2.053, 0, 0]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="book2_Cube024_1010"
+            geometry={nodes.book2_Cube024_1010.geometry}
+            material={materials.White}
+          />
+          <mesh
+            name="book2_Cube024_1010_1"
+            geometry={nodes.book2_Cube024_1010_1.geometry}
+            material={materials["Yellow Book"]}
+          />
+          <mesh
+            name="book2_Cube024_1010_2"
+            geometry={nodes.book2_Cube024_1010_2.geometry}
+            material={materials["Red Book"]}
+          />
+        </group>
+        <group
+          name="shelf2_book_anchor2"
+          position={[-8.024, 2.09, -3.796]}
+          rotation={[0.538, 0, -Math.PI]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="book3_Cube_1013"
+            geometry={nodes.book3_Cube_1013.geometry}
+            material={materials["Green Book"]}
+          />
+          <mesh
+            name="book3_Cube_1013_1"
+            geometry={nodes.book3_Cube_1013_1.geometry}
+            material={materials.White}
+          />
+        </group>
+        <group
+          name="shelf2_book_anchor1"
+          position={[-8.032, 1.484, -2.908]}
+          rotation={[0.272, 0, -Math.PI]}
+          scale={[-0.079, -0.081, -0.081]}
+        >
+          <mesh
+            name="Book1_Cube025_1010"
+            geometry={nodes.Book1_Cube025_1010.geometry}
+            material={materials.White}
+          />
+          <mesh
+            name="Book1_Cube025_1010_1"
+            geometry={nodes.Book1_Cube025_1010_1.geometry}
+            material={materials["Purple Book"]}
+          />
+          <mesh
+            name="Book1_Cube025_1010_2"
+            geometry={nodes.Book1_Cube025_1010_2.geometry}
+            material={materials["Orange Book"]}
+          />
+          {shelf === "noShelf" ? (
+            <Html className="html-style" position={[22, 57.7, 10]}>
+              <div
+                onClick={() => setShelf("shelf2")}
+                className="coming-soon-label"
+              >
+                Coming Soon...
+              </div>
+            </Html>
+          ) : (
+            <Html className="html-style" position={[22, 77, 2]}>
+              <div onClick={() => setShelf("noShelf")} className="back-label">
+                Go Back
+              </div>
+            </Html>
+          )}
         </group>
       </group>
     </group>

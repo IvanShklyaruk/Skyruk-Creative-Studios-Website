@@ -3,6 +3,7 @@ import {
   CameraControls,
   Environment,
   Gltf,
+  Stage,
 } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { button, useControls } from "leva";
@@ -38,14 +39,6 @@ export const Experience = () => {
   const controls = useRef();
 
   const { cameraPosition } = useControls({
-    cameraPosition: {
-      value: "noShelf",
-      options: Object.keys(cameraPositions),
-      onChange: (value) => {
-        console.log(`Shelf changed to: ${value}`);
-        setShelf(value);
-      },
-    },
     getLookAt: button(() => {
       if (controls.current) {
         const position = controls.current.getPosition();
@@ -73,7 +66,7 @@ export const Experience = () => {
     <>
       <CameraControls
         ref={controls}
-        /* // disable all mouse buttons
+        /*  // disable all mouse buttons
         mouseButtons={{
           left: 0,
           middle: 0,
@@ -87,8 +80,22 @@ export const Experience = () => {
           three: 0,
         }}*/
       />
-      <ambientLight intensity={1} />
-      <pointLight position={[-5, 3, 0]} intensity={10} />
+
+      <pointLight
+        position={[0.486, 2.2, -6.5]}
+        intensity={17}
+        color={"#ffce00"}
+      />
+      <ambientLight
+        position={[-0.034, 0.008, 6.348]}
+        intensity={0.7}
+        /* color={"#ffce00"} */
+      />
+      <ambientLight
+        position={[-6.695, 1.534, 0.011]}
+        intensity={0.15}
+        color={"#43edf5"}
+      />
       <LibraryModel shelf={shelf} setShelf={setShelf} />
     </>
   );
