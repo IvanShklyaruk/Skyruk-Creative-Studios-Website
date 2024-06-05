@@ -116,7 +116,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     materials.mat12.toneMapped = false;
     materials.Sky.toneMapped = false;
 
-    // Cleanup function to restore original colors
+    // Cleanup function to restore original colors!
     return () => {
       materials["mat12.001"].color.copy(originalColors["mat12.001"]);
       materials["mat12.002"].color.copy(originalColors["mat12.002"]);
