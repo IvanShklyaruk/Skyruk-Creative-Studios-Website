@@ -26,7 +26,7 @@ export const LibraryEffects = () => {
 
   const brightnessContrastConfig = useControls("brightnessContrast", {
     enabled: true,
-    brightness: { value: 0.02, min: -1, max: 1 },
+    brightness: { value: 0.05, min: -1, max: 1 },
     contrast: { value: 0.19, min: -1, max: 1 },
   });
 

@@ -4705,6 +4705,30 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           position={[-6.848, 7.239, 3.836]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf1_book3");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf1_book3_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="Book1_Cube025_1058"
@@ -4721,12 +4745,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1058_2.geometry}
             material={materials["Purple Book"]}
           />
+          {hoveredObject === "shelf1_book3" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.348, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf1_book4"
           position={[-6.867, 7.238, 3.676]}
           rotation={[1.734, 0, -Math.PI]}
           scale={[-0.079, -0.058, -0.08]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf1_book4");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf1_book4_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1087"
@@ -4738,12 +4810,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1087_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf1_book4" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf1_book5"
           position={[-6.892, 7.229, 3.46]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf1_book5");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf1_book5_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book2_Cube024_1048"
@@ -4760,12 +4880,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1048_2.geometry}
             material={materials["Red Book"]}
           />
+          {hoveredObject === "shelf1_book5" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.674, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf2_book1"
           position={[-6.835, 7.239, -1.953]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf2_book1");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf2_book1_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="Book1_Cube025_1059"
@@ -4782,12 +4950,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1059_2.geometry}
             material={materials["Purple Book"]}
           />
+          {hoveredObject === "shelf2_book1" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.349, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf2_book2"
           position={[-6.84, 7.238, -2.108]}
           rotation={[1.734, 0, -Math.PI]}
           scale={[-0.079, -0.058, -0.08]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf2_book2");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf2_book2_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1088"
@@ -4799,12 +5015,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1088_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf2_book2" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf2_book3"
           position={[-6.899, 7.229, -2.323]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf2_book3");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf2_book3_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book2_Cube024_1049"
@@ -4821,12 +5085,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1049_2.geometry}
             material={materials["Blue Book"]}
           />
+          {hoveredObject === "shelf2_book3" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.675, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf2_book4"
           position={[-6.829, 7.248, -2.566]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf2_book4");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf2_book4_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1089"
@@ -4838,12 +5150,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1089_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf2_book4" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf2_book5"
           position={[-6.828, 7.239, -2.765]}
           rotation={[1.737, 0, -Math.PI]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf2_book5");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf2_book5_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="Book1_Cube025_1060"
@@ -4860,12 +5220,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1060_2.geometry}
             material={materials["Green Book"]}
           />
+          {hoveredObject === "shelf2_book5" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.347, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf3_book5"
           position={[7.765, 7.237, -0.142]}
           rotation={[1.375, 0, 0]}
           scale={[-0.079, -0.058, -0.08]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf3_book5");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf3_book5_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1091"
@@ -4877,12 +5285,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1091_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf3_book5" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf3_book4"
           position={[7.831, 7.238, -0.303]}
           rotation={[1.372, 0, 0]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf3_book4");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf3_book4_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="Book1_Cube025_1062"
@@ -4899,12 +5355,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1062_2.geometry}
             material={materials["Blue Book"]}
           />
+          {hoveredObject === "shelf3_book4" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.349, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf3_book3"
           position={[7.785, 7.231, -0.467]}
           rotation={[1.375, 0, 0]}
           scale={[-0.079, -0.058, -0.08]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf3_book3");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf3_book3_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1090"
@@ -4916,12 +5420,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1090_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf3_book3" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf3_book2"
           position={[7.807, 7.238, -0.629]}
           rotation={[1.372, 0, 0]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf3_book2");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf3_book2_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="Book1_Cube025_1061"
@@ -4938,12 +5490,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1061_2.geometry}
             material={materials["Red Book"]}
           />
+          {hoveredObject === "shelf3_book2" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.348, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf3_book1"
           position={[7.834, 7.236, -0.833]}
           rotation={[1.372, 0, 0]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf3_book1");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf3_book1_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book2_Cube024_1051"
@@ -4960,12 +5560,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1051_2.geometry}
             material={materials["Cyan Book"]}
           />
+          {hoveredObject === "shelf3_book1" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.674, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf4_book5"
           position={[7.834, 7.236, -6.369]}
           rotation={[1.372, 0, 0]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf4_book5");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf4_book5_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book2_Cube024_1053"
@@ -4982,12 +5630,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1053_2.geometry}
             material={materials["Purple Book"]}
           />
+          {hoveredObject === "shelf4_book5" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.674, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf4_book4"
           position={[7.765, 7.237, -6.585]}
           rotation={[1.375, 0, 0]}
           scale={[-0.079, -0.058, -0.08]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf4_book4");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf4_book4_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1093"
@@ -4999,12 +5695,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1093_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf4_book4" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf4_book3"
           position={[7.834, 7.236, -6.795]}
           rotation={[1.372, 0, 0]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf4_book3");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf4_book3_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book2_Cube024_1052"
@@ -5021,12 +5765,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1052_2.geometry}
             material={materials["Red Book"]}
           />
+          {hoveredObject === "shelf4_book3" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.674, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf4_book2"
           position={[7.831, 7.238, -6.994]}
           rotation={[1.372, 0, 0]}
           scale={[-0.079, -0.081, -0.081]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf4_book2");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf4_book2_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="Book1_Cube025_1063"
@@ -5043,12 +5835,60 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1063_2.geometry}
             material={materials["Green Book"]}
           />
+          {hoveredObject === "shelf4_book2" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[4.348, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf4_book1"
           position={[7.765, 7.237, -7.159]}
           rotation={[1.375, 0, 0]}
           scale={[-0.079, -0.058, -0.08]}
+          onPointerOver={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseEnter(e, "shelf4_book1");
+                }
+              : null
+          }
+          onPointerOut={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleMouseLeave(e);
+                }
+              : null
+          }
+          onClick={
+            shelf !== "noShelf"
+              ? (e) => {
+                  e.stopPropagation();
+                  handleClick("shelf4_book1_animation", "/library/games");
+                }
+              : null
+          }
         >
           <mesh
             name="book3_Cube_1092"
@@ -5060,6 +5900,30 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1092_1.geometry}
             material={materials.White}
           />
+          {hoveredObject === "shelf4_book1" ? (
+            <Html
+              position={[
+                hoveredPosition.x,
+                hoveredPosition.y + 5.25,
+                hoveredPosition.z - 10,
+              ]}
+            >
+              <div className="hover-info">
+                <h3>???</h3>
+                <img src={ComingSoonPNG} alt="???" />
+              </div>
+            </Html>
+          ) : (
+            <Text
+              position={[3.827, 0, 0]} // Adjust position as needed
+              fontSize={1.65} // Adjust font size as needed
+              font={MedievalFont}
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
+              color="black" // Adjust color as needed
+            >
+              ???
+            </Text>
+          )}
         </group>
         <group
           name="shelf1_book_anchor1"
