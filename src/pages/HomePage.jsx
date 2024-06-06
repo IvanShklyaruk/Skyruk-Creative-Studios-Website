@@ -1,45 +1,25 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import HomePageBackground1 from "../assets/HomePageBackgroundVideo1.mp4";
-import HomePageBackground2 from "../assets/HomePageBackgroundVideo2.mp4";
+import BackgroundImage from "../assets/HomePageBackgroundImage1.png"; // Ensure the image path is correct
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/HomePage.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [backgroundVideo, setBackgroundVideo] = useState(HomePageBackground1);
-  const nextVideoRef = useRef(null);
 
   function handleExplore() {
     navigate("/library");
-    /*
-        const nextVideo = backgroundVideo === HomePageBackground1 ? HomePageBackground2 : HomePageBackground1;
-        nextVideoRef.current.src = nextVideo;
-        nextVideoRef.current.load();
-
-        nextVideoRef.current.oncanplaythrough = () => {
-            setBackgroundVideo(nextVideo);
-            setTimeout(() => {
-                c
-            }, 1000); // Delay navigation if needed
-        };
-        */
   }
 
   return (
     <div className="home-page">
       <Navbar />
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="background-video"
-        key={backgroundVideo}
-      >
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      <img
+        src={BackgroundImage}
+        alt="Background"
+        className="background-image"
+      />
       <div className="headerContainer">
         <div className="centeredContent">
           <h1>Skyruk Creative Studios</h1>

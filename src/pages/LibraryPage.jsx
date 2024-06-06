@@ -1,12 +1,13 @@
 import { Canvas } from "@react-three/fiber";
 import { Library } from "../components/LibraryComponents/Library";
 import { LibraryEffects } from "../components/LibraryComponents/LibraryEffects";
-import "../styles/LibraryStyles/LibraryPage.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import "../styles/LibraryStyles/LibraryPage.css";
 
 const LibraryPage = () => {
   return (
-    <div className="test-page">
+    <div className="library-page">
       <Navbar />
       <Canvas
         camera={{
@@ -20,6 +21,7 @@ const LibraryPage = () => {
         <Library />
         <LibraryEffects />
       </Canvas>
+      <Footer />
     </div>
   );
 };

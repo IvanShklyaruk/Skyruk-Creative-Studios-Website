@@ -87,7 +87,7 @@ export const Library = () => {
       />
       <ambientLight
         position={[-6.695, 1.534, 0.011]}
-        intensity={0.19}
+        intensity={0.31}
         color={"#43edf5"}
       />
       <LibraryModel shelf={shelf} setShelf={setShelf} />

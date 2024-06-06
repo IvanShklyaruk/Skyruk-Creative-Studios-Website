@@ -8,6 +8,7 @@
   flex-shrink: 0; /* Prevent shrinking */
   font-family: "MedievalSharp", cursive;
   color: #b8e2f5; /* Set text color */
+  z-index: 2;
 }
 
 .navbar .leftSide {
@@ -17,7 +18,7 @@
 }
 
 .navbar .leftSide img {
-  width: 100px; /* Increase the logo size */
+  width: 89px; /* Increase the logo size */
   margin-right: 20px; /* Add margin to the right of the logo */
 }
 
