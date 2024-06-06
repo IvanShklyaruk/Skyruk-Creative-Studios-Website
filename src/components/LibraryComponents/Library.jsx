@@ -60,7 +60,7 @@ export const Library = () => {
     <>
       <CameraControls
         ref={controls}
-        /*  // disable all mouse buttons
+        // disable all mouse buttons
         mouseButtons={{
           left: 0,
           middle: 0,
@@ -72,7 +72,7 @@ export const Library = () => {
           one: 0,
           two: 0,
           three: 0,
-        }}*/
+        }}
       />
 
       <pointLight

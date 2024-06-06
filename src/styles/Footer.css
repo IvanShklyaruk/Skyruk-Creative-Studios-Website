@@ -1,22 +1,18 @@
 .footer {
   width: 100%;
-  height: 150px;
-  background-color: #121619;
+  background-color: transparent; /* Make the background invisible */
+  color: #b8e2f5;
+  text-align: center;
+  padding: 1rem 0;
+  flex-shrink: 0; /* Prevent shrinking */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Tangerine', cursive; /* Example of a font that might look medieval */
-  padding-top: 10px;
-}
-
-.socialMedia svg {
-  color: white;
-  margin: 20px;
-  font-size: 70px;
-  cursor: pointer;
+  font-family: "MedievalSharp", cursive; /* Use MedievalSharp font */
 }
 
 .footer p {
-  color: white;
+  color: #b8e2f5;
+  margin: 0;
 }

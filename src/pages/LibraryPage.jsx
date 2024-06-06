@@ -2,10 +2,12 @@ import { Canvas } from "@react-three/fiber";
 import { Library } from "../components/LibraryComponents/Library";
 import { LibraryEffects } from "../components/LibraryComponents/LibraryEffects";
 import "../styles/LibraryStyles/LibraryPage.css";
+import Navbar from "../components/Navbar";
 
 const LibraryPage = () => {
   return (
     <div className="test-page">
+      <Navbar />
       <Canvas
         camera={{
           position: [

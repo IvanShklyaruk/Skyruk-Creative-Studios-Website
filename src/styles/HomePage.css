@@ -3,6 +3,9 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .background-video {
@@ -27,18 +30,18 @@
 .centeredContent {
   text-align: center;
   color: #b8e2f5; /* Light blue color */
-  font-family: 'Tangerine', cursive; /* Example of a font that might look medieval */
-  margin-top: -255px; /* Pulls the content up by 100 pixels */
+  font-family: "MedievalSharp", cursive;
+  margin-top: -255px; /* Pulls the content up by 255 pixels */
 }
 
-.centeredContent  h1 {
+.centeredContent h1 {
   text-align: center;
   font-size: 70px;
   font-weight: 50;
   color: #b8e2f5;
 }
 
-.centeredContent  p {
+.centeredContent p {
   text-align: center;
   font-size: 35px;
   font-weight: 50;
@@ -46,50 +49,16 @@
 }
 
 .centeredContent button {
-  background-color: #b8e2f5; /* Dark bluish-grey color */
-  color: black; /* White text color */
+  background-color: #b8e2f5; /* Light blue color */
+  color: black; /* Black text color */
   border: none;
-  padding: 15px 15px; /* Equal padding on all sides to help form a circle */
-  border-radius: 50%; /* Fully rounded borders to create a circle */
+  padding: 15px 15px; /* Equal padding on all sides */
+  border-radius: 50%; /* Fully rounded borders */
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Tangerine', cursive; /* Example of a font that might look medieval */
+  font-family: "MedievalSharp", cursive;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
-}
-
-.centeredContent button:hover {
-  background-color: #6A7AB0; /* Lighter shade on hover */
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.3); /* Increased shadow on hover */
-}
-
-/* Media Queries for Responsive Adjustments */
-@media (max-width: 768px) {
-  .centeredContent h1 {
-    font-size: 24px; /* Smaller font size for the header */
-  }
-
-  .centeredContent p {
-    font-size: 16px; /* Smaller font size for the paragraph */
-  }
-
-  .centeredContent button {
-    padding: 8px 16px; /* Smaller button */
-  }
-}
-
-@media (max-width: 480px) {
-  .centeredContent h1 {
-    font-size: 18px; /* Even smaller font size for the header */
-  }
-
-  .centeredContent p {
-    font-size: 14px; /* Even smaller font size for the paragraph */
-  }
-
-  .centeredContent button {
-    padding: 6px 12px; /* Even smaller button */
-  }
 }

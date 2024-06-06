@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import HomePageBackground1 from "../assets/HomePageBackgroundVideo1.mp4";
 import HomePageBackground2 from "../assets/HomePageBackgroundVideo2.mp4";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "../styles/HomePage.css";
 
 const HomePage = () => {
@@ -27,6 +29,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+      <Navbar />
       <video
         autoPlay
         loop
@@ -44,6 +47,7 @@ const HomePage = () => {
           <button onClick={handleExplore}>Explore Now</button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
