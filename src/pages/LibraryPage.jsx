@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { Library } from "../components/Library";
-import { LibraryEffects } from "../components/LibraryEffects";
-import "../styles/LibraryPage.css";
+import { Library } from "../components/LibraryComponents/Library";
+import { LibraryEffects } from "../components/LibraryComponents/LibraryEffects";
+import "../styles/LibraryStyles/LibraryPage.css";
 
 const LibraryPage = () => {
   return (

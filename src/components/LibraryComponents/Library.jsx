@@ -2,8 +2,8 @@ import { CameraControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { button, useControls } from "leva";
 import { LibraryModel } from "./LibraryModel";
-import CameraPositionLogger from "../helpers/CameraPositionLogger";
-import "../styles/Library.css";
+import CameraPositionLogger from "../../helpers/CameraPositionLogger";
+import "../../styles/LibraryStyles/Library.css";
 
 const cameraPositions = {
   noShelf: [
