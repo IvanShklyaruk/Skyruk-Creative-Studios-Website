@@ -1,15 +1,9 @@
-import {
-  OrbitControls,
-  CameraControls,
-  Environment,
-  Gltf,
-  Stage,
-} from "@react-three/drei";
+import { CameraControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { button, useControls } from "leva";
 import { LibraryModel } from "./LibraryModel";
 import CameraPositionLogger from "../helpers/CameraPositionLogger";
-import "../styles/Experience.css";
+import "../styles/Library.css";
 
 const cameraPositions = {
   noShelf: [
@@ -34,7 +28,7 @@ const cameraPositions = {
   ],
 };
 
-export const Experience = () => {
+export const Library = () => {
   const [shelf, setShelf] = useState("noShelf");
   const controls = useRef();
 

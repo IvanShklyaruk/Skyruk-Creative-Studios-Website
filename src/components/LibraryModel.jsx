@@ -8,11 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
-import "../styles/LibraryModel.css";
-import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import WordlePNG from "../assets/Wordle.png";
 import ComingSoonPNG from "../assets/ComingSoon.png";
-import "../styles/LibraryPage.css";
+import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
+import "../styles/LibraryModel.css";
 
 export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const group = useRef();
