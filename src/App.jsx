@@ -6,7 +6,6 @@ import HomePage from "./pages/HomePage";
 import LibraryPage from "./pages/LibraryPage";
 import WordlePage from "./pages/WordlePage";
 import TestPage from "./pages/TestPage";
-import GamesPage from "./pages/GamesPage";
 import "./App.css";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
         <Routes>
           <Route path="/" exact Component={HomePage} />
           <Route path="/library" exact Component={LibraryPage} />
-          <Route path="/library/games" exact Component={GamesPage} />
           <Route path="/library/wordle" exact Component={WordlePage} />
           <Route path="/library/test" exact Component={TestPage} />
         </Routes>
