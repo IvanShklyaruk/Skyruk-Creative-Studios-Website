@@ -7,7 +7,7 @@ import {
   Sepia,
   Vignette,
 } from "@react-three/postprocessing";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
 import { BlendFunction } from "postprocessing";
 
 export const LibraryEffects = () => {
@@ -26,7 +26,7 @@ export const LibraryEffects = () => {
 
   const brightnessContrastConfig = useControls("brightnessContrast", {
     enabled: true,
-    brightness: { value: 0.09, min: -1, max: 1 },
+    brightness: { value: 0.019, min: -1, max: 1 },
     contrast: { value: 0.19, min: -1, max: 1 },
   });
 
@@ -62,14 +62,17 @@ export const LibraryEffects = () => {
   */
 
   return (
-    <EffectComposer disableNormalPass>
-      {vignetteConfig.enabled && <Vignette {...vignetteConfig} />}
-      {bloomConfig.enabled && <Bloom {...bloomConfig} />}
-      {brightnessContrastConfig.enabled && (
-        <BrightnessContrast {...brightnessContrastConfig} />
-      )}
+    <>
+      <Leva hidden />
+      <EffectComposer disableNormalPass>
+        {vignetteConfig.enabled && <Vignette {...vignetteConfig} />}
+        {bloomConfig.enabled && <Bloom {...bloomConfig} />}
+        {brightnessContrastConfig.enabled && (
+          <BrightnessContrast {...brightnessContrastConfig} />
+        )}
 
-      {noiseConfig.enabled && <Noise {...noiseConfig} />}
-    </EffectComposer>
+        {noiseConfig.enabled && <Noise {...noiseConfig} />}
+      </EffectComposer>
+    </>
   );
 };

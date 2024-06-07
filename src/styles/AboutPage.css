@@ -1,0 +1,65 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-content {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  color: #b8e2f5;
+  font-family: "MedievalSharp", cursive;
+  border-radius: 15px;
+  max-width: 770px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  margin-top: 2rem; /* Add margin to separate from the header */
+  margin-bottom: 2rem; /* Add margin to separate from the footer */
+  z-index: 1; /* Ensure the content is above the background */
+  position: relative;
+  animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+  transform: scale(1.45); /* Keep the original scale transform */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.about-content h1 {
+  color: #b8e2f5;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+}

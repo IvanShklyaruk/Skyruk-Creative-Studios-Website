@@ -22,64 +22,74 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Ensure the header container takes up the remaining space */
+  flex-grow: 1;
   position: relative;
   z-index: 1;
-  padding-bottom: 11rem;
-  transform: scale(1.29);
+  padding-bottom: 10rem; /* Adjusted padding */
+  transform: scale(1.37);
 }
 
 .centeredContent {
   text-align: center;
-  color: #b8e2f5; /* Light blue color */
+  color: #b8e2f5;
   font-family: "MedievalSharp", cursive;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  padding: 1rem; /* Add some padding for spacing */
-  border-radius: 10px; /* Rounded corners */
-  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+  padding: 2rem; /* Increased padding */
+  border-radius: 15px; /* Increased border radius */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+  animation: fadeIn 1.5s ease-in-out; /* Added fade-in animation */
 }
 
 .centeredContent h1 {
-  font-size: 70px;
-  font-weight: 50;
+  font-size: 84px; /* Increased font size */
+  font-weight: bold; /* Made the font bold */
   color: #b8e2f5;
   margin: 0;
   border: none; /* Ensure no borders are applied */
   text-decoration: none; /* Ensure no text decoration is applied */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow */
 }
 
 .centeredContent p {
-  font-size: 35px;
-  font-weight: 50;
+  font-size: 36px; /* Increased font size */
   color: #b8e2f5;
-  margin: 0; /* Remove default margin */
   margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Added text shadow */
 }
 
 .centeredContent button {
-  background-color: #b8e2f5; /* Light blue color */
-  color: black; /* Black text color */
+  background-color: #b8e2f5;
+  color: black;
   border: none;
-  padding: 15px 15px; /* Equal padding on all sides */
-  border-radius: 50%; /* Fully rounded borders */
+  padding: 15px 30px; /* Increased padding */
+  border-radius: 25px; /* Increased border radius */
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: "MedievalSharp", cursive;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
-  margin-top: 20px; /* Add some space above the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  margin-top: 20px;
 }
 
 .centeredContent button:hover {
-  background-color: #94c3db; /* Slightly darker blue for hover effect */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
-  transform: scale(1.05); /* Slightly increase size on hover */
+  background-color: #94c3db;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
 
 .centeredContent button:active {
-  background-color: #82a3b5; /* Even darker blue for active state */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
-  transform: scale(0.95); /* Slightly decrease size on click */
+  background-color: #82a3b5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
