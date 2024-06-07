@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Increase padding for more spacing */
+  padding-top: 1.5vh; /* Increase padding for more spacing */
   flex-shrink: 0; /* Prevent shrinking */
   font-family: "MedievalSharp", cursive;
   color: #b8e2f5; /* Set text color */
@@ -14,25 +14,24 @@
 .navbar .leftSide {
   display: flex;
   align-items: center;
-  margin-left: 69px; /* Push the logo towards the right */
+  margin-left: 4.5vw; /* Adjust margin for better spacing */
 }
 
 .navbar .leftSide img {
-  width: 89px; /* Increase the logo size */
-  margin-right: 20px; /* Add margin to the right of the logo */
+  width: 4vw; /* Adjust logo size */
 }
 
 .navbar .rightSide {
   display: flex;
   align-items: center;
-  margin-right: 99px; /* Push the words towards the left */
+  margin-right: 4.5vw; /* Adjust margin for better spacing */
 }
 
 .navbar a {
   color: #b8e2f5; /* Ensure links are visible */
   text-decoration: none;
-  margin: 0 1.5rem; /* Increase margin for more spacing */
-  font-size: 1.2rem; /* Increase font size of the words */
+  margin: 0 2vw; /* Adjust margin for better spacing */
+  font-size: 1.1vw; /* Adjust font size */
 }
 
 .navbar .rightSide button {
@@ -42,72 +41,63 @@
   cursor: pointer;
 }
 
-.navbar .rightSide svg {
-  font-size: 40px;
-}
-
 .navbar .socialIcons {
   display: flex;
   align-items: center;
-  margin-left: 1rem; /* Adjust margin for spacing */
+  margin-left: 1vw; /* Adjust margin for spacing */
 }
 
 .navbar .socialIcons svg {
-  font-size: 30px;
-  margin: 0 0.5rem;
+  font-size: 2vw; /* Adjust icon size */
+  margin: 0 0.9vw;
   cursor: pointer;
   color: #b8e2f5;
 }
 
-.navbar .hiddenLinks {
-  display: none;
-}
-
-#open .hiddenLinks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#open .hiddenLinks a {
-  width: 100px; /* Adjust width to match increased size */
-  margin: 10px 0; /* Increase margin for spacing */
-}
-
-@media only screen and (max-width: 900px) {
-  .navbar .rightSide a {
-    width: 100px; /* Adjust width to match increased size */
+@media (max-width: 1024px) {
+  .navbar .rightSide {
+    margin-right: 4vw; /* Adjust margin for better spacing */
   }
-  .navbar .leftSide {
-    padding-left: 50px;
+
+  .navbar a {
+    margin: 0 1vw; /* Adjust margin for better spacing */
+    font-size: 1.3vw; /* Adjust font size */
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .navbar .rightSide a {
-    display: none;
+@media (max-width: 768px) {
+  .navbar .leftSide img {
+    width: 8vw; /* Adjust logo size for smaller screens */
   }
 
   .navbar .rightSide {
     justify-content: flex-end;
-    padding-right: 50px;
+    padding-right: 4vw; /* Adjust padding for better spacing */
   }
 
-  .navbar .rightSide button {
-    display: inherit;
+  .navbar .rightSide svg {
+    font-size: 3.5vw; /* Adjust icon size */
   }
 
-  #open .hiddenLinks {
-    display: flex;
+  .navbar .socialIcons svg {
+    font-size: 2.5vw; /* Adjust icon size */
   }
 }
 
-@media only screen and (min-width: 600px) {
-  .navbar .rightSide button {
-    display: none;
+@media (max-width: 480px) {
+  .navbar {
+    padding: 2vh 2vw; /* Adjust padding for better spacing */
   }
 
-  .hiddenLinks {
-    display: none;
+  .navbar .leftSide img {
+    width: 12vw; /* Smaller logo size for small screens */
+  }
+
+  .navbar .rightSide svg {
+    font-size: 4vw; /* Smaller icon size for small screens */
+  }
+
+  .navbar .socialIcons svg {
+    font-size: 2.5vw; /* Smaller icon size for small screens */
   }
 }
