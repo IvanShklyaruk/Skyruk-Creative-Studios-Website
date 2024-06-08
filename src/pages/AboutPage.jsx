@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BackgroundImage from "../assets/HomePageBackgroundImage.png"; // Ensure the image path is correct
 import "../styles/AboutPage.css";
-
 const AboutPage = () => {
   return (
     <div className="about-page">
