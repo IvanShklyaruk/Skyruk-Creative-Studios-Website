@@ -1,43 +1,59 @@
 .about-page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  position: relative;
 }
 
-.background-container {
+.background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   z-index: -1;
 }
 
-.background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: -8.4vw;
+  margin-bottom: -6.1vw;
+  transform: scale(0.55); /* Adjusted scale for responsiveness */
 }
 
-.about-content {
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+.centeredContent {
+  text-align: center;
   color: #b8e2f5;
   font-family: "MedievalSharp", cursive;
-  border-radius: 15px;
-  max-width: 770px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  margin-top: 2rem; /* Add margin to separate from the header */
-  margin-bottom: 2rem; /* Add margin to separate from the footer */
-  z-index: 1; /* Ensure the content is above the background */
-  position: relative;
-  animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
-  transform: scale(1.45); /* Keep the original scale transform */
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+  padding: 2vw; /* Use viewport width */
+  border-radius: 1vw; /* Use viewport width */
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.centeredContent h1 {
+  font-size: 4.8vw; /* Use viewport width */
+  font-weight: bold;
+  color: #b8e2f5;
+  margin: 0;
+  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+}
+
+.centeredContent p {
+  font-size: 2vw; /* Use viewport width */
+  color: white;
+  margin-top: 1vw; /* Use viewport width */
+  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
 }
 
 @keyframes fadeIn {
@@ -49,16 +65,48 @@
   }
 }
 
-.about-content h1 {
-  color: #b8e2f5;
-  margin-bottom: 1rem;
-  text-align: center;
+/* Media Queries */
+@media (max-width: 1024px) {
+  .about-content {
+    margin-top: -29vw;
+    margin-bottom: -22vw;
+  }
+
+  .centeredContent h1 {
+    font-size: 7vw; /* Adjust font size for medium screens */
+  }
+
+  .centeredContent p {
+    font-size: 3.5vw; /* Adjust font size for medium screens */
+  }
 }
 
-.about-content p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #ffffff;
-  text-align: justify;
-  font-family: "Times New Roman", Times, serif;
+@media (max-width: 768px) {
+  .about-content {
+    margin-top: -29vw;
+    margin-bottom: -22vw;
+  }
+
+  .centeredContent h1 {
+    font-size: 8vw; /* Adjust font size for smaller screens */
+  }
+
+  .centeredContent p {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    margin-top: -29vw;
+    margin-bottom: -22vw;
+  }
+
+  .centeredContent h1 {
+    font-size: 10vw; /* Adjust font size for very small screens */
+  }
+
+  .centeredContent p {
+    font-size: 5vw; /* Adjust font size for very small screens */
+  }
 }

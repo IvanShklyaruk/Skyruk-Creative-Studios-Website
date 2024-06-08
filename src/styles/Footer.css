@@ -10,9 +10,17 @@
   align-items: center;
   flex-direction: column;
   font-family: "MedievalSharp", cursive; /* Use MedievalSharp font */
+  font-size: 0.79vw; /* Adjust icon size */
 }
 
 .footer p {
   color: #b8e2f5;
   margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .footer {
+    font-size: 2.2vw; /* Adjust icon size */
+  }
 }

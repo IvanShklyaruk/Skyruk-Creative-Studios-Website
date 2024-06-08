@@ -55,49 +55,43 @@
 }
 
 @media (max-width: 1024px) {
-  .navbar .rightSide {
-    margin-right: 4vw; /* Adjust margin for better spacing */
+  .navbar .leftSide img {
+    width: 4.5vw; /* Adjust logo size */
   }
 
   .navbar a {
-    margin: 0 1vw; /* Adjust margin for better spacing */
-    font-size: 1.3vw; /* Adjust font size */
+    font-size: 1.2vw;
+  }
+
+  .navbar .socialIcons svg {
+    font-size: 2.1vw; /* Adjust icon size */
   }
 }
 
 @media (max-width: 768px) {
   .navbar .leftSide img {
-    width: 8vw; /* Adjust logo size for smaller screens */
+    width: 5vw; /* Adjust logo size */
   }
 
-  .navbar .rightSide {
-    justify-content: flex-end;
-    padding-right: 4vw; /* Adjust padding for better spacing */
-  }
-
-  .navbar .rightSide svg {
-    font-size: 3.5vw; /* Adjust icon size */
+  .navbar a {
+    font-size: 2vw;
   }
 
   .navbar .socialIcons svg {
-    font-size: 2.5vw; /* Adjust icon size */
+    font-size: 3vw; /* Adjust icon size */
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    padding: 2vh 2vw; /* Adjust padding for better spacing */
-  }
-
   .navbar .leftSide img {
-    width: 12vw; /* Smaller logo size for small screens */
+    width: 11vw; /* Adjust logo size */
   }
 
-  .navbar .rightSide svg {
-    font-size: 4vw; /* Smaller icon size for small screens */
+  .navbar a {
+    font-size: 3.1vw;
   }
 
   .navbar .socialIcons svg {
-    font-size: 2.5vw; /* Smaller icon size for small screens */
+    font-size: 4.1vw; /* Adjust icon size */
   }
 }
