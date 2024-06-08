@@ -4659,7 +4659,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book2_animation", "/library");
+                  handleClick("shelf1_book2_animation", "/library/preview");
                 }
               : null
           }
@@ -4724,7 +4724,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book3_animation", "/library");
+                  handleClick("shelf1_book3_animation", "/library/preview");
                 }
               : null
           }
@@ -4794,7 +4794,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book4_animation", "/library");
+                  handleClick("shelf1_book4_animation", "/library/preview");
                 }
               : null
           }
@@ -4859,7 +4859,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book5_animation", "/library");
+                  handleClick("shelf1_book5_animation", "/library/preview");
                 }
               : null
           }
@@ -4929,7 +4929,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book1_animation", "/library");
+                  handleClick("shelf2_book1_animation", "/library/preview");
                 }
               : null
           }
@@ -4999,7 +4999,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book2_animation", "/library");
+                  handleClick("shelf2_book2_animation", "/library/preview");
                 }
               : null
           }
@@ -5064,7 +5064,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book3_animation", "/library");
+                  handleClick("shelf2_book3_animation", "/library/preview");
                 }
               : null
           }
@@ -5134,7 +5134,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book4_animation", "/library");
+                  handleClick("shelf2_book4_animation", "/library/preview");
                 }
               : null
           }
@@ -5199,7 +5199,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book5_animation", "/library");
+                  handleClick("shelf2_book5_animation", "/library/preview");
                 }
               : null
           }
@@ -5269,7 +5269,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book5_animation", "/library");
+                  handleClick("shelf3_book5_animation", "/library/preview");
                 }
               : null
           }
@@ -5334,7 +5334,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book4_animation", "/library");
+                  handleClick("shelf3_book4_animation", "/library/preview");
                 }
               : null
           }
@@ -5404,7 +5404,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book3_animation", "/library");
+                  handleClick("shelf3_book3_animation", "/library/preview");
                 }
               : null
           }
@@ -5469,7 +5469,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book2_animation", "/library");
+                  handleClick("shelf3_book2_animation", "/library/preview");
                 }
               : null
           }
@@ -5539,7 +5539,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book1_animation", "/library");
+                  handleClick("shelf3_book1_animation", "/library/preview");
                 }
               : null
           }
@@ -5609,7 +5609,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book5_animation", "/library");
+                  handleClick("shelf4_book5_animation", "/library/preview");
                 }
               : null
           }
@@ -5679,7 +5679,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book4_animation", "/library");
+                  handleClick("shelf4_book4_animation", "/library/preview");
                 }
               : null
           }
@@ -5744,7 +5744,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book3_animation", "/library");
+                  handleClick("shelf4_book3_animation", "/library/preview");
                 }
               : null
           }
@@ -5814,7 +5814,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book2_animation", "/library");
+                  handleClick("shelf4_book2_animation", "/library/preview");
                 }
               : null
           }
@@ -5884,7 +5884,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book1_animation", "/library");
+                  handleClick("shelf4_book1_animation", "/library/preview");
                 }
               : null
           }

@@ -14,7 +14,7 @@
 .navbar .leftSide {
   display: flex;
   align-items: center;
-  margin-left: 4.5vw; /* Adjust margin for better spacing */
+  margin-left: 3.9vw; /* Adjust margin for better spacing */
 }
 
 .navbar .leftSide img {
