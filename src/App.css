@@ -1,11 +1,23 @@
-.App {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Disable scrolling */
+  height: 100%; /* Ensure body and html take full height */
 }
 
-body {
-  padding: 0;
-  margin: 0;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.navbar,
+.footer {
+  flex-shrink: 0; /* Prevent the navbar and footer from shrinking */
 }
