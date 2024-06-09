@@ -3,9 +3,12 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.background-video {
+.background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -19,77 +22,119 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-grow: 1;
   position: relative;
   z-index: 1;
+  padding-bottom: 10vh; /* Use viewport height */
+  transform: scale(0.8); /* Adjusted scale for responsiveness */
 }
 
 .centeredContent {
   text-align: center;
-  color: #b8e2f5; /* Light blue color */
-  font-family: 'Tangerine', cursive; /* Example of a font that might look medieval */
-  margin-top: -255px; /* Pulls the content up by 100 pixels */
+  color: #b8e2f5;
+  font-family: "MedievalSharp", cursive;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+  padding: 2vw; /* Use viewport width */
+  border-radius: 1vw; /* Use viewport width */
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-.centeredContent  h1 {
-  text-align: center;
-  font-size: 70px;
-  font-weight: 50;
+.centeredContent h1 {
+  font-size: 6vw; /* Use viewport width */
+  font-weight: bold;
   color: #b8e2f5;
+  margin: 0;
+  border: none;
+  text-decoration: none;
+  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
 }
 
-.centeredContent  p {
-  text-align: center;
-  font-size: 35px;
-  font-weight: 50;
+.centeredContent p {
+  font-size: 3vw; /* Use viewport width */
   color: #b8e2f5;
+  margin-top: 1vw; /* Use viewport width */
+  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
 }
 
 .centeredContent button {
-  background-color: #b8e2f5; /* Dark bluish-grey color */
-  color: black; /* White text color */
+  background-color: #b8e2f5;
+  color: black;
   border: none;
-  padding: 15px 15px; /* Equal padding on all sides to help form a circle */
-  border-radius: 50%; /* Fully rounded borders to create a circle */
+  padding: 1.5vw 3vw; /* Use viewport width */
+  border-radius: 2.5vw; /* Use viewport width */
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Tangerine', cursive; /* Example of a font that might look medieval */
+  letter-spacing: 0.1vw; /* Use viewport width */
+  font-size: 1.5vw;
+  font-family: "MedievalSharp", cursive;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2); /* Use viewport width */
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  margin-top: 2vw; /* Use viewport width */
 }
 
 .centeredContent button:hover {
-  background-color: #6A7AB0; /* Lighter shade on hover */
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.3); /* Increased shadow on hover */
+  background-color: #94c3db;
+  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.3); /* Use viewport width */
+  transform: scale(1.05);
 }
 
-/* Media Queries for Responsive Adjustments */
-@media (max-width: 768px) {
+.centeredContent button:active {
+  background-color: #82a3b5;
+  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2); /* Use viewport width */
+  transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
   .centeredContent h1 {
-    font-size: 24px; /* Smaller font size for the header */
+    font-size: 7vw; /* Adjust font size for medium screens */
   }
 
   .centeredContent p {
-    font-size: 16px; /* Smaller font size for the paragraph */
+    font-size: 3.5vw; /* Adjust font size for medium screens */
   }
 
   .centeredContent button {
-    padding: 8px 16px; /* Smaller button */
+    font-size: 1.7vw; /* Adjust font size for medium screens */
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .centeredContent h1 {
+    font-size: 8vw; /* Adjust font size for smaller screens */
+  }
+
+  .centeredContent p {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+  }
+
+  .centeredContent button {
+    font-size: 2vw;
   }
 }
 
 @media (max-width: 480px) {
   .centeredContent h1 {
-    font-size: 18px; /* Even smaller font size for the header */
+    font-size: 10vw; /* Adjust font size for very small screens */
   }
 
   .centeredContent p {
-    font-size: 14px; /* Even smaller font size for the paragraph */
+    font-size: 5vw; /* Adjust font size for very small screens */
   }
 
   .centeredContent button {
-    padding: 6px 12px; /* Even smaller button */
+    font-size: 2.5vw;
   }
 }
