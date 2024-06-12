@@ -15,6 +15,7 @@ const useWordle = (solution) => {
       return { key: l, color: "grey" };
     });
 
+    // First pass: set correct letters in the correct position to green
     formattedGuess.forEach((l, i) => {
       if (solutionArray[i] === l.key) {
         formattedGuess[i].color = "green";
@@ -22,6 +23,7 @@ const useWordle = (solution) => {
       }
     });
 
+    // Second pass: set correct letters in the wrong position to yellow
     formattedGuess.forEach((l, i) => {
       if (solutionArray.includes(l.key) && l.color !== "green") {
         formattedGuess[i].color = "yellow";
