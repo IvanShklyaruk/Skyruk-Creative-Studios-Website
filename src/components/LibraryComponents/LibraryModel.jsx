@@ -6025,12 +6025,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.White}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, -59.5, 39]}>
-              <div
-                onClick={() => setShelf("shelf4")}
-                className="coming-soon-label"
-              >
-                Coming Soon...
+            <Html className="html-style" position={[25.7, -56.5, 39]}>
+              <div onClick={() => setShelf("shelf4")} className="apps-label">
+                Apps
               </div>
             </Html>
           ) : (
@@ -6066,12 +6063,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Purple Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, 48, 29.5]}>
-              <div
-                onClick={() => setShelf("shelf3")}
-                className="coming-soon-label"
-              >
-                Coming Soon...
+            <Html className="html-style" position={[25.7, 46.9, 29.5]}>
+              <div onClick={() => setShelf("shelf3")} className="models-label">
+                3D Models
               </div>
             </Html>
           ) : (
@@ -6146,12 +6140,12 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Orange Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, 57.7, 10]}>
+            <Html className="html-style" position={[22, 55.7, 10]}>
               <div
                 onClick={() => setShelf("shelf2")}
-                className="coming-soon-label"
+                className="scrapers-label"
               >
-                Coming Soon...
+                Scrapers
               </div>
             </Html>
           ) : (
