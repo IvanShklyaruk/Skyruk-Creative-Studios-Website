@@ -12,8 +12,10 @@ import WordlePNG from "../../assets/Wordle.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
+import { useDevice } from "../../hooks/useDevice";
 
 export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
+  const { scaleFactor } = useDevice();
   const group = useRef();
   const navigate = useNavigate();
   const { nodes, materials, animations } = useGLTF("./models/library.glb");

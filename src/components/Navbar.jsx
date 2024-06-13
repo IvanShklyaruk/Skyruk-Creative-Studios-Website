@@ -19,9 +19,27 @@ const Navbar = () => {
         <Link to="/library">Library</Link>
         <Link to="/about">About</Link>
         <div className="socialIcons">
-          <InstagramIcon />
-          <TikTokIcon />
-          <GitHubIcon />
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramIcon />
+          </a>
+          <a
+            href="https://www.tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <TikTokIcon />
+          </a>
+          <a
+            href="https://www.github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon />
+          </a>
         </div>
       </div>
     </div>
