@@ -49,6 +49,7 @@ export const Library = () => {
   const [shelf, setShelf] = useState("noShelf");
   const controls = useRef();
 
+  /* { Helper to get Camera Position }
   const { cameraPosition } = useControls({
     getLookAt: button(() => {
       if (controls.current) {
@@ -58,6 +59,7 @@ export const Library = () => {
       }
     }),
   });
+*/
 
   const playTransition = () => {
     if (controls.current && cameraPositions[shelf]) {
@@ -72,7 +74,6 @@ export const Library = () => {
           laptop: fov,
           desktop: fov,
         };
-        console.log(device);
         controls.current.camera.fov = fovMap[device] || fov;
       }
       controls.current.camera.updateProjectionMatrix();

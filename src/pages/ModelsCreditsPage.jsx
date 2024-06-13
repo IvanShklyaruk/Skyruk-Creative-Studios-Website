@@ -27,40 +27,291 @@ const ModelsCreditsPage = () => {
           <p>This scene includes assets sourced from the following:</p>
           <ul>
             <li>
-              <strong>Asset Name:</strong> Wooden Bookshelf
+              <strong>Asset Name:</strong> Simple Candelabra
               <br />
-              <strong>Source:</strong> Free3D.com
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Don%20Carson"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Don Carson
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/b07YM_KsRhb"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> Yes
             </li>
             <li>
-              <strong>Asset Name:</strong> Antique Chair
+              <strong>Asset Name:</strong> Books
               <br />
-              <strong>Source:</strong> Sketchfab
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/jeremy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                jeremy
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/aXBH7oyJBu_"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> Yes
             </li>
             <li>
-              <strong>Asset Name:</strong> Reading Lamp
+              <strong>Asset Name:</strong> Floor Tile
               <br />
-              <strong>Source:</strong> TurboSquid
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/6baBuVGcyD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
             </li>
-          </ul>
-        </div>
-        <div className="credits-section">
-          <h2>Scene: Living Room</h2>
-          <p>This scene includes assets sourced from the following:</p>
-          <ul>
             <li>
-              <strong>Asset Name:</strong> Modern Sofa
+              <strong>Asset Name:</strong> Candles
               <br />
-              <strong>Source:</strong> CGTrader
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/AnzHB44wlW"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
             </li>
             <li>
-              <strong>Asset Name:</strong> Coffee Table
+              <strong>Asset Name:</strong> Wall
               <br />
-              <strong>Source:</strong> BlendSwap
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/CkF171SeTV"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
             </li>
             <li>
-              <strong>Asset Name:</strong> Floor Lamp
+              <strong>Asset Name:</strong> Window Round
               <br />
-              <strong>Source:</strong> 3D Warehouse
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/WROtq6kA7t"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Wood Log
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/L4E32Wee6C"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> Yes
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Wood Floor
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/Jw4zM0TcVo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Fireplace
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Nick%20Slough"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Nick Slough
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/uVogFlDES1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Candle
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Nick%20Slough"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Nick Slough
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/HFpLq6iqKu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Wooden Arm Chair
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Zsky"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zsky
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/x6qMpNlvWI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
             </li>
           </ul>
         </div>

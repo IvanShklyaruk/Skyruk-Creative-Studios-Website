@@ -9,7 +9,7 @@ import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
-import ModelsCreditsPNG from "../../assets/Wordle.png";
+import ModelsCreditsPNG from "../../assets/ModelsCreditsPNG.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
@@ -24,6 +24,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const [hoveredObject, setHoveredObject] = useState(null);
   const [hoveredPosition, setHoveredPosition] = useState(null);
   const [showBackLabel, setShowBackLabel] = useState(false);
+
+  /* { Will keep for now if needed for future tests}
 
   useEffect(() => {
     // Perform any actions based on the shelf change
@@ -53,33 +55,58 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     };
   }, [animation, actions]);
 
+  */
+
   const handleMouseEnter = (e, bookName) => {
     setHoveredObject(bookName);
-    setHoveredPosition(e.intersections[0].point);
+    if (e.intersections && e.intersections[0] && e.intersections[0].point) {
+      setHoveredPosition(e.intersections[0].point);
+    }
 
     document.body.style.cursor = "pointer";
 
-    // Highlight all parts of the book except the text component
-    e.object.parent.traverse((child) => {
-      if (child.isMesh) {
-        child.material = child.material.clone();
-        child.material.emissive.set(0x444444);
-        child.material.emissiveIntensity = 2;
-      }
-    });
+    if (e.object && e.object.parent) {
+      // Highlight all parts of the book except the text component
+      e.object.parent.traverse((child) => {
+        if (child.isMesh) {
+          if (child.material) {
+            child.material = child.material.clone();
+            if (child.material.emissive) {
+              child.material.emissive.set(0x444444);
+            }
+            child.material.emissiveIntensity = 2;
+          } else {
+            console.error("child.material is undefined", child);
+          }
+        }
+      });
+    } else {
+      console.error("e.object or e.object.parent is undefined", e.object);
+    }
   };
 
   const handleMouseLeave = (e) => {
     setHoveredObject(null);
     setHoveredPosition(null);
 
-    // Reset highlight for all parts of the book except the text component
-    e.object.parent.traverse((child) => {
-      if (child.isMesh) {
-        child.material.emissive.set(0x000000);
-        child.material.emissiveIntensity = 0;
-      }
-    });
+    if (e.object && e.object.parent) {
+      // Reset highlight for all parts of the book except the text component
+      e.object.parent.traverse((child) => {
+        if (child.isMesh) {
+          if (child.material && child.material.emissive) {
+            child.material.emissive.set(0x000000);
+            child.material.emissiveIntensity = 0;
+          } else {
+            console.error(
+              "child.material or child.material.emissive is undefined",
+              child
+            );
+          }
+        }
+      });
+    } else {
+      console.error("e.object or e.object.parent is undefined", e.object);
+    }
 
     document.body.style.cursor = "default";
   };
