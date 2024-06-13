@@ -9,6 +9,7 @@ import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
+import ModelsCreditsPNG from "../../assets/Wordle.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
@@ -5541,7 +5542,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book1_animation", "/library/preview");
+                  handleClick(
+                    "shelf3_book1_animation",
+                    "/library/models-credits"
+                  );
                 }
               : null
           }
@@ -5570,8 +5574,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Credits</h3>
+                <img src={ModelsCreditsPNG} alt="Credits" />
               </div>
             </Html>
           ) : (
@@ -5582,7 +5586,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Credits
             </Text>
           )}
         </group>
