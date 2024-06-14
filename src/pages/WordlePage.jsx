@@ -6,19 +6,35 @@ import "../styles/WordleStyles/WordlePage.css";
 
 const WordlePage = () => {
   const [solution, setSolution] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    fetch("http://localhost:3001/solutions")
-      .then((res) => res.json())
+    fetch("https://api.datamuse.com/words?sp=?????")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
       .then((json) => {
-        const randomSolution = json[Math.floor(Math.random() * json.length)];
-        setSolution(randomSolution.word);
+        const words = json.map((wordObj) => wordObj.word);
+        const randomSolution = words[Math.floor(Math.random() * words.length)];
+        setSolution(randomSolution);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
       });
-  }, [setSolution]);
+  }, []);
 
   return (
     <div className="wordle-page">
       <Navbar />
       <h1>Wordle</h1>
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
       {solution && <WordleInterface solution={solution} />}
       <Footer />
     </div>
