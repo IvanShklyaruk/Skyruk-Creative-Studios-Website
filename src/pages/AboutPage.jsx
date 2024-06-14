@@ -7,14 +7,13 @@ const AboutPage = () => {
   return (
     <div className="about-page">
       <Navbar />
-
       <img
         src={BackgroundImage}
         alt="Background"
         className="background-image"
       />
       <div className="about-content">
-        <div className="centeredContent">
+        <div className="about-centeredContent">
           <h1>About Skyruk Creative Studios</h1>
           <p>
             Hello! I am a passionate software developer dedicated to creating

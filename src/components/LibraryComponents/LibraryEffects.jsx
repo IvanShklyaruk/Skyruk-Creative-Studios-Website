@@ -52,8 +52,9 @@ export const LibraryEffects = () => {
     smoothTime: { value: 0.5, min: 0, max: 1 },
   });
 
-  /* {autofocusConfig.enabled && <Autofocus {...autofocusConfig} />} */
-  /* {sepiaConfig.enabled && (
+  /* { Other effects if needed to add in the future }
+  {autofocusConfig.enabled && <Autofocus {...autofocusConfig} />} 
+   {sepiaConfig.enabled && (
         <Sepia
           {...sepiaConfig}
           blendFunction={BlendFunction[sepiaConfig.blendFunction]}
