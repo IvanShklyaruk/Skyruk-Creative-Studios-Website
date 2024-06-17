@@ -5987,7 +5987,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf1" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 0.5, 65]}>
+              <Html className="html-style" position={[22, 4, 65]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
@@ -6064,7 +6064,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf4" &&
             showBackLabel && (
-              <Html className="html-style" position={[25.7, -61, 73.5]}>
+              <Html className="html-style" position={[31.7, -55, 73.5]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
@@ -6102,7 +6102,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf3" &&
             showBackLabel && (
-              <Html className="html-style" position={[25.7, 93.5, 25]}>
+              <Html className="html-style" position={[29.7, 96.5, 25]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
@@ -6182,7 +6182,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf2" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 77, 2]}>
+              <Html className="html-style" position={[29, 77, 2]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
