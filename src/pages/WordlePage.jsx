@@ -7,34 +7,110 @@ import "../styles/WordleStyles/WordlePage.css";
 const WordlePage = () => {
   const [solution, setSolution] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  // List of 100 five-letter words
+  const words = [
+    "apple",
+    "blush",
+    "crane",
+    "drake",
+    "eagle",
+    "fable",
+    "grape",
+    "honey",
+    "ivory",
+    "jolly",
+    "knife",
+    "lodge",
+    "mango",
+    "naval",
+    "oasis",
+    "piano",
+    "quail",
+    "raven",
+    "sheep",
+    "tiger",
+    "uncle",
+    "vivid",
+    "waltz",
+    "xenon",
+    "yacht",
+    "zebra",
+    "alarm",
+    "beach",
+    "charm",
+    "draft",
+    "eager",
+    "fancy",
+    "globe",
+    "house",
+    "image",
+    "joker",
+    "karma",
+    "laser",
+    "magic",
+    "nerve",
+    "ocean",
+    "peace",
+    "queen",
+    "robot",
+    "stone",
+    "trust",
+    "under",
+    "voice",
+    "wrist",
+    "xerox",
+    "youth",
+    "zonal",
+    "adopt",
+    "blend",
+    "crowd",
+    "dream",
+    "enemy",
+    "frost",
+    "glory",
+    "hotel",
+    "ideal",
+    "jewel",
+    "kneel",
+    "lemon",
+    "march",
+    "nerdy",
+    "olive",
+    "party",
+    "quiet",
+    "route",
+    "storm",
+    "title",
+    "ultra",
+    "visit",
+    "wheel",
+    "xylem",
+    "yield",
+    "zebra",
+    "about",
+    "brave",
+    "creek",
+    "doubt",
+    "exact",
+    "flame",
+    "grave",
+    "hatch",
+    "input",
+    "jumpy",
+  ];
 
   useEffect(() => {
-    fetch("https://api.datamuse.com/words?sp=?????")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return res.json();
-      })
-      .then((json) => {
-        const words = json.map((wordObj) => wordObj.word);
-        const randomSolution = words[Math.floor(Math.random() * words.length)];
-        setSolution(randomSolution);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
+    const randomSolution = words[Math.floor(Math.random() * words.length)];
+    setSolution(randomSolution);
+    setLoading(false);
   }, []);
 
   return (
     <div className="wordle-page">
       <Navbar />
-      <h1>Wordle</h1>
+      <h1>Wordle Clone</h1>
       {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
       {solution && <WordleInterface solution={solution} />}
       <Footer />
     </div>

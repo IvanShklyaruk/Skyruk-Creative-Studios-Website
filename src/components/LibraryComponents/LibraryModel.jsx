@@ -4647,7 +4647,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="hover-info">
-                <h3>Wordle</h3>
+                <h3>Wordle Clone</h3>
                 <img src={WordlePNG} alt="Wordle" />
               </div>
             </Html>
@@ -4659,7 +4659,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              Wordle
+              Wordle Clone
             </Text>
           )}
         </group>
