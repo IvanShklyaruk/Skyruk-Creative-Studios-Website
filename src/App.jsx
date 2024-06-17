@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LibraryPage from "./pages/LibraryPage";
 import AboutPage from "./pages/AboutPage";
-import ThreeWorldsPage from "./pages/ThreeWorldsPage";
-import ModelsCreditsPage from "./pages/ModelsCreditsPage";
 import WordlePage from "./pages/WordlePage";
+import MagicMatchPage from "./pages/MagicMatchPage";
+import ModelsCreditsPage from "./pages/ModelsCreditsPage";
+import ThreeWorldsPage from "./pages/ThreeWorldsPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import TestPage from "./pages/TestPage";
 import "./App.css";
@@ -20,6 +21,11 @@ function App() {
             <Route path="/library" exact Component={LibraryPage} />
             <Route path="/about" exact Component={AboutPage} />
             <Route path="/library/wordle" exact Component={WordlePage} />
+            <Route
+              path="/library/magic-match"
+              exact
+              Component={MagicMatchPage}
+            />
             <Route
               path="/library/models-credits"
               exact

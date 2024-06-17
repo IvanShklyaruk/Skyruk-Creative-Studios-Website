@@ -9,6 +9,7 @@ import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
+import MagicMatchPNG from "../../assets/Wordle.png";
 import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
 import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
@@ -4690,7 +4691,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book2_animation", "/library/preview");
+                  handleClick("shelf1_book2_animation", "/library/magic-match");
                 }
               : null
           }
@@ -4714,8 +4715,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Magic Match</h3>
+                <img src={MagicMatchPNG} alt="Magic Match" />
               </div>
             </Html>
           ) : (
@@ -4726,7 +4727,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Magic Match
             </Text>
           )}
         </group>
