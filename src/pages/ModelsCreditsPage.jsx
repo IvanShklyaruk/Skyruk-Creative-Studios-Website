@@ -315,6 +315,34 @@ const ModelsCreditsPage = () => {
             </li>
           </ul>
         </div>
+        <div className="credits-section">
+          <h2>Scene: Three Worlds</h2>
+          <p>This scene includes assets sourced from the following:</p>
+          <ul>
+            <li>
+              <strong>Asset Name:</strong> Ultimate Monsters
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://quaternius.com/packs/ultimatemonsters.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://quaternius.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+          </ul>
+        </div>
       </div>
       <Footer />
     </div>
