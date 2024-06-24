@@ -10,7 +10,7 @@ export default function WordleModal({ isCorrect, turn, solution }) {
   };
 
   const handleLibrary = () => {
-    navigate("/library");
+    window.location.href = "/library";
   };
 
   return (

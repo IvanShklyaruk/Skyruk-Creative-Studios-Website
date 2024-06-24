@@ -1,4 +1,5 @@
 .footer {
+  position: relative;
   width: 100%;
   background-color: transparent; /* Make the background invisible */
   color: #b8e2f5;
@@ -18,9 +19,22 @@
   margin: 0;
 }
 
+.footer .version {
+  position: absolute;
+  bottom: 0.5rem; /* Slightly above the bottom edge */
+  right: 1rem; /* Slightly left from the right edge */
+  font-size: 0.7vw; /* Slightly smaller for version text */
+  color: #b8e2f5;
+  margin: 0;
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .footer {
     font-size: 2.2vw; /* Adjust icon size */
+  }
+
+  .footer .version {
+    font-size: 2vw; /* Adjust version text size */
   }
 }
