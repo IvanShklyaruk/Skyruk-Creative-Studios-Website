@@ -9,7 +9,9 @@ import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
-import ModelsCreditsPNG from "../../assets/ModelsCreditsPNG.png";
+import MagicMatchPNG from "../../assets/Wordle.png";
+import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
+import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
@@ -4647,7 +4649,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="hover-info">
-                <h3>Wordle</h3>
+                <h3>Wordle Clone</h3>
                 <img src={WordlePNG} alt="Wordle" />
               </div>
             </Html>
@@ -4659,7 +4661,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              Wordle
+              Wordle Clone
             </Text>
           )}
         </group>
@@ -4689,7 +4691,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book2_animation", "/library/preview");
+                  handleClick("shelf1_book2_animation", "/library/magic-match");
                 }
               : null
           }
@@ -4713,8 +4715,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Magic Match</h3>
+                <img src={MagicMatchPNG} alt="Magic Match" />
               </div>
             </Html>
           ) : (
@@ -4725,7 +4727,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Magic Match
             </Text>
           )}
         </group>
@@ -5499,7 +5501,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book2_animation", "/library/preview");
+                  handleClick(
+                    "shelf3_book2_animation",
+                    "/library/three-worlds"
+                  );
                 }
               : null
           }
@@ -5528,8 +5533,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Three Worlds</h3>
+                <img src={ThreeWorldsPNG} alt="Three Worlds" />
               </div>
             </Html>
           ) : (
@@ -5540,7 +5545,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Three Worlds
             </Text>
           )}
         </group>
@@ -5987,7 +5992,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf1" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 0.5, 65]}>
+              <Html className="html-style" position={[22, 4, 65]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
@@ -6064,7 +6069,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf4" &&
             showBackLabel && (
-              <Html className="html-style" position={[25.7, -61, 73.5]}>
+              <Html className="html-style" position={[31.7, -55, 73.5]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
@@ -6102,7 +6107,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf3" &&
             showBackLabel && (
-              <Html className="html-style" position={[25.7, 93.5, 25]}>
+              <Html className="html-style" position={[29.7, 96.5, 25]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
@@ -6182,7 +6187,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf2" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 77, 2]}>
+              <Html className="html-style" position={[29, 77, 2]}>
                 <div onClick={() => setShelf("noShelf")} className="back-label">
                   Go Back
                 </div>
