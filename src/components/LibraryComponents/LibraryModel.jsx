@@ -113,16 +113,17 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     document.body.style.cursor = "default";
   };
 
-  const handleClick = (animationName, targetPath) => {
+  const handleClick = (animationName, link) => {
     if (actions[animationName]) {
       actions[animationName].reset().play();
       actions[animationName].setLoop(THREE.LoopOnce, 1);
       actions[animationName].clampWhenFinished = true;
 
-      // Set a timeout to navigate to the target path after 1 second
       setTimeout(() => {
-        navigate(targetPath);
-      }, 1000); // 1000 milliseconds = 1 second
+        window.open(link, "_blank");
+
+        actions[animationName].stop();
+      }, 1100);
     }
   };
 
@@ -4617,7 +4618,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book1_animation", "/library/wordle");
+                  handleClick(
+                    "shelf1_book1_animation",
+                    "https://ivanshklyaruk.github.io/Wordle-Clone/"
+                  );
                 }
               : null
           }
@@ -4691,7 +4695,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book2_animation", "/library/magic-match");
+                  handleClick(
+                    "shelf1_book2_animation",
+                    "https://ivanshklyaruk.github.io/Magic-Match/"
+                  );
                 }
               : null
           }

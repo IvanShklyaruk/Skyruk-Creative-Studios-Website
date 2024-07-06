@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import LibraryPageBackground from "../assets/LibraryPageBackgroundVideo.mp4";
+import LibraryPageBackground from "../assets/HomePageBackgroundImage.png";
 import "../styles/TestPage.css";
 
 const TestPage = () => {
