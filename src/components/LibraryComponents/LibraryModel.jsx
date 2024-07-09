@@ -18,6 +18,10 @@ import "../../styles/LibraryStyles/LibraryModel.css";
 import { useDevice } from "../../hooks/useDevice";
 
 export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
+  useEffect(() => {
+    useGLTF.preload("./models/library.glb");
+  }, []);
+
   const { scaleFactor } = useDevice();
   const group = useRef();
   const navigate = useNavigate();
@@ -6206,5 +6210,3 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     </group>
   );
 }
-
-useGLTF.preload("./models/library.glb");
