@@ -5510,7 +5510,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                   e.stopPropagation();
                   handleClick(
                     "shelf3_book2_animation",
-                    "/library/three-worlds"
+                    "https://ivanshklyaruk.github.io/Three-Worlds/"
                   );
                 }
               : null
