@@ -1,3 +1,4 @@
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Library } from "../components/LibraryComponents/Library";
 import { LibraryEffects } from "../components/LibraryComponents/LibraryEffects";
@@ -5,19 +6,19 @@ import LoadingScreen from "../components/LoadingScreen";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/LibraryStyles/LibraryPage.css";
+import { useProgress } from "@react-three/drei";
 
 const LibraryPage = () => {
+  const { progress, active } = useProgress();
+
   return (
     <>
-      <LoadingScreen />
+      {<LoadingScreen progress={progress} active={active} />}
       <div className="library-page">
         <Navbar />
         <Canvas
           camera={{
-            position: [
-              1.0422729349890474, 5.267620732424673, 11.78916240352308,
-              0.5689723022767902, 4.707275204313833, -0.2507842152919058,
-            ],
+            position: [1.042, 5.268, 11.789],
             fov: 61,
           }}
         >

@@ -1,12 +1,13 @@
 import React from "react";
-import { useProgress } from "@react-three/drei";
 import "../styles/LoadingScreen.css";
 
-const LoadingScreen = () => {
-  const { progress, active } = useProgress();
-
+const LoadingScreen = ({ progress, active }) => {
   return (
-    <div className={`loading-screen ${active ? "" : "loading-screen-hidden"}`}>
+    <div
+      className={`loading-screen ${
+        active ? "loading-screen-active" : "loading-screen-hidden"
+      }`}
+    >
       <div className="loading-screen-container">
         <h1 className="loading-screen-title">Library</h1>
         <div className="progress-container">

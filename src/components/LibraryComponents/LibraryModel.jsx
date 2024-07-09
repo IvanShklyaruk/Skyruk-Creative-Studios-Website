@@ -4,7 +4,6 @@ Command: npx gltfjsx@6.2.17 public/models/library.glb
 */
 
 import React, { useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
@@ -18,13 +17,8 @@ import "../../styles/LibraryStyles/LibraryModel.css";
 import { useDevice } from "../../hooks/useDevice";
 
 export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
-  useEffect(() => {
-    useGLTF.preload("./models/library.glb");
-  }, []);
-
   const { scaleFactor } = useDevice();
   const group = useRef();
-  const navigate = useNavigate();
   const { nodes, materials, animations } = useGLTF("./models/library.glb");
   const { actions } = useAnimations(animations, group);
   const [hoveredObject, setHoveredObject] = useState(null);
