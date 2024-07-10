@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import BackgroundImage from "../assets/HomePageBackgroundImage.png"; // Ensure the image path is correct
+import BackgroundImage from "../assets/HomePageBackgroundImage.png";
 import "../styles/AboutPage.css";
+
 const AboutPage = () => {
   return (
     <div className="about-page">
@@ -10,10 +11,10 @@ const AboutPage = () => {
       <img
         src={BackgroundImage}
         alt="Background"
-        className="background-image"
+        className="about-background-image"
       />
       <div className="about-content">
-        <div className="about-centeredContent">
+        <div className="about-centered-content">
           <h1>About Skyruk Creative Studios</h1>
           <p>
             Hello! I am a passionate software developer dedicated to creating

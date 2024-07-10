@@ -18,10 +18,10 @@ const ComingSoonPage = () => {
       <img
         src={BackgroundImage}
         alt="Background"
-        className="background-image"
+        className="coming-soon-background-image"
       />
       <div className="coming-soon-content">
-        <div className="centeredContent">
+        <div className="coming-soon-centered-content">
           <h1>Under Construction</h1>
           <p>Great Things are Coming Soon!</p>
           <button onClick={handleExplore}>Go Home</button>

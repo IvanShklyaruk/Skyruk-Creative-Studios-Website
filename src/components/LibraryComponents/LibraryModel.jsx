@@ -4650,7 +4650,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Wordle Clone</h3>
                 <img src={WordlePNG} alt="Wordle" />
               </div>
@@ -4719,7 +4719,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Magic Match</h3>
                 <img src={MagicMatchPNG} alt="Magic Match" />
               </div>
@@ -4789,7 +4789,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4854,7 +4854,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4924,7 +4924,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4994,7 +4994,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5059,7 +5059,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5129,7 +5129,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5194,7 +5194,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5264,7 +5264,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5329,7 +5329,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5399,7 +5399,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5464,7 +5464,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5537,7 +5537,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Three Worlds</h3>
                 <img src={ThreeWorldsPNG} alt="Three Worlds" />
               </div>
@@ -5610,7 +5610,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Credits</h3>
                 <img src={ModelsCreditsPNG} alt="Credits" />
               </div>
@@ -5680,7 +5680,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5745,7 +5745,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5815,7 +5815,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5885,7 +5885,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5950,7 +5950,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5989,16 +5989,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.FF5722}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, -21, 40.5]}>
-              <div onClick={() => setShelf("shelf1")} className="games-label">
+            <Html className="library-html-style" position={[22, -21, 40.5]}>
+              <div
+                onClick={() => setShelf("shelf1")}
+                className="library-games-label"
+              >
                 Games
               </div>
             </Html>
           ) : (
             shelf === "shelf1" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 4, 65]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[22, 4, 65]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6066,16 +6072,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.White}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, -56.5, 39]}>
-              <div onClick={() => setShelf("shelf4")} className="apps-label">
+            <Html className="library-html-style" position={[25.7, -56.5, 39]}>
+              <div
+                onClick={() => setShelf("shelf4")}
+                className="library-apps-label"
+              >
                 Apps
               </div>
             </Html>
           ) : (
             shelf === "shelf4" &&
             showBackLabel && (
-              <Html className="html-style" position={[31.7, -55, 73.5]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[31.7, -55, 73.5]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6104,16 +6116,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Purple Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, 46.9, 29.5]}>
-              <div onClick={() => setShelf("shelf3")} className="models-label">
+            <Html className="library-html-style" position={[25.7, 46.9, 29.5]}>
+              <div
+                onClick={() => setShelf("shelf3")}
+                className="library-models-label"
+              >
                 3D Models
               </div>
             </Html>
           ) : (
             shelf === "shelf3" &&
             showBackLabel && (
-              <Html className="html-style" position={[29.7, 96.5, 25]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[29.7, 96.5, 25]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6181,10 +6199,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Orange Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, 55.7, 10]}>
+            <Html className="library-html-style" position={[22, 55.7, 10]}>
               <div
                 onClick={() => setShelf("shelf2")}
-                className="scrapers-label"
+                className="library-scrapers-label"
               >
                 Scrapers
               </div>
@@ -6192,8 +6210,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf2" &&
             showBackLabel && (
-              <Html className="html-style" position={[29, 77, 2]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[29, 77, 2]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>

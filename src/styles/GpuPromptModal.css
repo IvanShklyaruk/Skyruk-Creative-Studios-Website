@@ -1,0 +1,34 @@
+.gpu-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.gpu-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.gpu-modal h2 {
+  margin-bottom: 20px;
+}
+
+.gpu-modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gpu-modal-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
