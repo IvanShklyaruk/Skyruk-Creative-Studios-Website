@@ -33,7 +33,6 @@
 .about-centered-content {
   text-align: center;
   color: #b8e2f5;
-  font-family: "MedievalSharp", cursive;
   background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
   padding: 2vw; /* Use viewport width */
   border-radius: 1vw; /* Use viewport width */
@@ -47,6 +46,7 @@
   color: #b8e2f5;
   margin: 0;
   text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  font-family: "MedievalSharp", cursive;
 }
 
 .about-centered-content p {
