@@ -3,51 +3,9 @@
   pointer-events: auto;
 }
 
-.library-games-label {
-  padding: 0.5rem 1.5rem;
-  background-color: rgb(255 255 255 / 80%);
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s, opacity 0.42s;
-  font-family: "MedievalSharp", cursive;
-  font-size: 22px;
-  font-weight: 400;
-  font-style: normal;
-  pointer-events: auto;
-  white-space: nowrap;
-}
-
-.library-scrapers-label {
-  padding: 0.5rem 1.5rem;
-  background-color: rgb(255 255 255 / 80%);
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s, opacity 0.42s;
-  font-family: "MedievalSharp", cursive;
-  font-size: 22px;
-  font-weight: 400;
-  font-style: normal;
-  pointer-events: auto;
-  white-space: nowrap;
-}
-
-.library-models-label {
-  padding: 0.5rem 1.5rem;
-  background-color: rgb(255 255 255 / 80%);
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s, opacity 0.42s;
-  font-family: "MedievalSharp", cursive;
-  font-size: 22px;
-  font-weight: 400;
-  font-style: normal;
-  pointer-events: auto;
-  white-space: nowrap;
-}
-
+.library-games-label,
+.library-scrapers-label,
+.library-models-label,
 .library-apps-label {
   padding: 0.5rem 1.5rem;
   background-color: rgb(255 255 255 / 80%);
@@ -61,9 +19,11 @@
   font-style: normal;
   pointer-events: auto;
   white-space: nowrap;
+  opacity: 0; /* Set initial opacity to 0 */
+  animation: fade-in 0.5s ease-in-out forwards 1s;
 }
 
-@keyframes library-fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -84,8 +44,8 @@
   font-size: 22px;
   font-weight: 400;
   font-style: normal;
-  opacity: 0;
-  animation: library-fadeIn 1s forwards;
+  opacity: 0; /* Set initial opacity to 0 */
+  animation: fade-in 1s forwards;
   animation-delay: 1s;
 }
 
