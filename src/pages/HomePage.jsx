@@ -20,8 +20,8 @@ const HomePage = () => {
         alt="Background"
         className="home-background-image"
       />
-      <div className="home-headerContainer">
-        <div className="home-centeredContent">
+      <div className="home-content">
+        <div className="home-centered-content">
           <h1>Skyruk Creative Studios</h1>
           <p>PROJECTS MADE FOR FUN!</p>
           <button onClick={handleExplore}>Explore Now</button>

@@ -10,7 +10,7 @@ const ModelsCreditsPage = () => {
       <img
         src={BackgroundImage}
         alt="Background"
-        className="background-image"
+        className="models-credits-background-image"
       />
       <Navbar />
       <div className="models-credits-content">
@@ -22,7 +22,7 @@ const ModelsCreditsPage = () => {
           to bring their projects to life. Their contributions are invaluable
           and deeply appreciated.
         </p>
-        <div className="credits-section">
+        <div className="models-credits-section">
           <h2>Scene: Library</h2>
           <p>This scene includes assets sourced from the following:</p>
           <ul>
@@ -315,7 +315,7 @@ const ModelsCreditsPage = () => {
             </li>
           </ul>
         </div>
-        <div className="credits-section">
+        <div className="models-credits-section">
           <h2>Scene: Three Worlds</h2>
           <p>This scene includes assets sourced from the following:</p>
           <ul>

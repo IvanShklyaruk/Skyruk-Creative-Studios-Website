@@ -7,7 +7,7 @@
   color: #333; /* Adjust text color as needed */
 }
 
-.background-image {
+.models-credits-background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,24 +36,24 @@
   word-wrap: break-word; /* Ensure text wraps properly */
 }
 
-.credits-section {
+.models-credits-section {
   margin-top: 2vw; /* Adjust margin-top using vw */
 }
 
-.credits-section h2 {
+.models-credits-section h2 {
   margin-bottom: 1vw; /* Adjust margin-bottom using vw */
 }
 
-.credits-section ul {
+.models-credits-section ul {
   list-style-type: none;
   padding: 0;
 }
 
-.credits-section ul li {
+.models-credits-section ul li {
   margin-bottom: 1vw; /* Adjust margin-bottom using vw */
 }
 
-.credits-section ul li strong {
+.models-credits-section ul li strong {
   display: block;
   font-weight: bold;
 }

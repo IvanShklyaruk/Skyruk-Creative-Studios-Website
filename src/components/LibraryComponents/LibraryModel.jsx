@@ -4,12 +4,11 @@ Command: npx gltfjsx@6.2.17 public/models/library.glb
 */
 
 import React, { useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
-import MagicMatchPNG from "../../assets/Wordle.png";
+import MagicMatchPNG from "../../assets/MagicMatch.png";
 import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
 import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
@@ -20,96 +19,23 @@ import { useDevice } from "../../hooks/useDevice";
 export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const { scaleFactor } = useDevice();
   const group = useRef();
-  const navigate = useNavigate();
   const { nodes, materials, animations } = useGLTF("./models/library.glb");
   const { actions } = useAnimations(animations, group);
   const [hoveredObject, setHoveredObject] = useState(null);
   const [hoveredPosition, setHoveredPosition] = useState(null);
   const [showBackLabel, setShowBackLabel] = useState(false);
 
-  /* { Will keep for now if needed for future tests}
-
-  useEffect(() => {
-    // Perform any actions based on the shelf change
-    if (typeof shelf === "string") {
-      console.log(`LibraryModel received shelf: ${shelf}`);
-      // Add your logic here to respond to the shelf change
-    }
-  }, [shelf]);
-
-  const { animation } = useControls({
-    animation: {
-      value: "Idle",
-      options: Object.keys(actions),
-    },
-  });
-
-  useEffect(() => {
-    if (actions[animation]) {
-      actions[animation].setLoop(THREE.LoopOnce, 1); // Play only once
-      actions[animation].clampWhenFinished = true; // Stop at the last frame
-      actions[animation].play();
-    }
-    return () => {
-      if (actions[animation]) {
-        actions[animation].stop();
-      }
-    };
-  }, [animation, actions]);
-
-  */
-
   const handleMouseEnter = (e, bookName) => {
     setHoveredObject(bookName);
     if (e.intersections && e.intersections[0] && e.intersections[0].point) {
       setHoveredPosition(e.intersections[0].point);
     }
-
     document.body.style.cursor = "pointer";
-
-    if (e.object && e.object.parent) {
-      // Highlight all parts of the book except the text component
-      e.object.parent.traverse((child) => {
-        if (child.isMesh) {
-          if (child.material) {
-            child.material = child.material.clone();
-            if (child.material.emissive) {
-              child.material.emissive.set(0x444444);
-            }
-            child.material.emissiveIntensity = 2;
-          } else {
-            console.error("child.material is undefined", child);
-          }
-        }
-      });
-    } else {
-      console.error("e.object or e.object.parent is undefined", e.object);
-    }
   };
 
   const handleMouseLeave = (e) => {
     setHoveredObject(null);
     setHoveredPosition(null);
-
-    if (e.object && e.object.parent) {
-      // Reset highlight for all parts of the book except the text component
-      e.object.parent.traverse((child) => {
-        if (child.isMesh) {
-          if (child.material && child.material.emissive) {
-            child.material.emissive.set(0x000000);
-            child.material.emissiveIntensity = 0;
-          } else {
-            console.error(
-              "child.material or child.material.emissive is undefined",
-              child
-            );
-          }
-        }
-      });
-    } else {
-      console.error("e.object or e.object.parent is undefined", e.object);
-    }
-
     document.body.style.cursor = "default";
   };
 
@@ -121,7 +47,6 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
 
       setTimeout(() => {
         window.open(link, "_blank");
-
         actions[animationName].stop();
       }, 1100);
     }
@@ -132,7 +57,6 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
       const timer = setTimeout(() => {
         setShowBackLabel(true);
       }, 100);
-
       return () => clearTimeout(timer);
     } else {
       setShowBackLabel(false);
@@ -162,7 +86,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     materials.mat12.toneMapped = false;
     materials.Sky.toneMapped = false;
 
-    // Cleanup function to restore original colors!
+    // Cleanup function to restore original colors
     return () => {
       materials["mat12.001"].color.copy(originalColors["mat12.001"]);
       materials["mat12.002"].color.copy(originalColors["mat12.002"]);
@@ -4652,7 +4576,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Wordle Clone</h3>
                 <img src={WordlePNG} alt="Wordle" />
               </div>
@@ -4721,7 +4645,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Magic Match</h3>
                 <img src={MagicMatchPNG} alt="Magic Match" />
               </div>
@@ -4791,7 +4715,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4856,7 +4780,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4926,7 +4850,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4996,7 +4920,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5061,7 +4985,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5131,7 +5055,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5196,7 +5120,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5266,7 +5190,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5331,7 +5255,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5401,7 +5325,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5466,7 +5390,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5510,7 +5434,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                   e.stopPropagation();
                   handleClick(
                     "shelf3_book2_animation",
-                    "/library/three-worlds"
+                    "https://ivanshklyaruk.github.io/Three-Worlds/"
                   );
                 }
               : null
@@ -5539,7 +5463,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Three Worlds</h3>
                 <img src={ThreeWorldsPNG} alt="Three Worlds" />
               </div>
@@ -5612,7 +5536,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Credits</h3>
                 <img src={ModelsCreditsPNG} alt="Credits" />
               </div>
@@ -5682,7 +5606,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5747,7 +5671,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5817,7 +5741,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5887,7 +5811,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5952,7 +5876,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5991,16 +5915,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.FF5722}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, -21, 40.5]}>
-              <div onClick={() => setShelf("shelf1")} className="games-label">
+            <Html className="library-html-style" position={[22, -21, 40.5]}>
+              <div
+                onClick={() => setShelf("shelf1")}
+                className="library-games-label"
+              >
                 Games
               </div>
             </Html>
           ) : (
             shelf === "shelf1" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 4, 65]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[22, 4, 65]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6068,16 +5998,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.White}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, -56.5, 39]}>
-              <div onClick={() => setShelf("shelf4")} className="apps-label">
+            <Html className="library-html-style" position={[25.7, -56.5, 39]}>
+              <div
+                onClick={() => setShelf("shelf4")}
+                className="library-apps-label"
+              >
                 Apps
               </div>
             </Html>
           ) : (
             shelf === "shelf4" &&
             showBackLabel && (
-              <Html className="html-style" position={[31.7, -55, 73.5]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[31.7, -55, 73.5]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6106,16 +6042,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Purple Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, 46.9, 29.5]}>
-              <div onClick={() => setShelf("shelf3")} className="models-label">
+            <Html className="library-html-style" position={[25.7, 46.9, 29.5]}>
+              <div
+                onClick={() => setShelf("shelf3")}
+                className="library-models-label"
+              >
                 3D Models
               </div>
             </Html>
           ) : (
             shelf === "shelf3" &&
             showBackLabel && (
-              <Html className="html-style" position={[29.7, 96.5, 25]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[29.7, 96.5, 25]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6183,10 +6125,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Orange Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, 55.7, 10]}>
+            <Html className="library-html-style" position={[22, 55.7, 10]}>
               <div
                 onClick={() => setShelf("shelf2")}
-                className="scrapers-label"
+                className="library-scrapers-label"
               >
                 Scrapers
               </div>
@@ -6194,8 +6136,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
           ) : (
             shelf === "shelf2" &&
             showBackLabel && (
-              <Html className="html-style" position={[29, 77, 2]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[29, 77, 2]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6206,5 +6151,3 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     </group>
   );
 }
-
-useGLTF.preload("./models/library.glb");

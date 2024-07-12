@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 
-.background-image {
+.about-background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,33 +30,33 @@
   transform: scale(0.55); /* Adjusted scale for responsiveness */
 }
 
-.about-centeredContent {
+.about-centered-content {
   text-align: center;
   color: #b8e2f5;
-  font-family: "MedievalSharp", cursive;
   background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
   padding: 2vw; /* Use viewport width */
   border-radius: 1vw; /* Use viewport width */
   box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
-  animation: fadeIn 1.5s ease-in-out;
+  animation: about-fade-in 1.5s ease-in-out;
 }
 
-.about-centeredContent h1 {
+.about-centered-content h1 {
   font-size: 4.8vw; /* Use viewport width */
   font-weight: bold;
   color: #b8e2f5;
   margin: 0;
   text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  font-family: "MedievalSharp", cursive;
 }
 
-.about-centeredContent p {
+.about-centered-content p {
   font-size: 2vw; /* Use viewport width */
   color: white;
   margin-top: 1vw; /* Use viewport width */
   text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
 }
 
-@keyframes fadeIn {
+@keyframes about-fade-in {
   from {
     opacity: 0;
   }
@@ -72,11 +72,11 @@
     margin-bottom: -22vw;
   }
 
-  .centeredContent h1 {
+  .about-centered-content h1 {
     font-size: 7vw; /* Adjust font size for medium screens */
   }
 
-  .centeredContent p {
+  .about-centered-content p {
     font-size: 3.5vw; /* Adjust font size for medium screens */
   }
 }
@@ -87,11 +87,11 @@
     margin-bottom: -22vw;
   }
 
-  .centeredContent h1 {
+  .about-centered-content h1 {
     font-size: 8vw; /* Adjust font size for smaller screens */
   }
 
-  .centeredContent p {
+  .about-centered-content p {
     font-size: 4vw; /* Adjust font size for smaller screens */
   }
 }
@@ -102,11 +102,11 @@
     margin-bottom: -22vw;
   }
 
-  .centeredContent h1 {
+  .about-centered-content h1 {
     font-size: 10vw; /* Adjust font size for very small screens */
   }
 
-  .centeredContent p {
+  .about-centered-content p {
     font-size: 5vw; /* Adjust font size for very small screens */
   }
 }

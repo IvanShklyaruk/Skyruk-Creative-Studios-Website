@@ -1,0 +1,54 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 4rem;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #b8c6db;
+  background-image: linear-gradient(0deg, #b8c6db 0%, #f5f7fa 74%);
+  opacity: 1;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.loading-screen-hidden {
+  animation: fade-out 0.5s ease-in-out forwards 1s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.progress-container {
+  width: 100%;
+  height: 1rem;
+  background-color: rgb(102 106 113 / 42%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.loading-screen-title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1a202c;
+  margin: 0;
+  font-family: "MedievalSharp", cursive;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #1a202c;
+  transition: width 0.5s ease-in-out;
+}

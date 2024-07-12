@@ -18,7 +18,7 @@
   z-index: -1;
 }
 
-.home-headerContainer {
+.home-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
   transform: scale(0.8); /* Adjusted scale for responsiveness */
 }
 
-.home-centeredContent {
+.home-centered-content {
   text-align: center;
   color: #b8e2f5;
   font-family: "MedievalSharp", cursive;
@@ -37,10 +37,10 @@
   padding: 2vw; /* Use viewport width */
   border-radius: 1vw; /* Use viewport width */
   box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
-  animation: fadeIn 1.5s ease-in-out;
+  animation: home-fade-in 1.5s ease-in-out;
 }
 
-.home-centeredContent h1 {
+.home-centered-content h1 {
   font-size: 6vw; /* Use viewport width */
   font-weight: bold;
   color: #b8e2f5;
@@ -50,14 +50,14 @@
   text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
 }
 
-.home-centeredContent p {
+.home-centered-content p {
   font-size: 3vw; /* Use viewport width */
   color: #b8e2f5;
   margin-top: 1vw; /* Use viewport width */
   text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
 }
 
-.home-centeredContent button {
+.home-centered-content button {
   background-color: #b8e2f5;
   color: black;
   border: none;
@@ -74,19 +74,19 @@
   margin-top: 2vw; /* Use viewport width */
 }
 
-.home-centeredContent button:hover {
+.home-centered-content button:hover {
   background-color: #94c3db;
   box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.3); /* Use viewport width */
   transform: scale(1.05);
 }
 
-.home-centeredContent button:active {
+.home-centered-content button:active {
   background-color: #82a3b5;
   box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2); /* Use viewport width */
   transform: scale(0.95);
 }
 
-@keyframes fadeIn {
+@keyframes home-fade-in {
   from {
     opacity: 0;
   }
@@ -97,44 +97,43 @@
 
 /* Media Queries */
 @media (max-width: 1024px) {
-  .home-centeredContent h1 {
+  .home-centered-content h1 {
     font-size: 7vw; /* Adjust font size for medium screens */
   }
 
-  .home-centeredContent p {
+  .home-centered-content p {
     font-size: 3.5vw; /* Adjust font size for medium screens */
   }
 
-  .home-centeredContent button {
+  .home-centered-content button {
     font-size: 1.7vw; /* Adjust font size for medium screens */
   }
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
-  .home-centeredContent h1 {
+  .home-centered-content h1 {
     font-size: 8vw; /* Adjust font size for smaller screens */
   }
 
-  .home-centeredContent p {
+  .home-centered-content p {
     font-size: 4vw; /* Adjust font size for smaller screens */
   }
 
-  .home-centeredContent button {
+  .home-centered-content button {
     font-size: 2vw;
   }
 }
 
 @media (max-width: 480px) {
-  .home-centeredContent h1 {
+  .home-centered-content h1 {
     font-size: 10vw; /* Adjust font size for very small screens */
   }
 
-  .home-centeredContent p {
+  .home-centered-content p {
     font-size: 5vw; /* Adjust font size for very small screens */
   }
 
-  .home-centeredContent button {
+  .home-centered-content button {
     font-size: 2.5vw;
   }
 }
