@@ -1,13 +1,99 @@
 .library-2d {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.library-2d-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.library-2d-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: black;
+  height: 100%;
+  width: 100%;
   color: white;
 }
 
-.library-2d h1 {
-  font-size: 2em;
+.library-2d-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.library-2d-option,
+.library-2d-sub-option {
+  margin: 20px 0;
+  padding: 25px 60px;
+  background-color: #333;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 350px;
+  font-size: 1.5em;
+  transition: background-color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.library-2d-option:hover,
+.library-2d-sub-option:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.library-2d-sub-options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 70vh; /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.library-2d-back-button {
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  background-color: #333;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.3em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.library-2d-back-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.library-2d-sub-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 20px; /* Add padding to the left and right */
+}
+
+.library-2d-sub-options a {
+  display: block;
+  text-decoration: none;
+  position: relative;
 }
