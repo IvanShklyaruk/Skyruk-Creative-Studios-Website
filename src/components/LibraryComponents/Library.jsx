@@ -50,7 +50,7 @@ export const Library = () => {
   const controls = useRef();
 
   /* { Helper to get Camera Position }
-  const { cameraPosition } = useControls({
+  const { cameraPosition } = useControls({ hi
     getLookAt: button(() => {
       if (controls.current) {
         const position = controls.current.getPosition();
