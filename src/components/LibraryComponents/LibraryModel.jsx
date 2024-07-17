@@ -5505,7 +5505,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book1_animation", "/models-credits");
+                  handleClick("shelf3_book1_animation", "/credits");
                 }
               : null
           }
