@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/LibraryStyles/Library2D.css";
 import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.png"; // Ensure the image path is correct
 
@@ -22,7 +23,7 @@ const apps = [
 ];
 
 const models = [
-  { name: "Credits", link: "/library/models-credits" },
+  { name: "Credits", link: "/library/credits" },
   {
     name: "Three Worlds",
     link: "https://ivanshklyaruk.github.io/Three-Worlds/",
@@ -49,6 +50,7 @@ const categories = {
 
 export const Library2D = () => {
   const [visibleOption, setVisibleOption] = useState(null);
+  const navigate = useNavigate();
 
   const handleOptionClick = (option) => {
     setVisibleOption(option);
@@ -60,11 +62,7 @@ export const Library2D = () => {
 
   const handleLinkClick = (link) => {
     if (link.startsWith("/")) {
-      const anchor = document.createElement("a");
-      anchor.href = link;
-      anchor.target = "_blank";
-      anchor.rel = "noopener noreferrer";
-      anchor.click();
+      navigate(link);
     } else {
       window.open(link, "_blank", "noopener,noreferrer");
     }

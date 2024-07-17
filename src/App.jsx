@@ -18,7 +18,7 @@ function App() {
             <Route path="/library" exact Component={LibraryPage} />
             <Route path="/about" exact Component={AboutPage} />
             <Route
-              path="/library/models-credits"
+              path="/library/credits"
               exact
               Component={ModelsCreditsPage}
             />
