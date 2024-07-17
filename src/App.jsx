@@ -17,11 +17,7 @@ function App() {
             <Route path="/" exact Component={HomePage} />
             <Route path="/library" exact Component={LibraryPage} />
             <Route path="/about" exact Component={AboutPage} />
-            <Route
-              path="/library/models-credits"
-              exact
-              Component={ModelsCreditsPage}
-            />
+            <Route path="/models-credits" exact Component={ModelsCreditsPage} />
             <Route path="/library/preview" exact Component={ComingSoonPage} />
             <Route path="/library/test" exact Component={TestPage} />
           </Routes>
