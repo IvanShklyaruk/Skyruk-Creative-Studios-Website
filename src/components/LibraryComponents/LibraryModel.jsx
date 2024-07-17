@@ -4568,7 +4568,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Blue Book"]}
           />
 
-          {hoveredObject === "shelf1_book1" ? (
+          {hoveredObject === "shelf1_book1" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4637,7 +4637,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1086_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf1_book2" ? (
+          {hoveredObject === "shelf1_book2" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4707,7 +4707,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1058_2.geometry}
             material={materials["Purple Book"]}
           />
-          {hoveredObject === "shelf1_book3" ? (
+          {hoveredObject === "shelf1_book3" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4772,7 +4772,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1087_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf1_book4" ? (
+          {hoveredObject === "shelf1_book4" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4842,7 +4842,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1048_2.geometry}
             material={materials["Red Book"]}
           />
-          {hoveredObject === "shelf1_book5" ? (
+          {hoveredObject === "shelf1_book5" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4912,7 +4912,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1059_2.geometry}
             material={materials["Purple Book"]}
           />
-          {hoveredObject === "shelf2_book1" ? (
+          {hoveredObject === "shelf2_book1" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4977,7 +4977,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1088_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf2_book2" ? (
+          {hoveredObject === "shelf2_book2" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5047,7 +5047,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1049_2.geometry}
             material={materials["Blue Book"]}
           />
-          {hoveredObject === "shelf2_book3" ? (
+          {hoveredObject === "shelf2_book3" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5112,7 +5112,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1089_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf2_book4" ? (
+          {hoveredObject === "shelf2_book4" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5182,7 +5182,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1060_2.geometry}
             material={materials["Green Book"]}
           />
-          {hoveredObject === "shelf2_book5" ? (
+          {hoveredObject === "shelf2_book5" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5247,7 +5247,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1091_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf3_book5" ? (
+          {hoveredObject === "shelf3_book5" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5317,7 +5317,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1062_2.geometry}
             material={materials["Blue Book"]}
           />
-          {hoveredObject === "shelf3_book4" ? (
+          {hoveredObject === "shelf3_book4" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5382,7 +5382,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1090_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf3_book3" ? (
+          {hoveredObject === "shelf3_book3" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5455,7 +5455,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1061_2.geometry}
             material={materials["Red Book"]}
           />
-          {hoveredObject === "shelf3_book2" ? (
+          {hoveredObject === "shelf3_book2" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5525,7 +5525,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1051_2.geometry}
             material={materials["Cyan Book"]}
           />
-          {hoveredObject === "shelf3_book1" ? (
+          {hoveredObject === "shelf3_book1" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5595,7 +5595,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1053_2.geometry}
             material={materials["Purple Book"]}
           />
-          {hoveredObject === "shelf4_book5" ? (
+          {hoveredObject === "shelf4_book5" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5660,7 +5660,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1093_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf4_book4" ? (
+          {hoveredObject === "shelf4_book4" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5730,7 +5730,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1052_2.geometry}
             material={materials["Red Book"]}
           />
-          {hoveredObject === "shelf4_book3" ? (
+          {hoveredObject === "shelf4_book3" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5800,7 +5800,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1063_2.geometry}
             material={materials["Green Book"]}
           />
-          {hoveredObject === "shelf4_book2" ? (
+          {hoveredObject === "shelf4_book2" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5865,7 +5865,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1092_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf4_book1" ? (
+          {hoveredObject === "shelf4_book1" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
