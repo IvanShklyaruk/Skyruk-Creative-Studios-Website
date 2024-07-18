@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/LibraryStyles/Library2D.css";
-import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.png"; // Ensure the image path is correct
+import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.png";
 
 const games = [
   {
@@ -81,24 +81,32 @@ export const Library2D = () => {
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("games")}
+              role="button"
+              aria-label="Games"
             >
               Games
             </div>
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("apps")}
+              role="button"
+              aria-label="Apps"
             >
               Apps
             </div>
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("models")}
+              role="button"
+              aria-label="3D Models"
             >
               3D Models
             </div>
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("scrapers")}
+              role="button"
+              aria-label="Scrapers"
             >
               Scrapers
             </div>
@@ -108,6 +116,7 @@ export const Library2D = () => {
             <button
               className="library-2d-back-button"
               onClick={handleBackClick}
+              aria-label="Back"
             >
               Back
             </button>
@@ -117,6 +126,8 @@ export const Library2D = () => {
                   key={index}
                   onClick={() => handleLinkClick(item.link)}
                   className="library-2d-sub-option"
+                  role="button"
+                  aria-label={item.name}
                 >
                   {item.name}
                 </div>
