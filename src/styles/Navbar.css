@@ -1,14 +1,16 @@
 .navbar {
   width: 100%;
-  background-color: transparent; /* Make the background transparent */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1.5vh; /* Increase padding for more spacing */
+  padding-top: 1vh;
+  padding-bottom: 0.1vh;
   flex-shrink: 0; /* Prevent shrinking */
   font-family: "MedievalSharp", cursive;
   color: #b8e2f5; /* Set text color */
   z-index: 2;
+  position: relative;
 }
 
 .navbar .leftSide {
@@ -18,7 +20,7 @@
 }
 
 .navbar .leftSide img {
-  width: 4vw; /* Adjust logo size */
+  width: 3.2vw; /* Adjust logo size */
 }
 
 .navbar .rightSide {

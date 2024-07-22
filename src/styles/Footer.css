@@ -1,10 +1,10 @@
 .footer {
   position: relative;
   width: 100%;
-  background-color: transparent; /* Make the background invisible */
+  background-color: rgba(0, 0, 0, 0.6);
   color: #b8e2f5;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   flex-shrink: 0; /* Prevent shrinking */
   display: flex;
   justify-content: center;
@@ -12,6 +12,7 @@
   flex-direction: column;
   font-family: "MedievalSharp", cursive; /* Use MedievalSharp font */
   font-size: 0.79vw; /* Adjust icon size */
+  z-index: 2;
 }
 
 .footer p {
