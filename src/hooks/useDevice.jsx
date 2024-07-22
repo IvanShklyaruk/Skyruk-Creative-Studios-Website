@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const DESKTOP_THRESHOLD = 2561; // Reference width for desktop
+const DESKTOP_THRESHOLD = 2561;
 const LAPTOP_THRESHOLD = 1513;
 const TABLET_THRESHOLD = 1025;
 const MOBILE_THRESHOLD = 601;

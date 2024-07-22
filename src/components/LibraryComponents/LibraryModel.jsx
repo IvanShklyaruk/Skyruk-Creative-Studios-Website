@@ -17,6 +17,8 @@ import WeatherAppPNG from "../../assets/WeatherApp.png";
 import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
 import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
 import TeslaSlideshowPNG from "../../assets/TeslaSlideshow.png";
+import FaceDetectionPNG from "../../assets/FaceDetection.png";
+import GestureRecognitionPNG from "../../assets/GestureRecognition.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
@@ -5809,7 +5811,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book2_animation", "/library/preview");
+                  handleClick(
+                    "shelf4_book2_animation",
+                    "https://ivanshklyaruk.github.io/Gesture-Recognition/"
+                  );
                 }
               : null
           }
@@ -5838,8 +5843,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Gesture Recognition</h3>
+                <img src={GestureRecognitionPNG} alt="Gesture Recognition" />
               </div>
             </Html>
           ) : (
@@ -5850,7 +5855,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Gesture Recognition
             </Text>
           )}
         </group>
@@ -5879,7 +5884,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book1_animation", "/library/preview");
+                  handleClick(
+                    "shelf4_book1_animation",
+                    "https://ivanshklyaruk.github.io/Face-Detection/"
+                  );
                 }
               : null
           }
@@ -5903,8 +5911,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Face Detection</h3>
+                <img src={FaceDetectionPNG} alt="Face Detection" />
               </div>
             </Html>
           ) : (
@@ -5915,7 +5923,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Face Detection
             </Text>
           )}
         </group>

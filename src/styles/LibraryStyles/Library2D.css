@@ -1,4 +1,3 @@
-/* Keyframes for fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -17,8 +16,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222; /* Fallback background color */
+  background-color: #222;
   font-family: "MedievalSharp", cursive;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .library-2d-background-image {
@@ -42,17 +43,19 @@
   width: 100%;
   color: white;
   text-align: center;
-  padding: 20px; /* Optional padding for better spacing */
+  padding: 5px;
   box-sizing: border-box;
 }
 
 .library-2d-options,
 .library-2d-sub-options-container {
-  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
   font-family: "MedievalSharp", cursive;
+  width: 90%; /* Reduced width */
+  max-width: 600px; /* Reduced max-width */
 }
 
 .library-2d-options {
@@ -63,16 +66,17 @@
 
 .library-2d-option,
 .library-2d-sub-option {
-  margin: 20px 0;
-  padding: 25px 60px;
-  background-color: #333; /* Solid color background */
+  margin: 15px 0; /* Adjusted margin */
+  padding: 20px 50px; /* Adjusted padding */
+  background-color: #333;
   color: white;
-  border: 0.15vw solid #b8e2f5; /* Updated border color */
+  border: 0.15vw solid #b8e2f5;
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
-  width: 350px;
-  font-size: 1.5em;
+  width: 100%;
+  max-width: 300px; /* Adjusted max-width */
+  font-size: 1.3em; /* Adjusted font-size */
   transition: background-color 0.3s, transform 0.3s;
   position: relative;
   font-family: "MedievalSharp", cursive;
@@ -81,7 +85,7 @@
 
 .library-2d-option:hover,
 .library-2d-sub-option:hover {
-  background-color: #555; /* Slightly lighter on hover */
+  background-color: #555;
   transform: scale(1.05);
 }
 
@@ -91,24 +95,26 @@
   align-items: center;
   max-height: 70vh;
   overflow-y: auto;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
 .library-2d-back-button {
   margin-bottom: 20px;
-  padding: 20px 40px;
-  background-color: #333; /* Solid color background */
+  padding: 15px 30px;
+  background-color: #333;
   color: white;
-  border: 0.15vw solid #b8e2f5; /* Updated border color */
+  border: 0.15vw solid #b8e2f5;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1.3em;
+  font-size: 1.1em;
   transition: background-color 0.3s, transform 0.3s;
   font-family: "MedievalSharp", cursive;
   animation: fadeIn 1s ease-in-out;
 }
 
 .library-2d-back-button:hover {
-  background-color: #555; /* Slightly lighter on hover */
+  background-color: #555;
   transform: scale(1.05);
 }
 
@@ -117,7 +123,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 0 20px;
+  padding: 0 5px;
 }
 
 .library-2d-sub-options a {
@@ -130,12 +136,12 @@
   .library-2d-option,
   .library-2d-sub-option {
     width: 80%;
-    font-size: 1.2em;
-    padding: 20px 30px;
+    font-size: 1.1em;
+    padding: 15px 25px;
   }
 
   .library-2d-back-button {
-    padding: 15px 30px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 0.9em;
   }
 }

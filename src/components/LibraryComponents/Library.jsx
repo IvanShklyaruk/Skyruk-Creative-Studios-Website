@@ -92,14 +92,12 @@ export const Library = () => {
     <>
       <CameraControls
         ref={controls}
-        // disable all mouse buttons
         mouseButtons={{
           left: 0,
           middle: 0,
           right: 0,
           wheel: 0,
         }}
-        // disable all touch gestures
         touches={{
           one: 0,
           two: 0,

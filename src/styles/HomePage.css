@@ -25,62 +25,62 @@
   flex-grow: 1;
   position: relative;
   z-index: 1;
-  padding-bottom: 8vh; /* Reduced padding for better centering */
+  padding-bottom: 8vh;
 }
 
 .home-centered-content {
   text-align: center;
   color: #b8e2f5;
   font-family: "MedievalSharp", cursive;
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
-  padding: 1.5vw; /* Use viewport width */
-  border-radius: 1vw; /* Use viewport width */
-  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1.5vw;
+  border-radius: 1vw;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
   animation: home-fade-in 1.5s ease-in-out;
 }
 
 .home-centered-content h1 {
-  font-size: 5vw; /* Slightly reduced font size */
+  font-size: 5vw;
   font-weight: bold;
   color: #b8e2f5;
   margin: 0;
   text-decoration: none;
-  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7);
 }
 
 .home-centered-content p {
-  font-size: 2.5vw; /* Slightly reduced font size */
-  color: #ffffff; /* Changed to white */
-  margin-top: 1vw; /* Use viewport width */
-  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  font-size: 2.5vw;
+  color: #ffffff;
+  margin-top: 1vw;
+  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7);
 }
 
 .home-centered-content button {
-  background-color: #333; /* Updated background color */
-  color: white; /* Updated text color */
-  border: 0.15vw solid #b8e2f5; /* Slightly thinner border */
-  padding: 1vw 2.5vw; /* Use viewport width */
-  border-radius: 2vw; /* Use viewport width */
+  background-color: #333;
+  color: white;
+  border: 0.15vw solid #b8e2f5;
+  padding: 1vw 2.5vw;
+  border-radius: 2vw;
   text-transform: uppercase;
-  letter-spacing: 0.1vw; /* Use viewport width */
-  font-size: 1.2vw; /* Slightly reduced font size */
+  letter-spacing: 0.1vw;
+  font-size: 1.2vw;
   font-family: "MedievalSharp", cursive;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2); /* Use viewport width */
+  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  margin-top: 1.5vw; /* Use viewport width */
+  margin-top: 1.5vw;
 }
 
 .home-centered-content button:hover {
-  background-color: #555; /* Updated hover background color */
-  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.3); /* Use viewport width */
+  background-color: #555;
+  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
 
 .home-centered-content button:active {
-  background-color: #555; /* Updated active background color */
-  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2); /* Use viewport width */
+  background-color: #555;
+  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2);
   transform: scale(0.95);
 }
 
@@ -93,28 +93,27 @@
   }
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   .home-centered-content h1 {
-    font-size: 6vw; /* Adjust font size for medium screens */
+    font-size: 6vw;
   }
 
   .home-centered-content p {
-    font-size: 3vw; /* Adjust font size for medium screens */
+    font-size: 3vw;
   }
 
   .home-centered-content button {
-    font-size: 1.5vw; /* Adjust font size for medium screens */
+    font-size: 1.5vw;
   }
 }
 
 @media (max-width: 768px) {
   .home-centered-content h1 {
-    font-size: 7vw; /* Adjust font size for smaller screens */
+    font-size: 7vw;
   }
 
   .home-centered-content p {
-    font-size: 3.5vw; /* Adjust font size for smaller screens */
+    font-size: 3.5vw;
   }
 
   .home-centered-content button {
@@ -124,11 +123,11 @@
 
 @media (max-width: 480px) {
   .home-centered-content h1 {
-    font-size: 8vw; /* Adjust font size for very small screens */
+    font-size: 8vw;
   }
 
   .home-centered-content p {
-    font-size: 4vw; /* Adjust font size for very small screens */
+    font-size: 4vw;
   }
 
   .home-centered-content button {
