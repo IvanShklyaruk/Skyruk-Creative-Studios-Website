@@ -4665,11 +4665,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               Magic Match
             </Text>
