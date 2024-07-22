@@ -695,7 +695,6 @@ const ModelsCreditsPage = () => {
           </ul>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
