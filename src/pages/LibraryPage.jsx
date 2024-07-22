@@ -41,9 +41,9 @@ const LibraryPage = () => {
       setShowSlider(true);
     } else {
       setShowSlider(false);
-      setIs3D(false); // Ensure 3D doesn't load on smaller screens
-      setHasDedicatedGPU(false); // Ensure 3D doesn't load on smaller screens
-      sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(false)); // Update session storage
+      setIs3D(false);
+      setHasDedicatedGPU(false);
+      sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(false));
     }
   };
 
@@ -59,7 +59,7 @@ const LibraryPage = () => {
     sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(newView));
 
     if (newView && !hasDedicatedGPU) {
-      window.location.reload(); // Reload the page if toggling to 3D for the first time
+      window.location.reload();
     }
   };
 
@@ -96,7 +96,7 @@ const LibraryPage = () => {
         <>
           <LoadingScreen progress={progress} active={active} />
           <Canvas
-            key={is3D} // Ensures Canvas reloads when is3D changes
+            key={is3D}
             camera={{
               position: [1.042, 5.268, 11.789],
               fov: 61,
