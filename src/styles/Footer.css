@@ -1,17 +1,18 @@
 .footer {
   position: relative;
   width: 100%;
-  background-color: transparent; /* Make the background invisible */
+  background-color: black;
   color: #b8e2f5;
   text-align: center;
-  padding: 1rem 0;
-  flex-shrink: 0; /* Prevent shrinking */
+  padding: 0.5rem 0;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "MedievalSharp", cursive; /* Use MedievalSharp font */
-  font-size: 0.79vw; /* Adjust icon size */
+  font-family: "MedievalSharp", cursive;
+  font-size: 0.79vw;
+  z-index: 3;
 }
 
 .footer p {
@@ -21,20 +22,19 @@
 
 .footer .version {
   position: absolute;
-  bottom: 0.5rem; /* Slightly above the bottom edge */
-  right: 1rem; /* Slightly left from the right edge */
-  font-size: 0.7vw; /* Slightly smaller for version text */
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 0.7vw;
   color: #b8e2f5;
   margin: 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
   .footer {
-    font-size: 2.2vw; /* Adjust icon size */
+    font-size: 2.2vw;
   }
 
   .footer .version {
-    font-size: 2vw; /* Adjust version text size */
+    font-size: 2vw;
   }
 }

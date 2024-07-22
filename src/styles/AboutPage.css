@@ -54,6 +54,7 @@
   color: white;
   margin-top: 1vw; /* Use viewport width */
   text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  font-family: "MedievalSharp", cursive;
 }
 
 @keyframes about-fade-in {

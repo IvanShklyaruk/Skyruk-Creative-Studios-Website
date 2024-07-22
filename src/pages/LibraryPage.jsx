@@ -14,8 +14,30 @@ const LibraryPage = () => {
   const { progress, active } = useProgress();
   const [hasDedicatedGPU, setHasDedicatedGPU] = useState(null);
 
+  useEffect(() => {
+    const gpuPreference = sessionStorage.getItem("hasDedicatedGPU");
+    if (gpuPreference !== null) {
+      setHasDedicatedGPU(JSON.parse(gpuPreference));
+    } else {
+      checkScreenSize();
+      window.addEventListener("resize", checkScreenSize);
+
+      return () => {
+        window.removeEventListener("resize", checkScreenSize);
+      };
+    }
+  }, []);
+
+  const checkScreenSize = () => {
+    if (window.innerWidth < 1280 || window.innerHeight < 800) {
+      setHasDedicatedGPU(false);
+      sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(false));
+    }
+  };
+
   const handleConfirm = (response) => {
     setHasDedicatedGPU(response);
+    sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(response));
   };
 
   if (hasDedicatedGPU === null) {

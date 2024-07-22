@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/LibraryStyles/Library2D.css";
-import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.png"; // Ensure the image path is correct
+import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.png";
 
 const games = [
   {
@@ -9,17 +9,23 @@ const games = [
     link: "https://ivanshklyaruk.github.io/Wordle-Clone/",
   },
   { name: "Magic Match", link: "https://ivanshklyaruk.github.io/Magic-Match/" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+  { name: "Chess", link: "https://ivanshklyaruk.github.io/Chess/" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
 const apps = [
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+  {
+    name: "YouTube Clone",
+    link: "https://ivanshklyaruk.github.io/YouTube-Clone/",
+  },
+  {
+    name: "Netflix Clone",
+    link: "https://ivanshklyaruk.github.io/Netflix-Clone/",
+  },
+  { name: "Weather App", link: "https://ivanshklyaruk.github.io/Weather-App/" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
 const models = [
@@ -28,24 +34,27 @@ const models = [
     name: "Three Worlds",
     link: "https://ivanshklyaruk.github.io/Three-Worlds/",
   },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+  {
+    name: "Tesla Slideshow",
+    link: "https://ivanshklyaruk.github.io/Tesla-Slideshow/",
+  },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
-const scrapers = [
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+const ai = [
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
 const categories = {
   games,
   apps,
   models,
-  scrapers,
+  ai,
 };
 
 export const Library2D = () => {
@@ -81,26 +90,34 @@ export const Library2D = () => {
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("games")}
+              role="button"
+              aria-label="Games"
             >
               Games
             </div>
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("apps")}
+              role="button"
+              aria-label="Apps"
             >
               Apps
             </div>
             <div
               className="library-2d-option"
               onClick={() => handleOptionClick("models")}
+              role="button"
+              aria-label="3D Models"
             >
               3D Models
             </div>
             <div
               className="library-2d-option"
-              onClick={() => handleOptionClick("scrapers")}
+              onClick={() => handleOptionClick("ai")}
+              role="button"
+              aria-label="AI"
             >
-              Scrapers
+              AI
             </div>
           </div>
         ) : (
@@ -108,6 +125,7 @@ export const Library2D = () => {
             <button
               className="library-2d-back-button"
               onClick={handleBackClick}
+              aria-label="Back"
             >
               Back
             </button>
@@ -117,6 +135,8 @@ export const Library2D = () => {
                   key={index}
                   onClick={() => handleLinkClick(item.link)}
                   className="library-2d-sub-option"
+                  role="button"
+                  aria-label={item.name}
                 >
                   {item.name}
                 </div>

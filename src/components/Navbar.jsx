@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Logo from "../assets/SkyrukLogo.png"; // Ensure the logo path is correct
+import React from "react";
+import Logo from "../assets/SkyrukLogo.png";
 import { Link } from "react-router-dom";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TikTokIcon from "@mui/icons-material/LibraryMusic";
 import GitHubIcon from "@mui/icons-material/GitHub";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+// import TikTokIcon from "@mui/icons-material/LibraryMusic";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link to="/library">Library</Link>
         <Link to="/about">About</Link>
         <div className="socialIcons">
-          <a
+          {/* <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -32,9 +32,9 @@ const Navbar = () => {
             rel="noopener noreferrer"
           >
             <TikTokIcon />
-          </a>
+          </a> */}
           <a
-            href="https://www.github.com"
+            href="https://github.com/IvanShklyaruk"
             target="_blank"
             rel="noopener noreferrer"
           >
