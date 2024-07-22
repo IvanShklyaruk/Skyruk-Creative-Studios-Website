@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import BackgroundImage from "../assets/HomePageBackgroundImage.png";
+import AboutUsPageBackgroundImage from "../assets/AboutUsPageBackgroundImage.png";
 import "../styles/AboutPage.css";
 
 const AboutPage = () => {
@@ -9,7 +9,7 @@ const AboutPage = () => {
     <div className="about-page">
       <Navbar />
       <img
-        src={BackgroundImage}
+        src={AboutUsPageBackgroundImage}
         alt="Background"
         className="about-background-image"
       />

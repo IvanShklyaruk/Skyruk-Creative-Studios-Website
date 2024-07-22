@@ -1,3 +1,13 @@
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .library-2d {
   position: relative;
   width: 100%;
@@ -8,6 +18,7 @@
   align-items: center;
   justify-content: center;
   background-color: #222; /* Fallback background color */
+  font-family: "MedievalSharp", cursive;
 }
 
 .library-2d-background-image {
@@ -31,25 +42,35 @@
   width: 100%;
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6); /* Black transparent background */
   padding: 20px; /* Optional padding for better spacing */
   box-sizing: border-box;
+  animation: fadeIn 1s ease-in-out;
 }
 
+.library-2d-options,
+.library-2d-sub-options-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+  animation: fadeIn 1s ease-in-out;
+  font-family: "MedievalSharp", cursive;
+}
 
 .library-2d-options {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .library-2d-option,
 .library-2d-sub-option {
   margin: 20px 0;
   padding: 25px 60px;
-  background-color: #333;
+  background-color: #333; /* Solid color background */
   color: white;
-  border: 2px solid white;
+  border: 2px solid #b8e2f5; /* Updated border color */
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
@@ -57,11 +78,12 @@
   font-size: 1.5em;
   transition: background-color 0.3s, transform 0.3s;
   position: relative;
+  font-family: "MedievalSharp", cursive;
 }
 
 .library-2d-option:hover,
 .library-2d-sub-option:hover {
-  background-color: #555;
+  background-color: #555; /* Slightly lighter on hover */
   transform: scale(1.05);
 }
 
@@ -76,17 +98,19 @@
 .library-2d-back-button {
   margin-bottom: 20px;
   padding: 20px 40px;
-  background-color: #333;
+  background-color: #333; /* Solid color background */
   color: white;
-  border: 2px solid white;
+  border: 2px solid #b8e2f5; /* Updated border color */
   border-radius: 10px;
   cursor: pointer;
   font-size: 1.3em;
   transition: background-color 0.3s, transform 0.3s;
+  animation: fadeIn 1s ease-in-out;
+  font-family: "MedievalSharp", cursive;
 }
 
 .library-2d-back-button:hover {
-  background-color: #555;
+  background-color: #555; /* Slightly lighter on hover */
   transform: scale(1.05);
 }
 
