@@ -9,7 +9,7 @@ const ComingSoonPage = () => {
   const navigate = useNavigate();
 
   function handleExplore() {
-    navigate("/");
+    navigate("/library");
   }
 
   return (
@@ -24,7 +24,7 @@ const ComingSoonPage = () => {
         <div className="coming-soon-centered-content">
           <h1>Under Construction</h1>
           <p>Great Things are Coming Soon!</p>
-          <button onClick={handleExplore}>Go Home</button>
+          <button onClick={handleExplore}>Back to the Library</button>
         </div>
       </div>
       <Footer />
