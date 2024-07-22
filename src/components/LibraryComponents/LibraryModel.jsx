@@ -5531,7 +5531,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book1_animation", "/library/credits");
+                  handleClick(
+                    "shelf3_book1_animation",
+                    "/library/models-credits"
+                  );
                 }
               : null
           }
@@ -5560,8 +5563,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>Credits</h3>
-                <img src={ModelsCreditsPNG} alt="Credits" />
+                <h3>Models Credits</h3>
+                <img src={ModelsCreditsPNG} alt="Models Credits" />
               </div>
             </Html>
           ) : (
@@ -5572,7 +5575,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              Credits
+              Models Credits
             </Text>
           )}
         </group>

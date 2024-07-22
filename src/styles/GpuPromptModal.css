@@ -13,23 +13,23 @@
 
 .gpu-modal {
   background: #fff; /* White background */
-  padding: 30px; /* More padding for a nicer look */
-  border-radius: 10px; /* Slightly more rounded corners */
+  padding: 40px; /* Increased padding */
+  border-radius: 15px; /* Slightly more rounded corners */
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  max-width: 400px; /* Limit the width */
+  max-width: 500px; /* Increased max-width */
   font-family: "MedievalSharp", cursive; /* Apply the font family */
 }
 
 .gpu-modal h2 {
-  margin-bottom: 15px; /* Less margin for tighter spacing */
-  font-size: 1.8em; /* Slightly larger font */
+  margin-bottom: 20px; /* Less margin for tighter spacing */
+  font-size: 2em; /* Slightly larger font */
   color: #b8e2f5; /* Updated color for the heading */
 }
 
 .gpu-modal p {
-  margin-bottom: 20px;
-  font-size: 1em; /* Standard font size */
+  margin-bottom: 25px;
+  font-size: 1.2em; /* Larger font size */
   color: #666; /* Gray color for better readability */
 }
 
@@ -39,8 +39,8 @@
 }
 
 .gpu-modal-buttons button {
-  padding: 12px 25px; /* Original padding */
-  font-size: 1em; /* Original font size */
+  padding: 15px 30px; /* Increased padding */
+  font-size: 1.2em; /* Larger font size */
   cursor: pointer;
   background-color: #333; /* Solid color background */
   color: white; /* White text color */
@@ -56,8 +56,18 @@
 }
 
 @media (max-width: 768px) {
+  .gpu-modal {
+    padding: 30px; /* Adjust padding for smaller screens */
+    max-width: 90%; /* Adjust width for smaller screens */
+  }
+  .gpu-modal h2 {
+    font-size: 1.8em; /* Adjust font size for smaller screens */
+  }
+  .gpu-modal p {
+    font-size: 1.1em; /* Adjust font size for smaller screens */
+  }
   .gpu-modal-buttons button {
-    padding: 15px 30px; /* Adjust padding for smaller screens */
+    padding: 12px 25px; /* Adjust padding for smaller screens */
     font-size: 1em; /* Adjust font size for smaller screens */
   }
 }
