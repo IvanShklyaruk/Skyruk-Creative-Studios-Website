@@ -43,8 +43,14 @@ const models = [
 ];
 
 const ai = [
-  { name: "???", link: "/library/preview" },
-  { name: "???", link: "/library/preview" },
+  {
+    name: "Face Detection",
+    link: "https://ivanshklyaruk.github.io/Face-Detection/",
+  },
+  {
+    name: "Gesture-Recognition",
+    link: "https://ivanshklyaruk.github.io/Gesture-Recognition/",
+  },
   { name: "???", link: "/library/preview" },
   { name: "???", link: "/library/preview" },
   { name: "???", link: "/library/preview" },
