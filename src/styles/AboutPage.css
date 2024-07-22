@@ -27,33 +27,33 @@
   z-index: 1;
   margin-top: -8.4vw;
   margin-bottom: -6.1vw;
-  transform: scale(0.55); /* Adjusted scale for responsiveness */
+  transform: scale(0.55);
 }
 
 .about-centered-content {
   text-align: center;
   color: #b8e2f5;
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
-  padding: 2vw; /* Use viewport width */
-  border-radius: 1vw; /* Use viewport width */
-  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2vw;
+  border-radius: 1vw;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
   animation: about-fade-in 1.5s ease-in-out;
 }
 
 .about-centered-content h1 {
-  font-size: 4.8vw; /* Use viewport width */
+  font-size: 4.8vw;
   font-weight: bold;
   color: #b8e2f5;
   margin: 0;
-  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7);
   font-family: "MedievalSharp", cursive;
 }
 
 .about-centered-content p {
-  font-size: 2vw; /* Use viewport width */
+  font-size: 2vw;
   color: white;
-  margin-top: 1vw; /* Use viewport width */
-  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  margin-top: 1vw;
+  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7);
   font-family: "MedievalSharp", cursive;
 }
 
@@ -66,7 +66,6 @@
   }
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   .about-content {
     margin-top: -29vw;
@@ -74,11 +73,11 @@
   }
 
   .about-centered-content h1 {
-    font-size: 7vw; /* Adjust font size for medium screens */
+    font-size: 7vw;
   }
 
   .about-centered-content p {
-    font-size: 3.5vw; /* Adjust font size for medium screens */
+    font-size: 3.5vw;
   }
 }
 
@@ -89,11 +88,11 @@
   }
 
   .about-centered-content h1 {
-    font-size: 8vw; /* Adjust font size for smaller screens */
+    font-size: 8vw;
   }
 
   .about-centered-content p {
-    font-size: 4vw; /* Adjust font size for smaller screens */
+    font-size: 4vw;
   }
 }
 
@@ -104,10 +103,10 @@
   }
 
   .about-centered-content h1 {
-    font-size: 10vw; /* Adjust font size for very small screens */
+    font-size: 10vw;
   }
 
   .about-centered-content p {
-    font-size: 5vw; /* Adjust font size for very small screens */
+    font-size: 5vw;
   }
 }

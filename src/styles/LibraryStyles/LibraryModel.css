@@ -19,7 +19,7 @@
   font-style: normal;
   pointer-events: auto;
   white-space: nowrap;
-  opacity: 0; /* Set initial opacity to 0 */
+  opacity: 0;
   animation: fade-in 0.5s ease-in-out forwards 1s;
 }
 
@@ -44,7 +44,7 @@
   font-size: 22px;
   font-weight: 400;
   font-style: normal;
-  opacity: 0; /* Set initial opacity to 0 */
+  opacity: 0;
   animation: fade-in 1s forwards;
   animation-delay: 1s;
 }
@@ -53,11 +53,11 @@
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-  padding: 1rem; /* Increase padding for better spacing */
+  padding: 1rem;
   text-align: center;
-  pointer-events: none; /* Ensure it doesn't capture pointer events */
+  pointer-events: none;
   font-family: "MedievalSharp", cursive;
-  font-size: 1.4rem; /* Increase font size */
+  font-size: 1.4rem;
 }
 
 .library-hover-info h3 {
@@ -65,7 +65,7 @@
 }
 
 .library-hover-info img {
-  max-width: 255px; /* Increase size of the image */
+  max-width: 255px;
   height: auto;
   display: block;
   margin: 0 auto;

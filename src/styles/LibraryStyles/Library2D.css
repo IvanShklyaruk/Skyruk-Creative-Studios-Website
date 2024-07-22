@@ -1,4 +1,3 @@
-/* Keyframes for fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -17,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222; /* Fallback background color */
+  background-color: #222;
   font-family: "MedievalSharp", cursive;
 }
 
@@ -42,16 +41,16 @@
   width: 100%;
   color: white;
   text-align: center;
-  padding: 20px; /* Optional padding for better spacing */
+  padding: 20px;
   box-sizing: border-box;
 }
 
 .library-2d-options,
 .library-2d-sub-options-container {
-  background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
   font-family: "MedievalSharp", cursive;
 }
 
@@ -65,9 +64,9 @@
 .library-2d-sub-option {
   margin: 20px 0;
   padding: 25px 60px;
-  background-color: #333; /* Solid color background */
+  background-color: #333;
   color: white;
-  border: 0.15vw solid #b8e2f5; /* Updated border color */
+  border: 0.15vw solid #b8e2f5;
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
@@ -81,7 +80,7 @@
 
 .library-2d-option:hover,
 .library-2d-sub-option:hover {
-  background-color: #555; /* Slightly lighter on hover */
+  background-color: #555;
   transform: scale(1.05);
 }
 
@@ -96,9 +95,9 @@
 .library-2d-back-button {
   margin-bottom: 20px;
   padding: 20px 40px;
-  background-color: #333; /* Solid color background */
+  background-color: #333;
   color: white;
-  border: 0.15vw solid #b8e2f5; /* Updated border color */
+  border: 0.15vw solid #b8e2f5;
   border-radius: 10px;
   cursor: pointer;
   font-size: 1.3em;
@@ -108,7 +107,7 @@
 }
 
 .library-2d-back-button:hover {
-  background-color: #555; /* Slightly lighter on hover */
+  background-color: #555;
   transform: scale(1.05);
 }
 

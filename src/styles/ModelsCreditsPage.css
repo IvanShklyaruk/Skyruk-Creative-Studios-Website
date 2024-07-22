@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #333; /* Adjust text color as needed */
+  color: #333;
 }
 
 .models-credits-background-image {
@@ -19,29 +19,29 @@
 
 .models-credits-content {
   z-index: 1;
-  padding: 2vw; /* Adjust padding using vw */
-  width: 80vw; /* Adjust width using vw */
+  padding: 2vw;
+  width: 80vw;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 1vw; /* Adjust border-radius using vw */
-  margin: 2vw 0; /* Adjust margin using vw */
-  overflow-y: auto; /* Make content scrollable */
-  max-height: 70vh; /* Adjust height as needed to allow scrolling */
+  border-radius: 1vw;
+  margin: 2vw 0;
+  overflow-y: auto;
+  max-height: 70vh;
 }
 
 .models-credits-description {
   font-size: 18px;
-  margin-top: 1vw; /* Adjust margin-top using vw */
-  text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
-  width: 25vw; /* Adjust width using vw */
-  word-wrap: break-word; /* Ensure text wraps properly */
+  margin-top: 1vw;
+  text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.5);
+  width: 25vw;
+  word-wrap: break-word;
 }
 
 .models-credits-section {
-  margin-top: 2vw; /* Adjust margin-top using vw */
+  margin-top: 2vw;
 }
 
 .models-credits-section h2 {
-  margin-bottom: 1vw; /* Adjust margin-bottom using vw */
+  margin-bottom: 1vw;
 }
 
 .models-credits-section ul {
@@ -50,7 +50,7 @@
 }
 
 .models-credits-section ul li {
-  margin-bottom: 1vw; /* Adjust margin-bottom using vw */
+  margin-bottom: 1vw;
 }
 
 .models-credits-section ul li strong {
