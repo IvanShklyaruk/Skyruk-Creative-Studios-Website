@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   color: #333;
+  font-family: "MedievalSharp", cursive;
 }
 
 .models-credits-background-image {
@@ -18,18 +19,19 @@
   z-index: 1;
   padding: 2vw;
   width: 80vw;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 1vw;
   margin: 2vw 0;
   overflow-y: auto;
   max-height: 73.5vh;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.5);
 }
 
 .models-credits-description {
   font-size: 18px;
   margin-top: 1vw;
   text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.5);
-  width: 25vw;
+  width: 100%;
   word-wrap: break-word;
 }
 
@@ -39,18 +41,33 @@
 
 .models-credits-section h2 {
   margin-bottom: 1vw;
+  text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.5);
 }
 
 .models-credits-section ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .models-credits-section ul li {
-  margin-bottom: 1vw;
+  margin-bottom: 1.5vw;
+  padding: 1vw;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.5vw;
+  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2);
 }
 
 .models-credits-section ul li strong {
-  display: block;
   font-weight: bold;
+}
+
+.models-credits-section ul li a {
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.models-credits-section ul li a:hover {
+  color: #0056b3;
 }

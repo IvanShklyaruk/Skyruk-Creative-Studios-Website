@@ -2,8 +2,6 @@ import React from "react";
 import Logo from "../assets/SkyrukLogo.png";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import TikTokIcon from "@mui/icons-material/LibraryMusic";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -19,20 +17,6 @@ const Navbar = () => {
         <Link to="/library">Library</Link>
         <Link to="/about">About</Link>
         <div className="socialIcons">
-          {/* <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            href="https://www.tiktok.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TikTokIcon />
-          </a> */}
           <a
             href="https://github.com/IvanShklyaruk"
             target="_blank"

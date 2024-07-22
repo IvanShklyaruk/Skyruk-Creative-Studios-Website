@@ -34,6 +34,11 @@
   text-decoration: none;
   margin: 0 1.5vw;
   font-size: 1.1vw;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: white;
 }
 
 .navbar .rightSide button {
@@ -41,6 +46,10 @@
   border: none;
   color: #b8e2f5;
   cursor: pointer;
+}
+
+.navbar .rightSide button:hover {
+  color: white;
 }
 
 .navbar .socialIcons {
@@ -55,10 +64,15 @@
   color: #b8e2f5;
   margin: 0 0.5vw;
   font-size: 2vw;
+  transition: color 0.3s;
+}
+
+.navbar .socialIcons a:hover {
+  color: white;
 }
 
 .navbar .socialIcons a svg {
-  font-size: inherit;
+  font-size: 2vw; /* Adjusted value */
   cursor: pointer;
 }
 
@@ -74,6 +88,10 @@
   .navbar .socialIcons a {
     font-size: 2.1vw;
   }
+
+  .navbar .socialIcons a svg {
+    font-size: 2.1vw; /* Adjusted value */
+  }
 }
 
 @media (max-width: 768px) {
@@ -88,6 +106,10 @@
   .navbar .socialIcons a {
     font-size: 3vw;
   }
+
+  .navbar .socialIcons a svg {
+    font-size: 3vw; /* Adjusted value */
+  }
 }
 
 @media (max-width: 480px) {
@@ -101,5 +123,9 @@
 
   .navbar .socialIcons a {
     font-size: 4.1vw;
+  }
+
+  .navbar .socialIcons a svg {
+    font-size: 4.1vw; /* Adjusted value */
   }
 }
