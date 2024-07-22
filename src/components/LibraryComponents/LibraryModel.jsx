@@ -5357,11 +5357,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[4.349, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.349, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5425,11 +5425,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               Tesla Slideshow
             </Text>
@@ -5502,7 +5502,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               fontSize={1.65} // Adjust font size as needed
               font={MedievalFont}
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              color="black"
             >
               Three Worlds
             </Text>
@@ -5571,11 +5571,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[4.674, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.674, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               Models Credits
             </Text>
@@ -5641,11 +5641,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[4.674, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.674, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5706,11 +5706,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5776,11 +5776,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[4.674, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.674, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5849,11 +5849,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[4.348, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.348, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               Gesture Recognition
             </Text>
@@ -5917,11 +5917,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               Face Detection
             </Text>
