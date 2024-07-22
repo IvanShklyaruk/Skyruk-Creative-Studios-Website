@@ -43,6 +43,7 @@ const LibraryPage = () => {
       setShowSlider(false);
       setIs3D(false); // Ensure 3D doesn't load on smaller screens
       setHasDedicatedGPU(false); // Ensure 3D doesn't load on smaller screens
+      sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(false)); // Update session storage
     }
   };
 
@@ -61,6 +62,28 @@ const LibraryPage = () => {
       window.location.reload(); // Reload the page if toggling to 3D for the first time
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      if (width < 1280 || height < 800) {
+        setShowSlider(false);
+        if (is3D) {
+          setIs3D(false);
+          setHasDedicatedGPU(false);
+          sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(false));
+        }
+      } else {
+        setShowSlider(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [is3D]);
 
   if (hasDedicatedGPU === null) {
     return <GpuPromptModal onConfirm={handleConfirm} />;
