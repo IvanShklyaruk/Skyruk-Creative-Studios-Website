@@ -9,17 +9,23 @@ const games = [
     link: "https://ivanshklyaruk.github.io/Wordle-Clone/",
   },
   { name: "Magic Match", link: "https://ivanshklyaruk.github.io/Magic-Match/" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+  { name: "Chess", link: "https://ivanshklyaruk.github.io/Chess/" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
 const apps = [
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+  {
+    name: "YouTube Clone",
+    link: "https://ivanshklyaruk.github.io/YouTube-Clone/",
+  },
+  {
+    name: "Netflix Clone",
+    link: "https://ivanshklyaruk.github.io/Netflix-Clone/",
+  },
+  { name: "Weather App", link: "https://ivanshklyaruk.github.io/Weather-App/" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
 const models = [
@@ -28,24 +34,27 @@ const models = [
     name: "Three Worlds",
     link: "https://ivanshklyaruk.github.io/Three-Worlds/",
   },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+  {
+    name: "Tesla Slideshow",
+    link: "https://ivanshklyaruk.github.io/Tesla-Slideshow/",
+  },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
-const scrapers = [
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
-  { name: "???", link: "#" },
+const ai = [
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
+  { name: "???", link: "/library/preview" },
 ];
 
 const categories = {
   games,
   apps,
   models,
-  scrapers,
+  ai,
 };
 
 export const Library2D = () => {
@@ -104,11 +113,11 @@ export const Library2D = () => {
             </div>
             <div
               className="library-2d-option"
-              onClick={() => handleOptionClick("scrapers")}
+              onClick={() => handleOptionClick("ai")}
               role="button"
-              aria-label="Scrapers"
+              aria-label="AI"
             >
-              Scrapers
+              AI
             </div>
           </div>
         ) : (

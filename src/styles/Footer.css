@@ -12,7 +12,7 @@
   flex-direction: column;
   font-family: "MedievalSharp", cursive; /* Use MedievalSharp font */
   font-size: 0.79vw; /* Adjust icon size */
-  z-index: 2;
+  z-index: 3;
 }
 
 .footer p {
