@@ -29,7 +29,7 @@ const apps = [
 ];
 
 const models = [
-  { name: "Credits", link: "/library/credits" },
+  { name: "Credits", link: "/library/models-credits" },
   {
     name: "Three Worlds",
     link: "https://ivanshklyaruk.github.io/Three-Worlds/",
