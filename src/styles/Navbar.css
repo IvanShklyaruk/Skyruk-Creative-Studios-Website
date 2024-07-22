@@ -5,9 +5,10 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 1vh;
+  padding-bottom: 0.1;
   flex-shrink: 0;
   font-family: "MedievalSharp", cursive;
-  color: #b8e2f5;
+  color: #6a818b;
   z-index: 3;
   position: relative;
 }
@@ -19,7 +20,7 @@
 }
 
 .navbar .leftSide img {
-  width: 3.2vw;
+  width: 2.9vw;
 }
 
 .navbar .rightSide {
