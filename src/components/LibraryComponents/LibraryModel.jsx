@@ -4,6 +4,7 @@ Command: npx gltfjsx@6.2.17 public/models/library.glb
 */
 
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
@@ -29,6 +30,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const [hoveredObject, setHoveredObject] = useState(null);
   const [hoveredPosition, setHoveredPosition] = useState(null);
   const [showBackLabel, setShowBackLabel] = useState(false);
+  const navigate = useNavigate();
 
   const handleMouseEnter = (e, bookName) => {
     setHoveredObject(bookName);
@@ -51,7 +53,11 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
       actions[animationName].clampWhenFinished = true;
 
       setTimeout(() => {
-        window.open(link, "_blank");
+        if (link.startsWith("http")) {
+          window.open(link, "_blank");
+        } else {
+          navigate(link);
+        }
         actions[animationName].stop();
       }, 1100);
     }
@@ -4583,7 +4589,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Wordle Clone</h3>
-                <img src={WordlePNG} alt="Wordle" />
+                <img src={WordlePNG} alt="Wordle Clone" />
               </div>
             </Html>
           ) : (
@@ -4900,7 +4906,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book1_animation", "/library/preview");
+                  handleClick(
+                    "shelf2_book1_animation",
+                    "https://ivanshklyaruk.github.io/YouTube-Clone/"
+                  );
                 }
               : null
           }
@@ -4929,8 +4938,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>YouTube Clone</h3>
+                <img src={YouTubeClonePNG} alt="YouTube Clone" />
               </div>
             </Html>
           ) : (
@@ -4941,7 +4950,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              YouTube Clone
             </Text>
           )}
         </group>
@@ -4970,7 +4979,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book2_animation", "/library/preview");
+                  handleClick(
+                    "shelf2_book2_animation",
+                    "https://ivanshklyaruk.github.io/Netflix-Clone/"
+                  );
                 }
               : null
           }
@@ -4994,8 +5006,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Netflix Clone</h3>
+                <img src={NetflixClonePNG} alt="Netflix Clone" />
               </div>
             </Html>
           ) : (
@@ -5006,7 +5018,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Netflix Clone
             </Text>
           )}
         </group>
@@ -5035,7 +5047,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book3_animation", "/library/preview");
+                  handleClick(
+                    "shelf2_book3_animation",
+                    "https://ivanshklyaruk.github.io/Weather-App/"
+                  );
                 }
               : null
           }
@@ -5064,8 +5079,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Weather App</h3>
+                <img src={WeatherAppPNG} alt="Weather App" />
               </div>
             </Html>
           ) : (
@@ -5076,7 +5091,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Weather App
             </Text>
           )}
         </group>
@@ -6009,9 +6024,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             <Html className="library-html-style" position={[25.7, -56.5, 39]}>
               <div
                 onClick={() => setShelf("shelf4")}
-                className="library-apps-label"
+                className="library-ai-label"
               >
-                Apps
+                AI
               </div>
             </Html>
           ) : (
@@ -6136,9 +6151,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             <Html className="library-html-style" position={[22, 55.7, 10]}>
               <div
                 onClick={() => setShelf("shelf2")}
-                className="library-ai-label"
+                className="library-apps-label"
               >
-                AI
+                Apps
               </div>
             </Html>
           ) : (
