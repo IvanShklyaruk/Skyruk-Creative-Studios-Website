@@ -9,8 +9,13 @@ import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
 import MagicMatchPNG from "../../assets/MagicMatch.png";
+import ChessPNG from "../../assets/Chess.png";
+import YouTubeClonePNG from "../../assets/YouTubeClone.png";
+import NetflixClonePNG from "../../assets/NetflixClone.png";
+import WeatherAppPNG from "../../assets/WeatherApp.png";
 import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
 import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
+import TeslaSlideshowPNG from "../../assets/TeslaSlideshow.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
@@ -4687,7 +4692,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book3_animation", "/library/preview");
+                  handleClick(
+                    "shelf1_book3_animation",
+                    "https://ivanshklyaruk.github.io/Chess/"
+                  );
                 }
               : null
           }
@@ -4716,8 +4724,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Chess</h3>
+                <img src={ChessPNG} alt="Chess" />
               </div>
             </Html>
           ) : (
@@ -4728,7 +4736,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Chess
             </Text>
           )}
         </group>
@@ -5367,7 +5375,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book3_animation", "/library/preview");
+                  handleClick(
+                    "shelf3_book3_animation",
+                    "https://ivanshklyaruk.github.io/Tesla-Slideshow/"
+                  );
                 }
               : null
           }
@@ -5391,8 +5402,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <h3>Tesla Slideshow</h3>
+                <img src={TeslaSlideshowPNG} alt="Tesla Slideshow" />
               </div>
             </Html>
           ) : (
@@ -5403,7 +5414,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Tesla Slideshow
             </Text>
           )}
         </group>
@@ -6125,9 +6136,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             <Html className="library-html-style" position={[22, 55.7, 10]}>
               <div
                 onClick={() => setShelf("shelf2")}
-                className="library-scrapers-label"
+                className="library-ai-label"
               >
-                Scrapers
+                AI
               </div>
             </Html>
           ) : (
