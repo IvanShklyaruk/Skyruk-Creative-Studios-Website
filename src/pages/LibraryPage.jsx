@@ -37,7 +37,7 @@ const LibraryPage = () => {
   const checkScreenSize = () => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    if (width >= 1280 && height >= 800) {
+    if (width >= 1100 && height >= 600) {
       setShowSlider(true);
     } else {
       setShowSlider(false);
@@ -67,7 +67,7 @@ const LibraryPage = () => {
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      if (width < 1280 || height < 800) {
+      if (width < 1100 || height < 600) {
         setShowSlider(false);
         if (is3D) {
           setIs3D(false);
