@@ -67,7 +67,7 @@ const LibraryPage = () => {
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      if (width < 1280 || height < 800) {
+      if (width < 1000 || height < 800) {
         setShowSlider(false);
         if (is3D) {
           setIs3D(false);
