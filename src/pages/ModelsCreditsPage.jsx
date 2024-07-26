@@ -7,12 +7,12 @@ import "../styles/ModelsCreditsPage.css";
 const ModelsCreditsPage = () => {
   return (
     <div className="models-credits-page">
+      <Navbar />
       <img
         src={BackgroundImage}
         alt="Background"
-        className="background-image"
+        className="models-credits-background-image"
       />
-      <Navbar />
       <div className="models-credits-content">
         <h1>Models Credit Page</h1>
         <p className="models-credits-description">
@@ -22,7 +22,7 @@ const ModelsCreditsPage = () => {
           to bring their projects to life. Their contributions are invaluable
           and deeply appreciated.
         </p>
-        <div className="credits-section">
+        <div className="models-credits-section">
           <h2>Scene: Library</h2>
           <p>This scene includes assets sourced from the following:</p>
           <ul>
@@ -315,7 +315,7 @@ const ModelsCreditsPage = () => {
             </li>
           </ul>
         </div>
-        <div className="credits-section">
+        <div className="models-credits-section">
           <h2>Scene: Three Worlds</h2>
           <p>This scene includes assets sourced from the following:</p>
           <ul>
@@ -343,8 +343,358 @@ const ModelsCreditsPage = () => {
             </li>
           </ul>
         </div>
+        <div className="models-credits-section">
+          <h2>Scene: Tesla Slideshow</h2>
+          <p>This scene includes assets sourced from the following:</p>
+          <ul>
+            <li>
+              <strong>Asset Name:</strong> Cactus
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Poly%20by%20Google"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly by Google
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/9UCcl_W0Xq3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Picnic Table
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/J-Toastie"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                J-Toastie
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/GQieALI2C4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Kayak
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Poly%20by%20Google"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly by Google
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/8d-cgFdVEVN"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Three way traffic light
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Poly%20by%20Google"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly by Google
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/ayAwgj82oUR"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Tires
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/mmq7GmG1AK"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Wall desk speakers
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Poly%20by%20Google"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly by Google
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/fhFGDsv5jje"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Cargo Train Container
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/Quaternius"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quaternius
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://poly.pizza/m/AILdezfcv1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Cone
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/J-Toastie"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                J-Toastie
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/WoXpAJT0oD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Concrete Barrier
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://poly.pizza/u/J-Toastie"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                J-Toastie
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://poly.pizza/m/5Cg2oW7EFn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poly Pizza
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Cybertruck
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://market.pmnd.rs/creator/hashikemu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                hashikemu
+              </a>{" "}
+              via{" "}
+              <a
+                href="https://market.pmnd.rs/model/cybertruck"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                pmndrs market
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Tesla Model 3
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://sketchfab.com/David_Holiday"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                David_Holiday
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://sketchfab.com/3d-models/tesla-model-3-123c10f376ec4f18b93c73afc382808b"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sketchfab
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+            <li>
+              <strong>Asset Name:</strong> Tesla Semi
+              <br />
+              <strong>Source:</strong>{" "}
+              <a
+                href="https://sketchfab.com/Aleksei.Rozumnyi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Aleksei Rozumnyi
+              </a>{" "}
+              [CC-BY] via{" "}
+              <a
+                href="https://sketchfab.com/3d-models/tesla-semi-39ffc7c746184e0c9ebd5bbcd0b405dd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sketchfab
+              </a>
+              <br />
+              <strong>License:</strong>{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC-BY
+              </a>
+              <br />
+              <strong>Modified:</strong> No
+            </li>
+          </ul>
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

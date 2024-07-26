@@ -1,19 +1,20 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import BackgroundImage from "../assets/HomePageBackgroundImage.png"; // Ensure the image path is correct
+import AboutUsPageBackgroundImage from "../assets/AboutUsPageBackgroundImage.png";
 import "../styles/AboutPage.css";
+
 const AboutPage = () => {
   return (
     <div className="about-page">
       <Navbar />
       <img
-        src={BackgroundImage}
+        src={AboutUsPageBackgroundImage}
         alt="Background"
-        className="background-image"
+        className="about-background-image"
       />
       <div className="about-content">
-        <div className="about-centeredContent">
+        <div className="about-centered-content">
           <h1>About Skyruk Creative Studios</h1>
           <p>
             Hello! I am a passionate software developer dedicated to creating
@@ -35,12 +36,8 @@ const AboutPage = () => {
             envelope with every project I undertake.
           </p>
           <p>
-            I find this method of delivery incredibly exciting, as it provides a
-            continuous source of inspiration and encouragement. It drives me to
-            create more awesome stuff, knowing that my work is appreciated and
-            that there is always room for improvement. Thank you for visiting
-            Skyruk Creative Studios, and I hope you find joy and inspiration in
-            exploring my projects :)
+            Thank you for visiting Skyruk Creative Studios, and I hope you find
+            joy and inspiration in exploring my projects :)
           </p>
         </div>
       </div>

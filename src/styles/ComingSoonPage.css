@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 
-.background-image {
+.coming-soon-background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -25,68 +25,68 @@
   flex-grow: 1;
   position: relative;
   z-index: 1;
-  padding-bottom: 10vh; /* Use viewport height */
-  transform: scale(0.8); /* Adjusted scale for responsiveness */
+  padding-bottom: 10vh;
+  transform: scale(0.8);
 }
 
-.centeredContent {
+.coming-soon-centered-content {
   text-align: center;
   color: #b8e2f5;
   font-family: "MedievalSharp", cursive;
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
-  padding: 2vw; /* Use viewport width */
-  border-radius: 1vw; /* Use viewport width */
-  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5); /* Use viewport width */
-  animation: fadeIn 1.5s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2vw;
+  border-radius: 1vw;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
+  animation: coming-soon-fade-in 1.5s ease-in-out;
 }
 
-.centeredContent h1 {
-  font-size: 6vw; /* Use viewport width */
+.coming-soon-centered-content h1 {
+  font-size: 6vw;
   font-weight: bold;
   color: #b8e2f5;
   margin: 0;
   border: none;
   text-decoration: none;
-  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+  text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.7);
 }
 
-.centeredContent p {
-  font-size: 3vw; /* Use viewport width */
-  color: #b8e2f5;
-  margin-top: 1vw; /* Use viewport width */
-  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7); /* Use viewport width */
+.coming-soon-centered-content p {
+  font-size: 3vw;
+  color: white;
+  margin-top: 1vw;
+  text-shadow: 0.1vw 0.1vw 0.3vw rgba(0, 0, 0, 0.7);
 }
 
-.centeredContent button {
-  background-color: #b8e2f5;
-  color: black;
-  border: none;
-  padding: 1.5vw 3vw; /* Use viewport width */
-  border-radius: 2.5vw; /* Use viewport width */
+.coming-soon-centered-content button {
+  background-color: #333;
+  color: white;
+  border: 0.15vw solid #b8e2f5;
+  padding: 1.5vw 3vw;
+  border-radius: 2.5vw;
   text-transform: uppercase;
-  letter-spacing: 0.1vw; /* Use viewport width */
+  letter-spacing: 0.1vw;
   font-size: 1.5vw;
   font-family: "MedievalSharp", cursive;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2); /* Use viewport width */
+  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  margin-top: 2vw; /* Use viewport width */
+  margin-top: 2vw;
 }
 
-.centeredContent button:hover {
-  background-color: #94c3db;
-  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.3); /* Use viewport width */
+.coming-soon-centered-content button:hover {
+  background-color: #555;
+  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
 
-.centeredContent button:active {
-  background-color: #82a3b5;
-  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2); /* Use viewport width */
+.coming-soon-centered-content button:active {
+  background-color: #555;
+  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.2);
   transform: scale(0.95);
 }
 
-@keyframes fadeIn {
+@keyframes coming-soon-fade-in {
   from {
     opacity: 0;
   }
@@ -97,44 +97,43 @@
 
 /* Media Queries */
 @media (max-width: 1024px) {
-  .centeredContent h1 {
-    font-size: 7vw; /* Adjust font size for medium screens */
+  .coming-soon-centered-content h1 {
+    font-size: 7vw;
   }
 
-  .centeredContent p {
-    font-size: 3.5vw; /* Adjust font size for medium screens */
+  .coming-soon-centered-content p {
+    font-size: 3.5vw;
   }
 
-  .centeredContent button {
-    font-size: 1.7vw; /* Adjust font size for medium screens */
+  .coming-soon-centered-content button {
+    font-size: 1.7vw;
   }
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
-  .centeredContent h1 {
-    font-size: 8vw; /* Adjust font size for smaller screens */
+  .coming-soon-centered-content h1 {
+    font-size: 8vw;
   }
 
-  .centeredContent p {
-    font-size: 4vw; /* Adjust font size for smaller screens */
+  .coming-soon-centered-content p {
+    font-size: 4vw;
   }
 
-  .centeredContent button {
+  .coming-soon-centered-content button {
     font-size: 2vw;
   }
 }
 
 @media (max-width: 480px) {
-  .centeredContent h1 {
-    font-size: 10vw; /* Adjust font size for very small screens */
+  .coming-soon-centered-content h1 {
+    font-size: 10vw;
   }
 
-  .centeredContent p {
-    font-size: 5vw; /* Adjust font size for very small screens */
+  .coming-soon-centered-content p {
+    font-size: 5vw;
   }
 
-  .centeredContent button {
+  .coming-soon-centered-content button {
     font-size: 2.5vw;
   }
 }

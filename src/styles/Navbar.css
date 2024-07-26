@@ -1,37 +1,57 @@
 .navbar {
   width: 100%;
-  background-color: transparent; /* Make the background transparent */
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1.5vh; /* Increase padding for more spacing */
-  flex-shrink: 0; /* Prevent shrinking */
+  padding-top: 1vh;
+  padding-bottom: 0.11;
+  flex-shrink: 0;
   font-family: "MedievalSharp", cursive;
-  color: #b8e2f5; /* Set text color */
-  z-index: 2;
+  color: #6a818b;
+  z-index: 3;
+  position: relative;
 }
 
 .navbar .leftSide {
   display: flex;
   align-items: center;
-  margin-left: 3.9vw; /* Adjust margin for better spacing */
+  margin-left: 2vw;
 }
 
 .navbar .leftSide img {
-  width: 4vw; /* Adjust logo size */
+  width: 2.9vw;
+}
+
+.navbar .viewToggle {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5vw;
+  font-size: 1.1vw;
+  color: #b8e2f5;
+}
+
+.navbar .viewToggle .viewLabel {
+  margin: 0 0.5vw;
+  font-size: 1.2vw;
 }
 
 .navbar .rightSide {
   display: flex;
   align-items: center;
-  margin-right: 4.5vw; /* Adjust margin for better spacing */
+  margin-right: 2vw;
 }
 
 .navbar a {
-  color: #b8e2f5; /* Ensure links are visible */
+  color: #b8e2f5;
   text-decoration: none;
-  margin: 0 2vw; /* Adjust margin for better spacing */
-  font-size: 1.1vw; /* Adjust font size */
+  margin: 0 1.5vw;
+  font-size: 1.1vw;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: white;
 }
 
 .navbar .rightSide button {
@@ -41,28 +61,37 @@
   cursor: pointer;
 }
 
+.navbar .rightSide button:hover {
+  color: white;
+}
+
 .navbar .socialIcons {
   display: flex;
   align-items: center;
-  margin-left: 1vw; /* Adjust margin for spacing */
+  margin-left: 1vw;
 }
 
 .navbar .socialIcons a {
   display: flex;
   align-items: center;
   color: #b8e2f5;
-  margin: 0 0.9vw;
-  font-size: 2vw; /* Adjust icon size */
+  margin: 0 0.5vw;
+  font-size: 2vw;
+  transition: color 0.3s;
+}
+
+.navbar .socialIcons a:hover {
+  color: white;
 }
 
 .navbar .socialIcons a svg {
-  font-size: inherit; /* Inherit font size from parent */
+  font-size: 2vw;
   cursor: pointer;
 }
 
 @media (max-width: 1024px) {
   .navbar .leftSide img {
-    width: 4.5vw; /* Adjust logo size */
+    width: 4.5vw;
   }
 
   .navbar a {
@@ -70,13 +99,17 @@
   }
 
   .navbar .socialIcons a {
-    font-size: 2.1vw; /* Adjust icon size */
+    font-size: 2.1vw;
+  }
+
+  .navbar .socialIcons a svg {
+    font-size: 2.1vw;
   }
 }
 
 @media (max-width: 768px) {
   .navbar .leftSide img {
-    width: 5vw; /* Adjust logo size */
+    width: 5vw;
   }
 
   .navbar a {
@@ -84,13 +117,17 @@
   }
 
   .navbar .socialIcons a {
-    font-size: 3vw; /* Adjust icon size */
+    font-size: 3vw;
+  }
+
+  .navbar .socialIcons a svg {
+    font-size: 3vw;
   }
 }
 
 @media (max-width: 480px) {
   .navbar .leftSide img {
-    width: 11vw; /* Adjust logo size */
+    width: 11vw;
   }
 
   .navbar a {
@@ -98,6 +135,10 @@
   }
 
   .navbar .socialIcons a {
-    font-size: 4.1vw; /* Adjust icon size */
+    font-size: 4.1vw;
+  }
+
+  .navbar .socialIcons a svg {
+    font-size: 4.1vw;
   }
 }

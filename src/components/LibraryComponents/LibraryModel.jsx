@@ -9,9 +9,16 @@ import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
 import WordlePNG from "../../assets/Wordle.png";
-import MagicMatchPNG from "../../assets/Wordle.png";
+import MagicMatchPNG from "../../assets/MagicMatch.png";
+import ChessPNG from "../../assets/Chess.png";
+import YouTubeClonePNG from "../../assets/YouTubeClone.png";
+import NetflixClonePNG from "../../assets/NetflixClone.png";
+import WeatherAppPNG from "../../assets/WeatherApp.png";
 import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
 import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
+import TeslaSlideshowPNG from "../../assets/TeslaSlideshow.png";
+import FaceDetectionPNG from "../../assets/FaceDetection.png";
+import GestureRecognitionPNG from "../../assets/GestureRecognition.png";
 import ComingSoonPNG from "../../assets/ComingSoon.png";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
@@ -20,109 +27,41 @@ import { useDevice } from "../../hooks/useDevice";
 export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
   const { scaleFactor } = useDevice();
   const group = useRef();
-  const navigate = useNavigate();
   const { nodes, materials, animations } = useGLTF("./models/library.glb");
   const { actions } = useAnimations(animations, group);
   const [hoveredObject, setHoveredObject] = useState(null);
   const [hoveredPosition, setHoveredPosition] = useState(null);
   const [showBackLabel, setShowBackLabel] = useState(false);
-
-  /* { Will keep for now if needed for future tests}
-
-  useEffect(() => {
-    // Perform any actions based on the shelf change
-    if (typeof shelf === "string") {
-      console.log(`LibraryModel received shelf: ${shelf}`);
-      // Add your logic here to respond to the shelf change
-    }
-  }, [shelf]);
-
-  const { animation } = useControls({
-    animation: {
-      value: "Idle",
-      options: Object.keys(actions),
-    },
-  });
-
-  useEffect(() => {
-    if (actions[animation]) {
-      actions[animation].setLoop(THREE.LoopOnce, 1); // Play only once
-      actions[animation].clampWhenFinished = true; // Stop at the last frame
-      actions[animation].play();
-    }
-    return () => {
-      if (actions[animation]) {
-        actions[animation].stop();
-      }
-    };
-  }, [animation, actions]);
-
-  */
+  const navigate = useNavigate();
 
   const handleMouseEnter = (e, bookName) => {
     setHoveredObject(bookName);
     if (e.intersections && e.intersections[0] && e.intersections[0].point) {
       setHoveredPosition(e.intersections[0].point);
     }
-
     document.body.style.cursor = "pointer";
-
-    if (e.object && e.object.parent) {
-      // Highlight all parts of the book except the text component
-      e.object.parent.traverse((child) => {
-        if (child.isMesh) {
-          if (child.material) {
-            child.material = child.material.clone();
-            if (child.material.emissive) {
-              child.material.emissive.set(0x444444);
-            }
-            child.material.emissiveIntensity = 2;
-          } else {
-            console.error("child.material is undefined", child);
-          }
-        }
-      });
-    } else {
-      console.error("e.object or e.object.parent is undefined", e.object);
-    }
   };
 
   const handleMouseLeave = (e) => {
     setHoveredObject(null);
     setHoveredPosition(null);
-
-    if (e.object && e.object.parent) {
-      // Reset highlight for all parts of the book except the text component
-      e.object.parent.traverse((child) => {
-        if (child.isMesh) {
-          if (child.material && child.material.emissive) {
-            child.material.emissive.set(0x000000);
-            child.material.emissiveIntensity = 0;
-          } else {
-            console.error(
-              "child.material or child.material.emissive is undefined",
-              child
-            );
-          }
-        }
-      });
-    } else {
-      console.error("e.object or e.object.parent is undefined", e.object);
-    }
-
     document.body.style.cursor = "default";
   };
 
-  const handleClick = (animationName, targetPath) => {
+  const handleClick = (animationName, link) => {
     if (actions[animationName]) {
       actions[animationName].reset().play();
       actions[animationName].setLoop(THREE.LoopOnce, 1);
       actions[animationName].clampWhenFinished = true;
 
-      // Set a timeout to navigate to the target path after 1 second
       setTimeout(() => {
-        navigate(targetPath);
-      }, 1000); // 1000 milliseconds = 1 second
+        if (link.startsWith("http")) {
+          window.open(link, "_blank");
+        } else {
+          navigate(link);
+        }
+        actions[animationName].stop();
+      }, 1100);
     }
   };
 
@@ -131,7 +70,6 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
       const timer = setTimeout(() => {
         setShowBackLabel(true);
       }, 100);
-
       return () => clearTimeout(timer);
     } else {
       setShowBackLabel(false);
@@ -161,7 +99,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     materials.mat12.toneMapped = false;
     materials.Sky.toneMapped = false;
 
-    // Cleanup function to restore original colors!
+    // Cleanup function to restore original colors
     return () => {
       materials["mat12.001"].color.copy(originalColors["mat12.001"]);
       materials["mat12.002"].color.copy(originalColors["mat12.002"]);
@@ -4617,7 +4555,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book1_animation", "/library/wordle");
+                  handleClick(
+                    "shelf1_book1_animation",
+                    "https://ivanshklyaruk.github.io/Wordle-Clone/"
+                  );
                 }
               : null
           }
@@ -4640,7 +4581,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Blue Book"]}
           />
 
-          {hoveredObject === "shelf1_book1" ? (
+          {hoveredObject === "shelf1_book1" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4648,9 +4589,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Wordle Clone</h3>
-                <img src={WordlePNG} alt="Wordle" />
+                <img src={WordlePNG} alt="Wordle Clone" />
               </div>
             </Html>
           ) : (
@@ -4691,7 +4632,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book2_animation", "/library/magic-match");
+                  handleClick(
+                    "shelf1_book2_animation",
+                    "https://ivanshklyaruk.github.io/Magic-Match/"
+                  );
                 }
               : null
           }
@@ -4706,7 +4650,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1086_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf1_book2" ? (
+          {hoveredObject === "shelf1_book2" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4714,18 +4658,18 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Magic Match</h3>
                 <img src={MagicMatchPNG} alt="Magic Match" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               Magic Match
             </Text>
@@ -4756,7 +4700,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf1_book3_animation", "/library/preview");
+                  handleClick(
+                    "shelf1_book3_animation",
+                    "https://ivanshklyaruk.github.io/Chess/"
+                  );
                 }
               : null
           }
@@ -4776,7 +4723,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1058_2.geometry}
             material={materials["Purple Book"]}
           />
-          {hoveredObject === "shelf1_book3" ? (
+          {hoveredObject === "shelf1_book3" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4784,9 +4731,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>Chess</h3>
+                <img src={ChessPNG} alt="Chess" />
               </div>
             </Html>
           ) : (
@@ -4797,7 +4744,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Chess
             </Text>
           )}
         </group>
@@ -4841,7 +4788,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1087_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf1_book4" ? (
+          {hoveredObject === "shelf1_book4" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4849,7 +4796,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4911,7 +4858,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1048_2.geometry}
             material={materials["Red Book"]}
           />
-          {hoveredObject === "shelf1_book5" ? (
+          {hoveredObject === "shelf1_book5" && shelf === "shelf1" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4919,7 +4866,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -4961,7 +4908,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book1_animation", "/library/preview");
+                  handleClick(
+                    "shelf2_book1_animation",
+                    "https://ivanshklyaruk.github.io/YouTube-Clone/"
+                  );
                 }
               : null
           }
@@ -4981,7 +4931,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1059_2.geometry}
             material={materials["Purple Book"]}
           />
-          {hoveredObject === "shelf2_book1" ? (
+          {hoveredObject === "shelf2_book1" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -4989,9 +4939,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>YouTube Clone</h3>
+                <img src={YouTubeClonePNG} alt="YouTube Clone" />
               </div>
             </Html>
           ) : (
@@ -5002,7 +4952,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              YouTube Clone
             </Text>
           )}
         </group>
@@ -5031,7 +4981,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book2_animation", "/library/preview");
+                  handleClick(
+                    "shelf2_book2_animation",
+                    "https://ivanshklyaruk.github.io/Netflix-Clone/"
+                  );
                 }
               : null
           }
@@ -5046,7 +4999,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1088_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf2_book2" ? (
+          {hoveredObject === "shelf2_book2" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5054,9 +5007,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>Netflix Clone</h3>
+                <img src={NetflixClonePNG} alt="Netflix Clone" />
               </div>
             </Html>
           ) : (
@@ -5067,7 +5020,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Netflix Clone
             </Text>
           )}
         </group>
@@ -5096,7 +5049,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf2_book3_animation", "/library/preview");
+                  handleClick(
+                    "shelf2_book3_animation",
+                    "https://ivanshklyaruk.github.io/Weather-App/"
+                  );
                 }
               : null
           }
@@ -5116,7 +5072,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1049_2.geometry}
             material={materials["Blue Book"]}
           />
-          {hoveredObject === "shelf2_book3" ? (
+          {hoveredObject === "shelf2_book3" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5124,9 +5080,9 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>Weather App</h3>
+                <img src={WeatherAppPNG} alt="Weather App" />
               </div>
             </Html>
           ) : (
@@ -5137,7 +5093,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              ???
+              Weather App
             </Text>
           )}
         </group>
@@ -5181,7 +5137,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1089_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf2_book4" ? (
+          {hoveredObject === "shelf2_book4" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5189,7 +5145,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5251,7 +5207,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1060_2.geometry}
             material={materials["Green Book"]}
           />
-          {hoveredObject === "shelf2_book5" ? (
+          {hoveredObject === "shelf2_book5" && shelf === "shelf2" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5259,7 +5215,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5316,7 +5272,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1091_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf3_book5" ? (
+          {hoveredObject === "shelf3_book5" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5324,7 +5280,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
@@ -5386,7 +5342,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1062_2.geometry}
             material={materials["Blue Book"]}
           />
-          {hoveredObject === "shelf3_book4" ? (
+          {hoveredObject === "shelf3_book4" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5394,18 +5350,18 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[4.349, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.349, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5436,7 +5392,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf3_book3_animation", "/library/preview");
+                  handleClick(
+                    "shelf3_book3_animation",
+                    "https://ivanshklyaruk.github.io/Tesla-Slideshow/"
+                  );
                 }
               : null
           }
@@ -5451,7 +5410,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1090_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf3_book3" ? (
+          {hoveredObject === "shelf3_book3" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5459,20 +5418,20 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>Tesla Slideshow</h3>
+                <img src={TeslaSlideshowPNG} alt="Tesla Slideshow" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
-              ???
+              Tesla Slideshow
             </Text>
           )}
         </group>
@@ -5503,7 +5462,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                   e.stopPropagation();
                   handleClick(
                     "shelf3_book2_animation",
-                    "/library/three-worlds"
+                    "https://ivanshklyaruk.github.io/Three-Worlds/"
                   );
                 }
               : null
@@ -5524,7 +5483,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1061_2.geometry}
             material={materials["Red Book"]}
           />
-          {hoveredObject === "shelf3_book2" ? (
+          {hoveredObject === "shelf3_book2" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5532,7 +5491,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>Three Worlds</h3>
                 <img src={ThreeWorldsPNG} alt="Three Worlds" />
               </div>
@@ -5543,7 +5502,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               fontSize={1.65} // Adjust font size as needed
               font={MedievalFont}
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              color="black"
             >
               Three Worlds
             </Text>
@@ -5597,7 +5556,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1051_2.geometry}
             material={materials["Cyan Book"]}
           />
-          {hoveredObject === "shelf3_book1" ? (
+          {hoveredObject === "shelf3_book1" && shelf === "shelf3" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5605,20 +5564,20 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>Credits</h3>
-                <img src={ModelsCreditsPNG} alt="Credits" />
+              <div className="library-hover-info">
+                <h3>Models Credits</h3>
+                <img src={ModelsCreditsPNG} alt="Models Credits" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[4.674, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.674, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
-              Credits
+              Models Credits
             </Text>
           )}
         </group>
@@ -5667,7 +5626,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1053_2.geometry}
             material={materials["Purple Book"]}
           />
-          {hoveredObject === "shelf4_book5" ? (
+          {hoveredObject === "shelf4_book5" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5675,18 +5634,18 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[4.674, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.674, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5732,7 +5691,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1093_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf4_book4" ? (
+          {hoveredObject === "shelf4_book4" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5740,18 +5699,18 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5802,7 +5761,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book2_Cube024_1052_2.geometry}
             material={materials["Red Book"]}
           />
-          {hoveredObject === "shelf4_book3" ? (
+          {hoveredObject === "shelf4_book3" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5810,18 +5769,18 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
+              <div className="library-hover-info">
                 <h3>???</h3>
                 <img src={ComingSoonPNG} alt="???" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[4.674, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.674, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
               ???
             </Text>
@@ -5852,7 +5811,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book2_animation", "/library/preview");
+                  handleClick(
+                    "shelf4_book2_animation",
+                    "https://ivanshklyaruk.github.io/Gesture-Recognition/"
+                  );
                 }
               : null
           }
@@ -5872,7 +5834,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.Book1_Cube025_1063_2.geometry}
             material={materials["Green Book"]}
           />
-          {hoveredObject === "shelf4_book2" ? (
+          {hoveredObject === "shelf4_book2" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5880,20 +5842,20 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>Gesture Recognition</h3>
+                <img src={GestureRecognitionPNG} alt="Gesture Recognition" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[4.348, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[4.348, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
-              ???
+              Gesture Recognition
             </Text>
           )}
         </group>
@@ -5922,7 +5884,10 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick("shelf4_book1_animation", "/library/preview");
+                  handleClick(
+                    "shelf4_book1_animation",
+                    "https://ivanshklyaruk.github.io/Face-Detection/"
+                  );
                 }
               : null
           }
@@ -5937,7 +5902,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             geometry={nodes.book3_Cube_1092_1.geometry}
             material={materials.White}
           />
-          {hoveredObject === "shelf4_book1" ? (
+          {hoveredObject === "shelf4_book1" && shelf === "shelf4" ? (
             <Html
               position={[
                 hoveredPosition.x,
@@ -5945,20 +5910,20 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
                 hoveredPosition.z - 10,
               ]}
             >
-              <div className="hover-info">
-                <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+              <div className="library-hover-info">
+                <h3>Face Detection</h3>
+                <img src={FaceDetectionPNG} alt="Face Detection" />
               </div>
             </Html>
           ) : (
             <Text
-              position={[3.827, 0, 0]} // Adjust position as needed
-              fontSize={1.65} // Adjust font size as needed
+              position={[3.827, 0, 0]}
+              fontSize={1.65}
               font={MedievalFont}
-              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
-              color="black" // Adjust color as needed
+              rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]}
+              color="black"
             >
-              ???
+              Face Detection
             </Text>
           )}
         </group>
@@ -5984,16 +5949,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.FF5722}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, -21, 40.5]}>
-              <div onClick={() => setShelf("shelf1")} className="games-label">
+            <Html className="library-html-style" position={[22, -21, 40.5]}>
+              <div
+                onClick={() => setShelf("shelf1")}
+                className="library-games-label"
+              >
                 Games
               </div>
             </Html>
           ) : (
             shelf === "shelf1" &&
             showBackLabel && (
-              <Html className="html-style" position={[22, 4, 65]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[22, 4, 65]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6061,16 +6032,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials.White}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, -56.5, 39]}>
-              <div onClick={() => setShelf("shelf4")} className="apps-label">
-                Apps
+            <Html className="library-html-style" position={[25.7, -56.5, 39]}>
+              <div
+                onClick={() => setShelf("shelf4")}
+                className="library-ai-label"
+              >
+                AI
               </div>
             </Html>
           ) : (
             shelf === "shelf4" &&
             showBackLabel && (
-              <Html className="html-style" position={[31.7, -55, 73.5]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[31.7, -55, 73.5]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6099,16 +6076,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Purple Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[25.7, 46.9, 29.5]}>
-              <div onClick={() => setShelf("shelf3")} className="models-label">
+            <Html className="library-html-style" position={[25.7, 46.9, 29.5]}>
+              <div
+                onClick={() => setShelf("shelf3")}
+                className="library-models-label"
+              >
                 3D Models
               </div>
             </Html>
           ) : (
             shelf === "shelf3" &&
             showBackLabel && (
-              <Html className="html-style" position={[29.7, 96.5, 25]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[29.7, 96.5, 25]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6176,19 +6159,22 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             material={materials["Orange Book"]}
           />
           {shelf === "noShelf" ? (
-            <Html className="html-style" position={[22, 55.7, 10]}>
+            <Html className="library-html-style" position={[22, 55.7, 10]}>
               <div
                 onClick={() => setShelf("shelf2")}
-                className="scrapers-label"
+                className="library-apps-label"
               >
-                Scrapers
+                Apps
               </div>
             </Html>
           ) : (
             shelf === "shelf2" &&
             showBackLabel && (
-              <Html className="html-style" position={[29, 77, 2]}>
-                <div onClick={() => setShelf("noShelf")} className="back-label">
+              <Html className="library-html-style" position={[29, 77, 2]}>
+                <div
+                  onClick={() => setShelf("noShelf")}
+                  className="library-back-label"
+                >
                   Go Back
                 </div>
               </Html>
@@ -6199,5 +6185,3 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
     </group>
   );
 }
-
-useGLTF.preload("./models/library.glb");
