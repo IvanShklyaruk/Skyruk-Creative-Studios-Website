@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/LibraryStyles/Library2D.css";
-import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.png";
+import Library2DBackgroundImage from "../../assets/Library2DBackgroundImage.webp";
 
 const games = [
   {
@@ -65,7 +65,13 @@ const categories = {
 
 export const Library2D = () => {
   const [visibleOption, setVisibleOption] = useState(null);
+  const [bgLoaded, setBgLoaded] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setBgLoaded(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleOptionClick = (option) => {
     setVisibleOption(option);
@@ -89,8 +95,10 @@ export const Library2D = () => {
         src={Library2DBackgroundImage}
         alt="Background"
         className="library-2d-background-image"
+        onLoad={() => setBgLoaded(true)}
+        onError={() => setBgLoaded(true)}
       />
-      <div className="library-2d-content">
+      <div className={`library-2d-content${bgLoaded ? ' content-visible' : ''}`}>
         {visibleOption === null ? (
           <div className="library-2d-options">
             <div

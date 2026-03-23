@@ -36,7 +36,11 @@
   padding: 1.5vw;
   border-radius: 1vw;
   box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
-  animation: home-fade-in 1.5s ease-in-out;
+  opacity: 0;
+}
+
+.home-centered-content.home-content-visible {
+  animation: home-fade-in 1.5s ease-in-out forwards;
 }
 
 .home-centered-content h1 {

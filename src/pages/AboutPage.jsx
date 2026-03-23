@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AboutUsPageBackgroundImage from "../assets/AboutUsPageBackgroundImage.png";
+import AboutUsPageBackgroundImage from "../assets/AboutUsPageBackgroundImage.webp";
 import "../styles/AboutPage.css";
 
 const AboutPage = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setBgLoaded(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="about-page">
       <Navbar />
@@ -12,9 +19,11 @@ const AboutPage = () => {
         src={AboutUsPageBackgroundImage}
         alt="Background"
         className="about-background-image"
+        onLoad={() => setBgLoaded(true)}
+        onError={() => setBgLoaded(true)}
       />
       <div className="about-content">
-        <div className="about-centered-content">
+        <div className={`about-centered-content${bgLoaded ? ' about-content-visible' : ''}`}>
           <h1>About Skyruk Creative Studios</h1>
           <p>
             Hello! I am a passionate software developer dedicated to creating

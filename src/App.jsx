@@ -5,7 +5,6 @@ import LibraryPage from "./pages/LibraryPage";
 import AboutPage from "./pages/AboutPage";
 import ModelsCreditsPage from "./pages/ModelsCreditsPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
-import TestPage from "./pages/TestPage";
 import "./App.css";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
               Component={ModelsCreditsPage}
             />
             <Route path="/library/preview" exact Component={ComingSoonPage} />
-            <Route path="/library/test" exact Component={TestPage} />
           </Routes>
         </div>
       </Router>

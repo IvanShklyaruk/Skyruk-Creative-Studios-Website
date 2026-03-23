@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/SkyrukLogo.png";
+import Logo from "../assets/SkyrukLogo.webp";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Switch from "@mui/material/Switch";

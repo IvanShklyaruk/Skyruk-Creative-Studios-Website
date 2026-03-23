@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackgroundImage from "../assets/ComingSoonPageBackgroundImage.png";
+import BackgroundImage from "../assets/ComingSoonPageBackgroundImage.webp";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/ComingSoonPage.css";

@@ -13,7 +13,7 @@ export const useDevice = () => {
   const getDevice = (width) => {
     if (width >= DESKTOP_THRESHOLD) return "desktop";
     if (width >= LAPTOP_THRESHOLD && width < DESKTOP_THRESHOLD)
-      return "desktop";
+      return "laptop";
     if (width >= TABLET_THRESHOLD && width < LAPTOP_THRESHOLD) return "laptop";
     if (width >= MOBILE_THRESHOLD && width < TABLET_THRESHOLD) return "tablet";
     if (width < MOBILE_THRESHOLD) return "phone";

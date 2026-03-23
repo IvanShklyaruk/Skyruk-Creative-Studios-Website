@@ -45,6 +45,11 @@
   text-align: center;
   padding: 5px;
   box-sizing: border-box;
+  opacity: 0;
+}
+
+.library-2d-content.content-visible {
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .library-2d-options,

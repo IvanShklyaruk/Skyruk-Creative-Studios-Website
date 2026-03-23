@@ -8,18 +8,18 @@ import { useNavigate } from "react-router-dom";
 import { useGLTF, useAnimations, Html, Text } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
-import WordlePNG from "../../assets/Wordle.png";
-import MagicMatchPNG from "../../assets/MagicMatch.png";
-import ChessPNG from "../../assets/Chess.png";
-import YouTubeClonePNG from "../../assets/YouTubeClone.png";
-import NetflixClonePNG from "../../assets/NetflixClone.png";
-import WeatherAppPNG from "../../assets/WeatherApp.png";
-import ModelsCreditsPNG from "../../assets/ModelsCredits.png";
-import ThreeWorldsPNG from "../../assets/ThreeWorlds.png";
-import TeslaSlideshowPNG from "../../assets/TeslaSlideshow.png";
-import FaceDetectionPNG from "../../assets/FaceDetection.png";
-import GestureRecognitionPNG from "../../assets/GestureRecognition.png";
-import ComingSoonPNG from "../../assets/ComingSoon.png";
+import WordleWebP from "../../assets/Wordle.webp";
+import MagicMatchWebP from "../../assets/MagicMatch.webp";
+import ChessWebP from "../../assets/Chess.webp";
+import YouTubeCloneWebP from "../../assets/YouTubeClone.webp";
+import NetflixCloneWebP from "../../assets/NetflixClone.webp";
+import WeatherAppWebP from "../../assets/WeatherApp.webp";
+import ModelsCreditsWebP from "../../assets/ModelsCredits.webp";
+import ThreeWorldsWebP from "../../assets/ThreeWorlds.webp";
+import TeslaSlideshowWebP from "../../assets/TeslaSlideshow.webp";
+import FaceDetectionWebP from "../../assets/FaceDetection.webp";
+import GestureRecognitionWebP from "../../assets/GestureRecognition.webp";
+import ComingSoonWebP from "../../assets/ComingSoon.webp";
 import MedievalFont from "/fonts/MedievalSharp-Regular.ttf";
 import "../../styles/LibraryStyles/LibraryModel.css";
 import { useDevice } from "../../hooks/useDevice";
@@ -4591,7 +4591,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Wordle Clone</h3>
-                <img src={WordlePNG} alt="Wordle Clone" />
+                <img src={WordleWebP} alt="Wordle Clone" />
               </div>
             </Html>
           ) : (
@@ -4660,7 +4660,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Magic Match</h3>
-                <img src={MagicMatchPNG} alt="Magic Match" />
+                <img src={MagicMatchWebP} alt="Magic Match" />
               </div>
             </Html>
           ) : (
@@ -4733,7 +4733,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Chess</h3>
-                <img src={ChessPNG} alt="Chess" />
+                <img src={ChessWebP} alt="Chess" />
               </div>
             </Html>
           ) : (
@@ -4798,7 +4798,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -4868,7 +4868,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -4941,7 +4941,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>YouTube Clone</h3>
-                <img src={YouTubeClonePNG} alt="YouTube Clone" />
+                <img src={YouTubeCloneWebP} alt="YouTube Clone" />
               </div>
             </Html>
           ) : (
@@ -5009,7 +5009,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Netflix Clone</h3>
-                <img src={NetflixClonePNG} alt="Netflix Clone" />
+                <img src={NetflixCloneWebP} alt="Netflix Clone" />
               </div>
             </Html>
           ) : (
@@ -5082,7 +5082,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Weather App</h3>
-                <img src={WeatherAppPNG} alt="Weather App" />
+                <img src={WeatherAppWebP} alt="Weather App" />
               </div>
             </Html>
           ) : (
@@ -5147,7 +5147,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5217,7 +5217,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5282,7 +5282,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5352,7 +5352,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5420,7 +5420,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Tesla Slideshow</h3>
-                <img src={TeslaSlideshowPNG} alt="Tesla Slideshow" />
+                <img src={TeslaSlideshowWebP} alt="Tesla Slideshow" />
               </div>
             </Html>
           ) : (
@@ -5493,7 +5493,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Three Worlds</h3>
-                <img src={ThreeWorldsPNG} alt="Three Worlds" />
+                <img src={ThreeWorldsWebP} alt="Three Worlds" />
               </div>
             </Html>
           ) : (
@@ -5566,7 +5566,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Models Credits</h3>
-                <img src={ModelsCreditsPNG} alt="Models Credits" />
+                <img src={ModelsCreditsWebP} alt="Models Credits" />
               </div>
             </Html>
           ) : (
@@ -5636,7 +5636,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5701,7 +5701,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5771,7 +5771,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>???</h3>
-                <img src={ComingSoonPNG} alt="???" />
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5844,7 +5844,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Gesture Recognition</h3>
-                <img src={GestureRecognitionPNG} alt="Gesture Recognition" />
+                <img src={GestureRecognitionWebP} alt="Gesture Recognition" />
               </div>
             </Html>
           ) : (
@@ -5912,7 +5912,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             >
               <div className="library-hover-info">
                 <h3>Face Detection</h3>
-                <img src={FaceDetectionPNG} alt="Face Detection" />
+                <img src={FaceDetectionWebP} alt="Face Detection" />
               </div>
             </Html>
           ) : (
