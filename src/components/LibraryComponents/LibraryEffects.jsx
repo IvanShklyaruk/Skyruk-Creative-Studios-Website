@@ -64,7 +64,7 @@ export const LibraryEffects = () => {
 
   return (
     <>
-      {import.meta.env.DEV && <Leva hidden />}
+      <Leva hidden />
       <EffectComposer disableNormalPass>
         {vignetteConfig.enabled && <Vignette {...vignetteConfig} />}
         {bloomConfig.enabled && <Bloom {...bloomConfig} />}
