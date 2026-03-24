@@ -12,7 +12,6 @@ import WordleWebP from "../../assets/Wordle.webp";
 import MagicMatchWebP from "../../assets/MagicMatch.webp";
 import ChessWebP from "../../assets/Chess.webp";
 import YouTubeCloneWebP from "../../assets/YouTubeClone.webp";
-import NetflixCloneWebP from "../../assets/NetflixClone.webp";
 import WeatherAppWebP from "../../assets/WeatherApp.webp";
 import ModelsCreditsWebP from "../../assets/ModelsCredits.webp";
 import ThreeWorldsWebP from "../../assets/ThreeWorlds.webp";
@@ -4981,10 +4980,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
             shelf !== "noShelf"
               ? (e) => {
                   e.stopPropagation();
-                  handleClick(
-                    "shelf2_book2_animation",
-                    "https://ivanshklyaruk.github.io/Netflix-Clone/"
-                  );
+                  handleClick("shelf2_book2_animation", "/library/preview");
                 }
               : null
           }
@@ -5008,8 +5004,8 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               ]}
             >
               <div className="library-hover-info">
-                <h3>Netflix Clone</h3>
-                <img src={NetflixCloneWebP} alt="Netflix Clone" />
+                <h3>???</h3>
+                <img src={ComingSoonWebP} alt="???" />
               </div>
             </Html>
           ) : (
@@ -5020,7 +5016,7 @@ export function LibraryModel({ setSelectedObject, shelf, setShelf, ...props }) {
               rotation={[Math.PI / 2, -Math.PI / 2, Math.PI / 2]} // Rotate text 90 degrees around z-axis
               color="black" // Adjust color as needed
             >
-              Netflix Clone
+              ???
             </Text>
           )}
         </group>

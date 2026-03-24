@@ -19,11 +19,8 @@ const apps = [
     name: "YouTube Clone",
     link: "https://ivanshklyaruk.github.io/YouTube-Clone/",
   },
-  {
-    name: "Netflix Clone",
-    link: "https://ivanshklyaruk.github.io/Netflix-Clone/",
-  },
   { name: "Weather App", link: "https://ivanshklyaruk.github.io/Weather-App/" },
+  { name: "???", link: "/library/preview" },
   { name: "???", link: "/library/preview" },
   { name: "???", link: "/library/preview" },
 ];
