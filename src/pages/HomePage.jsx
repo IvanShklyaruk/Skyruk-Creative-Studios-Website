@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BackgroundImage from "../assets/HomePageBackgroundImage.webp";
 import Navbar from "../components/Navbar";
@@ -8,10 +8,11 @@ import "../styles/HomePage.css";
 const HomePage = () => {
   const navigate = useNavigate();
   const [bgLoaded, setBgLoaded] = useState(false);
+  const timerRef = useRef(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setBgLoaded(true), 3000);
-    return () => clearTimeout(timer);
+    timerRef.current = setTimeout(() => setBgLoaded(true), 5000);
+    return () => clearTimeout(timerRef.current);
   }, []);
 
   function handleExplore() {
@@ -25,8 +26,8 @@ const HomePage = () => {
         src={BackgroundImage}
         alt="Background"
         className="home-background-image"
-        onLoad={() => setBgLoaded(true)}
-        onError={() => setBgLoaded(true)}
+        onLoad={() => { clearTimeout(timerRef.current); setBgLoaded(true); }}
+        onError={() => { clearTimeout(timerRef.current); setBgLoaded(true); }}
       />
       <div className="home-content">
         <div className={`home-centered-content${bgLoaded ? ' home-content-visible' : ''}`}>

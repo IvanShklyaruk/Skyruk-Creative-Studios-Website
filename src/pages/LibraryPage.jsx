@@ -5,6 +5,7 @@ import { LibraryEffects } from "../components/LibraryComponents/LibraryEffects";
 import LoadingScreen from "../components/LoadingScreen";
 import { Library2D } from "../components/LibraryComponents/Library2D";
 import GpuPromptModal from "../components/GpuPromptModal";
+import ErrorBoundary from "../components/ErrorBoundary";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/LibraryStyles/LibraryPage.css";
@@ -95,16 +96,18 @@ const LibraryPage = () => {
       {is3D && hasDedicatedGPU ? (
         <>
           <LoadingScreen progress={progress} active={active} />
-          <Canvas
-            key={is3D}
-            camera={{
-              position: [1.042, 5.268, 11.789],
-              fov: 61,
-            }}
-          >
-            <Library />
-            <LibraryEffects />
-          </Canvas>
+          <ErrorBoundary>
+            <Canvas
+              key={is3D}
+              camera={{
+                position: [1.042, 5.268, 11.789],
+                fov: 61,
+              }}
+            >
+              <Library />
+              <LibraryEffects />
+            </Canvas>
+          </ErrorBoundary>
         </>
       ) : (
         <Library2D />

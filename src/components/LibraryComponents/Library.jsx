@@ -1,8 +1,6 @@
 import { CameraControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
-import { button, useControls } from "leva";
 import { LibraryModel } from "./LibraryModel";
-import CameraPositionLogger from "../../helpers/CameraPositionLogger";
 import "../../styles/LibraryStyles/Library.css";
 import { useDevice } from "../../hooks/useDevice";
 
@@ -48,18 +46,6 @@ export const Library = () => {
   const { device } = useDevice();
   const [shelf, setShelf] = useState("noShelf");
   const controls = useRef();
-
-  /* { Helper to get Camera Position }
-  const { cameraPosition } = useControls({
-    getLookAt: button(() => {
-      if (controls.current) {
-        const position = controls.current.getPosition();
-        const target = controls.current.getTarget();
-        console.log([...position, ...target]);
-      }
-    }),
-  });
-*/
 
   const playTransition = () => {
     if (controls.current && cameraPositions[shelf]) {
