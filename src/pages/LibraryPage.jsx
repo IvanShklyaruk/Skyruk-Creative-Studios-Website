@@ -57,11 +57,8 @@ const LibraryPage = () => {
   const toggleView = () => {
     const newView = !is3D;
     setIs3D(newView);
+    setHasDedicatedGPU(newView);
     sessionStorage.setItem("hasDedicatedGPU", JSON.stringify(newView));
-
-    if (newView && !hasDedicatedGPU) {
-      window.location.reload();
-    }
   };
 
   useEffect(() => {
